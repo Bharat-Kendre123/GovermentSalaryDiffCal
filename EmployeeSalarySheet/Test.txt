@@ -1,0 +1,80 @@
+ int joiningYear=Integer.parseInt(TDOJY.getText());
+        int JoiningMonth=Integer.parseInt((String) JDOJM.getItemAt(JDOJM.getSelectedIndex()));
+        int joningDay=Integer.parseInt(TDOJD.getText());
+        int fromMonth=Integer.parseInt((String) FMonth.getItemAt(FMonth.getSelectedIndex()));
+        int toMonth=  Integer.parseInt((String) TMonth.getItemAt(TMonth.getSelectedIndex()));
+        int fromYear= Integer.parseInt((String) FYear.getItemAt(FYear.getSelectedIndex())) ;
+        int toYear=  Integer.parseInt((String) TYear.getItemAt(TYear.getSelectedIndex()));
+        List<Employee> employeeList1 = new ArrayList<>();
+
+         if(fromYear==toYear)
+         {
+             employeeList1.add(noIncrement(false)) ;
+         }
+        else
+        {
+           int basic =Integer.parseInt(TBasic.getText());
+           int gradePay =Integer.parseInt(TGP.getText());
+           int attempt =1;
+          for(int year=fromYear;year<=toYear;year++)
+          {
+                  Employee employee= new Employee();
+                if(year==toYear)
+                {
+                   employee.setFromMonth(1);
+                   employee.setFromYear(year);
+                   employee.setToMonth(toMonth);
+                   employee.setToYear(year);
+                } else {
+                    employee.setFromMonth(fromMonth);
+                    employee.setFromYear(year);
+                    employee.setToMonth(12);
+                    employee.setToYear(year);
+                }
+                 if(Util.isIncrementAppcablleForJan(joningDay,JoiningMonth,joiningYear,year,attempt))
+                 {
+                     basic  = basic+Util.roundOffIncrement((int)(Math.round((basic+gradePay)*3/100.0)));
+                 }
+              employee.getDrawnSalary().setBasicPay(basic);
+              employee.getDrawnSalary().setGradepay(Integer.parseInt(TGP.getText()));
+              employee.getAdmissibleSalary().setBasicPay(Util.getAdmissibleBasicPay(basic,Integer.parseInt(TGP.getText()),(String)JPAY_BAND.getItemAt(JPAY_BAND.getSelectedIndex())));
+              employee.getAdmissibleSalary().setGradepay(0);
+              employee.getDiff().setBasicPay(employee.getAdmissibleSalary().getBasicPay()- (employee.getDrawnSalary().getBasicPay()+employee.getDrawnSalary().getGradepay()));
+              employee.getDiff().setGradepay(employee.getAdmissibleSalary().getGradepay()-employee.getDrawnSalary().getGradepay());
+
+              // TRAVEL ALLOWANCES
+              employee.getAdmissibleSalary().setTa(Integer.parseInt((String)JTA.getItemAt(JTA.getSelectedIndex())));
+              employee.getDrawnSalary().setTa(Integer.parseInt((String)JTA.getItemAt(JTA.getSelectedIndex())));
+              employee.getDiff().setTa(0);
+
+              //OTHER ALLOWANCES
+              employee.getAdmissibleSalary().setOtherA(Integer.parseInt((String)JOtherA.getItemAt(JOtherA.getSelectedIndex())));
+              employee.getDrawnSalary().setOtherA(Integer.parseInt((String)JOtherA.getItemAt(JOtherA.getSelectedIndex())));
+              employee.getDiff().setOtherA(0);
+
+              // WASHING ALLOWANCES
+              employee.getAdmissibleSalary().setWa(Integer.parseInt((String)JWA.getItemAt(JWA.getSelectedIndex())));
+              employee.getDrawnSalary().setWa(Integer.parseInt((String)JWA.getItemAt(JWA.getSelectedIndex())));
+              employee.getDiff().setWa(0);
+
+              //CLA
+              employee.getAdmissibleSalary().setCla(Integer.parseInt((String)JCLA.getItemAt(JCLA.getSelectedIndex())));
+              employee.getDrawnSalary().setCla(Integer.parseInt((String)JCLA.getItemAt(JCLA.getSelectedIndex())));
+              employee.getDiff().setCla(0);
+
+              //HRA
+              employee.getAdmissibleSalary().setHra(Util.getHRA(Integer.parseInt((String)JHRA7.getItemAt(JHRA7.getSelectedIndex())),employee.getAdmissibleSalary().getBasicPay()));
+              employee.getDrawnSalary().setHra(Util.getHRA(Integer.parseInt((String)JHRA6.getItemAt(JHRA6.getSelectedIndex())),(employee.getDrawnSalary().getBasicPay()+employee.getDrawnSalary().getGradepay())));
+              employee.getDiff().setHra(employee.getAdmissibleSalary().getHra()-employee.getDrawnSalary().getHra());
+
+              //NPA
+              int[] npa  =Util.calculateNPA((String)JNPA.getItemAt(JNPA.getSelectedIndex()),basic,Integer.parseInt(TGP.getText()),employee.getAdmissibleSalary().getBasicPay(),(String)JNPA7.getItemAt(JNPA7.getSelectedIndex()));
+              employee.getAdmissibleSalary().setNpa(npa[1]);
+              employee.getDrawnSalary().setNpa(npa[0]);
+              employee.getDiff().setNpa(npa[1]-npa[0]);
+              employeeList1.add(employee);
+              attempt++;
+              fromMonth  =1;
+          }
+        }
+          return employeeList1;

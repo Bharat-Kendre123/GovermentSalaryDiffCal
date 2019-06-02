@@ -1,0 +1,199 @@
+    public static void createExcelSheet(Employee employeeSheet,boolean dcpsFlag) throws Exception {
+
+
+        int []Addition = new int[36];
+        int []AdditonFor2019 = new int[36];
+        //Create blank workbook
+        XSSFWorkbook workbook = new XSSFWorkbook();
+
+        //Create a blank sheet
+        XSSFSheet spreadsheet = workbook.createSheet("Employee Salary Detail");
+        XSSFSheet spreadSheetFor2019 = workbook.createSheet("2019 Sheet");
+
+        String[] columnLsit ={"MONTH", "A-BasicPay","A-DA", "A-TA","A-Other A.","A-WA","A-CLA","A-HRA","A-DCPS","A-NPA","A-TOTAL","A-PT","D-BasicPay", "D-GradePay","D-DA", "D-TA","D-Other A.","D-WA","D-CLA","D-HRA","D-DCPS","D-NPA","D-TOTAL","D-PT","DIFF-BasicPay", "DIFF-DA","DIFF-TA","DIFF-Other A.","DIFF-WA","DIFF-CLA","DIFF-HRA","DIFF-DCPS","DIFF-NPA","DIFF-TOTAL","DIFF-PT","Credit to GPF/DCPS" };
+        int[] data = new int[columnLsit.length];
+        System.out.println("LenghtOfColumn-"+columnLsit.length  );
+        data[0]=0;
+        data[1]=employeeSheet.getAdmissibleSalary().getBasicPay();
+       // data[2]=employeeSheet.getAdmissibleSalary().getGradepay();
+        data[2]=employeeSheet.getAdmissibleSalary().getDa();
+        data[3]= employeeSheet.getAdmissibleSalary().getTa();
+        data[4]= employeeSheet.getAdmissibleSalary().getOtherA();
+        data[5]= employeeSheet.getAdmissibleSalary().getWa();
+        data[6]= employeeSheet.getAdmissibleSalary().getCla();
+        data[7]= employeeSheet.getAdmissibleSalary().getHra();
+        data[8]= employeeSheet.getAdmissibleSalary().getDcps();
+        data[9]= employeeSheet.getAdmissibleSalary().getNpa();
+        data[10] = data[1]+data[2]+data[3]+data[4]+data[5]+data[6]+data[7]+data[8]+data[9];
+        data[11] =0;
+        data[12]= employeeSheet.getDrawnSalary().getBasicPay();
+        data[13]= employeeSheet.getDrawnSalary().getGradepay();
+        data[14]= employeeSheet.getDrawnSalary().getDa();
+        data[15]= employeeSheet.getDrawnSalary().getTa();
+        data[16]= employeeSheet.getDrawnSalary().getOtherA();
+        data[17]= employeeSheet.getDrawnSalary().getWa();
+        data[18]= employeeSheet.getDrawnSalary().getCla();
+        data[19]= employeeSheet.getDrawnSalary().getHra();
+        data[20]= employeeSheet.getDrawnSalary().getDcps();
+        data[21]= employeeSheet.getDrawnSalary().getNpa();
+        data[22] =data[12]+ data[13]+data[14]+data[15]+data[16]+data[17]+data[18]+data[19]+data[20]+data[21];
+        data[23] =0;
+        data[24] = employeeSheet.getDiff().getBasicPay();
+        data[25] = employeeSheet.getDiff().getDa();
+        data[26] = employeeSheet.getDiff().getTa();
+        data[27] = employeeSheet.getDiff().getOtherA();
+        data[28] = employeeSheet.getDiff().getWa();
+        data[29] = employeeSheet.getDiff().getCla();
+        data[30] = employeeSheet.getDiff().getHra();
+        data[31] = employeeSheet.getDiff().getDcps();
+        data[32] = employeeSheet.getDiff().getNpa();
+        data[33] =data[24]+data[25]+data[26]+data[27]+data[28]+data[29]+data[30]+data[31]+data[32];
+        data[34]  =0;
+        data[35]  = data[33];
+
+
+
+        //Create row object
+        XSSFRow row;
+        int rowid=0;
+        row = spreadsheet.createRow(rowid++);
+        int cellid=0;
+        for(String columnName:columnLsit)
+        {
+            Cell cell = row.createCell(cellid++);
+            cell.setCellValue(columnName);
+        }
+
+
+        XSSFRow rowFor2019;
+        int rowid2019=0;
+        rowFor2019 = spreadSheetFor2019.createRow(rowid2019++);
+        int cellid2019=0;
+        for(String columnName:columnLsit)
+        {
+            Cell cell = row.createCell(cellid2019++);
+            cell.setCellValue(columnName);
+        }
+
+
+        int fromMonth=employeeSheet.getFromMonth();
+        int fromYear=employeeSheet.getFromYear();
+        int toMonth = employeeSheet.getToMonth();
+        int toYear= employeeSheet.getToYear();
+
+        boolean flag=true;   // to coontrol loopfor last month
+        for(int i=fromYear;i<=toYear && flag;i++)
+        {
+            for(int j=fromMonth;j<=12;j++)
+            {
+                row=spreadsheet.createRow(rowid++);
+                int admissibleDa  =0;
+                int drwanDa  =0;
+                int diffDa =0;
+                int drawnDcps  =0;
+                int admissibleDcps  =0;
+                int diffddcps  =0;
+                for(int k=0; k<columnLsit.length;k++)
+                {
+
+                    Cell cell = row.createCell(k);
+                    if(k==0)     // month
+                    {
+                       cell.setCellValue(monthList[j-1]+"-"+i);
+                    } else{
+                        if(k==11 || k==23) //proffessional tax logic
+                        {
+                            if(j==2)     //feb
+                            {
+                                cell.setCellValue(300);
+                                Addition[k]=300+Addition[k];    /// Addition of Amounts
+                            }
+                            else {
+                                Addition[k]=200+Addition[k];    /// Addition of Amounts
+                                cell.setCellValue(200);
+                            }
+                        } else if(k==2)  // admssble da
+                        {
+                            admissibleDa  =  Util.getAdmissibeDA(data[1],i,j);
+                            Addition[k]=admissibleDa+Addition[k];    /// Addition of Amounts
+                            cell.setCellValue(admissibleDa); //i year and j month
+                        }else if(k==14)    // Drawn Da
+                        {
+                            drwanDa  =  Util.getDrawnDa(data[12]+data[13],i,j);
+                            Addition[k]=drwanDa+Addition[k];    /// Addition of Amounts
+                            cell.setCellValue(drwanDa); //i year and j month
+                        }else if(k==25)   // difference da
+                        {
+                            diffDa =   admissibleDa-drwanDa;
+                            Addition[k]=diffDa+Addition[k];    /// Addition of Amounts
+                            cell.setCellValue(diffDa);
+                        } else if(k==10)  // add da in admssibbe total
+                        {
+                            cell.setCellValue(data[k]+admissibleDa +admissibleDcps);
+                            Addition[k]=data[k]+admissibleDa +admissibleDcps+Addition[k];    /// Addition of Amounts
+
+                        }  else if(k==22)   //add da + dcps in drawn total
+                        {
+                            cell.setCellValue(data[k]+drwanDa+drawnDcps);
+                            Addition[k]=data[k]+drwanDa+drawnDcps+Addition[k];    /// Addition of Amounts
+
+                        }   else if(k==33 || k==35)    //add da + dcps in diff total
+                        {
+                            cell.setCellValue(data[k]+diffDa+diffddcps);
+                            Addition[k]=data[k]+diffDa+diffddcps+Addition[k];    /// Addition of Amounts
+
+                        }  else if(k==8)   //calculate admissibble dcps
+                        {
+                            admissibleDcps = dcpsFlag?(int)  Math.round((data[1]+admissibleDa)*10/100.0):0;
+                            Addition[k]=admissibleDcps+Addition[k];    /// Addition of Amounts
+                            cell.setCellValue(admissibleDcps);
+                        } else if(k==20)   //calculate drwan dcps
+                        {
+                            drawnDcps = dcpsFlag? (int)  Math.round((data[12]+data[13]+drwanDa)*10/100.0):0;
+                            Addition[k]=drawnDcps+Addition[k];    /// Addition of Amounts
+                            cell.setCellValue(drawnDcps);
+                        }  else if(k==31)   //diff dcps
+                        {
+                            diffddcps =admissibleDcps-drawnDcps;
+                            Addition[k]=diffddcps+Addition[k];    /// Addition of Amounts
+                            cell.setCellValue(diffddcps);
+                        }
+                        else{
+                            cell.setCellValue(data[k]);
+                            Addition[k]=data[k]+Addition[k];    /// Addition of Amounts
+                        }
+                    }
+
+                }
+                if(j==toMonth && i==toYear)
+                {
+                    flag = false;
+                    break;
+                }
+
+            }
+            fromMonth    =1;
+        }
+
+        // TOTAL AMOUNT ROW
+
+        row = spreadsheet.createRow(rowid++);
+        for(int cellIdforTotal=0;cellIdforTotal<Addition.length;cellIdforTotal++)
+        {
+            Cell cellForTaoatl = row.createCell(cellIdforTotal);
+            if(cellIdforTotal==0)
+            {
+                cellForTaoatl.setCellValue("Total");
+            }else {
+                cellForTaoatl.setCellValue(Addition[cellIdforTotal]);
+            }
+
+
+        }
+        //Write the workbook in file system
+        System.out.println(Addition);
+        FileOutputStream out = new FileOutputStream(new File("11.xlsx"));
+        workbook.write(out);
+        out.close();
+        System.out.println("Writesheet.xlsx written successfully");
+    }
