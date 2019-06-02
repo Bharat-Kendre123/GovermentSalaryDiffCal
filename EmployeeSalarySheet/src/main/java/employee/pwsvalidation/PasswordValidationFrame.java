@@ -4,17 +4,15 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
+import javax.swing.*;
 
 import employee.mainscreen.EmplyeeSalaryTemplate;
 
 public class PasswordValidationFrame implements ActionListener{
 
 	JFrame f;
-	JTextField passwordTextField;
+
+    JPasswordField  passwordTextField;
 	JButton passwordButton;
 	JLabel heading,wrongPws,welcomeText;
 	
@@ -41,7 +39,7 @@ public class PasswordValidationFrame implements ActionListener{
 		heading.setForeground(Color.DARK_GRAY);
 		f.add(heading);
 		
-		passwordTextField = new JTextField();
+		passwordTextField = new JPasswordField();
 		passwordTextField.setBounds(90,300, 300,30);
 		//passwordTextField.setFont(f);
 		f.add(passwordTextField);

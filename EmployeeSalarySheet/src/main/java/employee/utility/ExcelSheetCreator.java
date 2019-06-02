@@ -15,11 +15,11 @@ import employee.styling.UtilForStyling;
 
 public class ExcelSheetCreator {
 
-    public static final  String[] monthList = {"JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","ACT","NOV","DEC"};
+    public static final  String[] monthList = {"JAN","FEB","MAr","APR","MAY","JUN","JUL","AUG","SEP","ACT","NOV","DEC"};
 
-    public static  final String[] columnLsit ={"Sr.No.","Month", "Pay","D.A", "T.A","C.A/Other A.","W.A","H.R.A.","N.P.A","Total From pay to NPA","P.T","D.C.P.S","Pay", "GradePay","D.A", "T.A","C.A/Other A.","W.A","H.R.A","N.P.A","Total From pay to NPA","P.T","D.C.P.S","Pay", "D.A","T.A","C.A/Other A.","WA","H.R.A","N.P.A","Total From pay to NPA","P.T","D.C.P.S","Credit to GPF/DCPS" };
+    public static  final String[] columnLsit ={"Sr.No.","Month", "Pay","D.A", "T.A","C.A/Other A.","W.A","H.R.A.","N.P.A","Total From pay to NPA","P.T","D.C.P.S","Pay", "GradePay","D.A", "T.A","C.A/Other A.","W.A","H.R.A","N.P.A","Total From pay to NPA","P.T","D.C.P.S","Pay", "D.A","T.A","C.A/Other A.","WA","H.R.A","N.P.A","Total From pay to NPA","P.T","D.C.P.S","Net Amount" };
 
-    public static  final String[] columnLsitFor2019 ={"Sr.No.","Month", "Pay","D.A", "T.A","C.A/Other A.","W.A","H.R.A.","N.P.A","Total From pay to NPA","P.T","D.C.P.S","Pay", "GradePay","D.A", "T.A","C.A/Other A.","W.A","H.R.A","N.P.A","Total From pay to NPA","P.T","D.C.P.S","Pay", "D.A","T.A","C.A/Other A.","WA","H.R.A","N.P.A","Total From pay to NPA","P.T","D.C.P.S","Net Amt.(Total Pay to NPA-DCPS)" };
+    public static  final String[] columnLsitFor2019 ={"Sr.No.","Month", "Pay","D.A", "T.A","C.A/Other A.","W.A","H.R.A.","N.P.A","Total From pay to NPA","P.T","D.C.P.S","Pay", "GradePay","D.A", "T.A","C.A/Other A.","W.A","H.R.A","N.P.A","Total From pay to NPA","P.T","D.C.P.S","Pay", "D.A","T.A","C.A/Other A.","WA","H.R.A","N.P.A","Total From pay to NPA","P.T","D.C.P.S","Net Amt." };
 
     public static String statementDuration ="";
     public static String statementDuration2019 ="" ;
@@ -319,6 +319,13 @@ public class ExcelSheetCreator {
 
         UtilForStyling.setInstallments(workbook,spreadsheet,Util.getInstallmentAmount(Addition[33]),Addition[33],rowid);
         //Write the workbook in file system
+
+        // auto column width
+        for(int i=0;i<34;i++){
+            spreadsheet.autoSizeColumn(i);
+            spreadsheetFor2019.autoSizeColumn(i);
+        }
+
         FileOutputStream out = new FileOutputStream(new File(nameOfEmployee+".xlsx"));
         workbook.write(out);
         out.close();

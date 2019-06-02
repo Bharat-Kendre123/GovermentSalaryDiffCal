@@ -387,6 +387,11 @@ public class Util {
                 fromYearTital2016_18=employeeSheetList.get(0).getFromYear();
                 toMonthTital2016_18=12;
                 toYearTital2016_18=2018;
+            }else{
+                fromMonthTital2016_18=employeeSheetList.get(0).getFromMonth();
+                fromYearTital2016_18=employeeSheetList.get(0).getFromYear();
+                toMonthTital2016_18=employeeSheetList.get(0).getToMonth();;
+                toYearTital2016_18=employeeSheetList.get(0).getToYear();;
             }
         }else{
             boolean contains2019=false;
