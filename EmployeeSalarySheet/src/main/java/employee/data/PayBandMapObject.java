@@ -49,10 +49,10 @@ public class PayBandMapObject {
         payBandLevelArrayMaping.put("PB-3 15600-39100-7600",SalaryData.s25);
         payBandLevelArrayMaping.put("PB-3 15600-39100-7900",SalaryData.s26);
         payBandLevelArrayMaping.put("PB-3 15600-39100-7900",SalaryData.s26);
-        payBandLevelArrayMaping.put("PB-4 37400-67000 8700",SalaryData.s27);
-        payBandLevelArrayMaping.put("PB-4 37400-67000 8800",SalaryData.s28);
-        payBandLevelArrayMaping.put("PB-4 37400-67000 8900",SalaryData.s29);
-        payBandLevelArrayMaping.put("PB-4 37400-67000 10000",SalaryData.s30);
+        payBandLevelArrayMaping.put("PB-4 37400-67000-8700",SalaryData.s27);
+        payBandLevelArrayMaping.put("PB-4 37400-67000-8800",SalaryData.s28);
+        payBandLevelArrayMaping.put("PB-4 37400-67000-8900",SalaryData.s29);
+        payBandLevelArrayMaping.put("PB-4 37400-67000-10000",SalaryData.s30);
         payBandLevelArrayMaping.put("67000 - 79000",SalaryData.s31);
 
 
@@ -89,10 +89,10 @@ public class PayBandMapObject {
         paybandMapWithLevels.put("PB-3 15600-39100-6900","S-24");
         paybandMapWithLevels.put("PB-3 15600-39100-7600","S-25");
         paybandMapWithLevels.put("PB-3 15600-39100-7900","S-26");
-        paybandMapWithLevels.put("PB-4 37400-67000 8700","S-27");
-        paybandMapWithLevels.put("PB-4 37400-67000 8800","S-28");
-        paybandMapWithLevels.put("PB-4 37400-67000 8900","S-29");
-        paybandMapWithLevels.put("PB-4 37400-67000 10000","S-30");
+        paybandMapWithLevels.put("PB-4 37400-67000-8700","S-27");
+        paybandMapWithLevels.put("PB-4 37400-67000-8800","S-28");
+        paybandMapWithLevels.put("PB-4 37400-67000-8900","S-29");
+        paybandMapWithLevels.put("PB-4 37400-67000-10000","S-30");
         paybandMapWithLevels.put("67000 - 79000","S-31");
 
     }
