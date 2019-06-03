@@ -374,66 +374,21 @@ public class Util {
         int toMonthTital2016_18=1;
         int toYearTital2016_18=1;
 
-
-        if(employeeSheetList.size()==1)
-        {
-            if(employeeSheetList.get(0).getToYear()==2019)
-            {
-                fromMonthTital2019=1;
-                fromYearTital2019=2019;
-                toMonthTital2019=employeeSheetList.get(0).getToMonth();
-                toYearTital2019=employeeSheetList.get(0).getToYear();
-                fromMonthTital2016_18=employeeSheetList.get(0).getFromMonth();
-                fromYearTital2016_18=employeeSheetList.get(0).getFromYear();
-                toMonthTital2016_18=12;
-                toYearTital2016_18=2018;
-            }else{
-                fromMonthTital2016_18=employeeSheetList.get(0).getFromMonth();
-                fromYearTital2016_18=employeeSheetList.get(0).getFromYear();
-                toMonthTital2016_18=employeeSheetList.get(0).getToMonth();;
-                toYearTital2016_18=employeeSheetList.get(0).getToYear();;
-            }
+        if(employeeSheetList.get(employeeSheetList.size()-1).getToYear() ==2019){
+            fromMonthTital2019 = 1;
+            fromYearTital2019  =  2019;
+            toMonthTital2019  =  employeeSheetList.get(employeeSheetList.size()-1).getToMonth();
+            toYearTital2019  =  2019;
+            fromMonthTital2016_18=employeeSheetList.get(0).getFromMonth();
+            fromYearTital2016_18=employeeSheetList.get(0).getFromYear();
+            toMonthTital2016_18 =12;
+            toYearTital2016_18 =2018;
         }else{
-            boolean contains2019=false;
-            boolean contains2016_2018=false;
-
-            for(int i=0;i<employeeSheetList.size();i++ )
-            {
-                if(employeeSheetList.get(i).getFromYear()<2019)
-                {
-                    contains2016_2018  = true;
-                }
-                if(employeeSheetList.get(i).getFromYear()==2019)
-                {
-                    contains2019 = true;
-                    break;
-                }
-            }
-
-            if(contains2019 && contains2016_2018)
-            {
-                fromMonthTital2016_18=employeeSheetList.get(0).getFromMonth();
-                fromYearTital2016_18=employeeSheetList.get(0).getFromYear();
-                toMonthTital2016_18 =12;
-                toYearTital2016_18 =2018;
-                fromMonthTital2019 = 1;
-                fromYearTital2019  =  2019;
-                toMonthTital2019  =  employeeSheetList.get(employeeSheetList.size()-1).getToMonth();
-                toYearTital2019  =  2019;
-            } else if(contains2016_2018 && !contains2019)
-            {
-                fromMonthTital2016_18=employeeSheetList.get(0).getFromMonth();
-                fromYearTital2016_18=employeeSheetList.get(0).getFromYear();
-                toMonthTital2016_18 =employeeSheetList.get(employeeSheetList.size()-1).getFromMonth();
-                toYearTital2016_18 =employeeSheetList.get(employeeSheetList.size()-1).getFromYear();
-            } else if(!contains2016_2018 && contains2019){
-                fromMonthTital2019 = 1;
-                fromYearTital2019  =  2019;
-                toMonthTital2019  =  employeeSheetList.get(employeeSheetList.size()-1).getFromMonth();
-                toYearTital2019  =  2019;
-            }
+            fromMonthTital2016_18=employeeSheetList.get(0).getFromMonth();
+            fromYearTital2016_18=employeeSheetList.get(0).getFromYear();
+            toMonthTital2016_18 =employeeSheetList.get(employeeSheetList.size()-1).getToMonth();
+            toYearTital2016_18 =employeeSheetList.get(employeeSheetList.size()-1).getToYear();
         }
-        ;
 
         try{
             ExcelSheetCreator.statementDuration ="Statement showing the Pay /D.A/& Other Differences w.e.from Dated  "+ ExcelSheetCreator.monthList[fromMonthTital2016_18-1] +"-"+fromYearTital2016_18 +" to "+ ExcelSheetCreator.monthList[toMonthTital2016_18-1] +"-"+toYearTital2016_18;

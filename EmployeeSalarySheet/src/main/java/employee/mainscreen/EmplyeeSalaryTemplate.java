@@ -18,6 +18,7 @@ import java.awt.event.FocusListener;
 import java.time.YearMonth;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 
 public class EmplyeeSalaryTemplate implements ActionListener{
@@ -27,7 +28,7 @@ public class EmplyeeSalaryTemplate implements ActionListener{
     JComboBox JTA,JCA_OtherA,JWA,JDCPS ,JHRA6,JHRA7,JNPA,FMonth,FYear,TMonth,TYear,JDOJM,JNcrement,JPAY_BAND,JNPA7,JFROMD,JTOD,JPROMO,JINCRE;
     JFrame f;
     JButton WithoutIncrement,increment;
-    JButton inProgress,done,refresh,BJULYPROM;
+    JButton inProgress,done,refresh,BJULYPROM,AUTO_PB;
     JButton steps;
     Employee employee;
     List<Employee> employeeList =new ArrayList<>();
@@ -61,6 +62,9 @@ public class EmplyeeSalaryTemplate implements ActionListener{
         Basic.setBounds(50, 90-height, 100, 30);
         GP= new JLabel("Grade Pay : ");
         GP.setBounds(50,130-height, 100,30);
+        AUTO_PB=new JButton("Auto PB");
+        AUTO_PB.setBounds(350,130-height, 100,30);
+        AUTO_PB.addActionListener(this);
         PAY_BAND=new JLabel("Pay Band");
         PAY_BAND.setBounds(50,170-height, 100,30);
 
@@ -98,7 +102,7 @@ public class EmplyeeSalaryTemplate implements ActionListener{
         FromDate.setBounds(50,490-height, 100,30);
         ToDate= new JLabel("ToDate : ");
         ToDate.setBounds(50,530-height, 100,30);
-        f.add(Name);f.add(Basic);f.add(GP);f.add(TA);f.add(WA);f.add(DCPS);f.add(HRA6);f.add(HRA7);f.add(FromDate);f.add(ToDate);f.add(NPA);f.add(DOJ);f.add(PAY_BAND);f.add(NPA7) ;
+        f.add(Name);f.add(Basic);f.add(GP);f.add(TA);f.add(WA);f.add(DCPS);f.add(HRA6);f.add(HRA7);f.add(FromDate);f.add(ToDate);f.add(NPA);f.add(DOJ);f.add(PAY_BAND);f.add(NPA7) ;f.add(AUTO_PB);
 
         // TEST FIELDS
         TName = new JTextField();
@@ -120,8 +124,10 @@ public class EmplyeeSalaryTemplate implements ActionListener{
         JPAY_BAND.addActionListener(this);
         f.add(JPAY_BAND);
 
-        TSLEVEL = new JTextField();
-        TSLEVEL.setBounds(340,170-height, 200,30);
+        TSLEVEL = new JTextField("LEVEL WILL DISPLAY HERE");
+        TSLEVEL.setBounds(350,170-height, 200,30);
+        Font font = new Font("SansSerif", Font.BOLD,12);
+        TSLEVEL.setFont(font);
         f.add(TSLEVEL);
 
         String taList []={"0","400","600","1000","1200","2000"};
@@ -166,7 +172,7 @@ public class EmplyeeSalaryTemplate implements ActionListener{
         JNPA7.setBounds(250,410-height, 70,30);
         f.add(JNPA7);
 
-        String incrementList []={"Double","Triple","Six Time"};
+        String incrementList []={"DOUBLE","TRIPLE","SIX TIME"};
         JINCRE=new JComboBox(incrementList);
         JINCRE.setBounds(430, 410-height, 110, 30);
         JINCRE.addActionListener(this);
@@ -220,38 +226,38 @@ public class EmplyeeSalaryTemplate implements ActionListener{
         f.add(TYear);
 
         inProgress=new JButton("PROGRESS");
-        inProgress.setBounds(30, 580-height, 120, 40);
+        inProgress.setBounds(30, 580-height, 143, 40);
         f.add(inProgress);
         inProgress.addActionListener(this);
 
         done=new JButton("DONE");
-        done.setBounds(180, 580-height, 120, 40);
+        done.setBounds(207, 580-height, 143, 40);
         f.add(done);
         done.addActionListener(this);
 
         WithoutIncrement=new JButton("NO-INCREMENT");
-        WithoutIncrement.setBounds(330, 580-height, 130, 40);
+        WithoutIncrement.setBounds(382, 580-height, 143, 40);
         f.add(WithoutIncrement);
         WithoutIncrement.addActionListener(this);
 
 
         BJULYPROM=new JButton("PROMOTION");
-        BJULYPROM.setBounds(30, 640-height, 120, 40);
+        BJULYPROM.setBounds(30, 640-height, 143, 40);
         BJULYPROM.addActionListener(this);
         f.add(BJULYPROM);
 
         refresh=new JButton("REFRESH");
-        refresh.setBounds(180, 640-height, 120, 40);
+        refresh.setBounds(207, 640-height, 143, 40);
         f.add(refresh);
 
         increment=new JButton("INCREMENT");
-        increment.setBounds(330, 640-height, 130, 40);
+        increment.setBounds(382, 640-height, 143, 40);
         f.add(increment);
         increment.addActionListener(this);
         refresh.addActionListener(this);
         
         steps=new JButton("CLICK FOR STEPS");
-        steps.setBounds(30, 690-height, 430, 40);
+        steps.setBounds(30, 690-height, 499, 40);
         steps.setFont(new Font("Courier New", Font.ITALIC, 18));
         steps.addActionListener(this);
         f.add(steps);
@@ -346,10 +352,74 @@ public class EmplyeeSalaryTemplate implements ActionListener{
         }else if(e.getSource() == steps)
         {
         	new StepButtons();
-        }/*else if(e.getSource() == TGP)
+        }else if(e.getSource() == AUTO_PB)
         {
-            setTheFilteredList();
-        }*/
+            setPBDropdownValue();
+        }
+    }
+
+    private void setPBDropdownValue() {
+        String payBand=TGP.getText();
+
+        String payband="";
+        int counter=0;
+        int counterForDuplicateGp=0;
+        for(String key : PayBandMapObject.payBandList){
+            counter++;
+            String[] payBandSplit= key.split("-");
+            if(payBandSplit[payBandSplit.length-1].equals(payBand)){
+                payband=key;
+                counterForDuplicateGp++;
+            }
+            if(counter==PayBandMapObject.payBandList.length-1){
+                if((67000<=Integer.parseInt(TGP.getText()) && Integer.parseInt(TGP.getText())<=79000)){
+                    payband="67000 - 79000";
+                }
+            }
+        }
+
+        String band=payband;
+        if(counterForDuplicateGp==1 && (Util.gradePayMap.containsKey(Integer.parseInt(TGP.getText())) || (67000<=Integer.parseInt(TGP.getText()) && Integer.parseInt(TGP.getText())<=79000)))
+        {
+            if(!(67000<=Integer.parseInt(TGP.getText()) && Integer.parseInt(TGP.getText())<=79000))
+            {
+                String s_level = PayBandMapObject.paybandMapWithLevels.get(payband);
+                String[] payBandSplit= (payband).split("-");
+                if(payBandSplit[payBandSplit.length-1].equalsIgnoreCase( TGP.getText()))
+                {
+                    int level = Util.getLevelFor7thPay(Integer.parseInt(TBasic.getText()), Integer.parseInt(TGP.getText()), payband);
+                    TSLEVEL.setText(s_level + " => (" + level + ")");
+                    Font font = new Font("SansSerif", Font.BOLD,12);
+                    TSLEVEL.setFont(font);
+                    TSLEVEL.setBackground(null);
+                }else{
+                    TSLEVEL.setText("INVALID GP ENTRY");
+                    TSLEVEL.setBackground(Color.pink);
+                    Font font = new Font("SansSerif", Font.BOLD,12);
+                    TSLEVEL.setFont(font);
+                }
+                JPAY_BAND.setSelectedItem(band);
+            } else{
+                int level = Util.getLevelFor7thPay(Integer.parseInt(TBasic.getText()), Integer.parseInt(TGP.getText()), "67000 - 79000");
+                TSLEVEL.setText("S-31" + " => (" + level + ")");
+                TSLEVEL.setBackground(null);
+                JPAY_BAND.setSelectedItem(band);
+            }
+
+        }else{
+            if(counterForDuplicateGp>1){
+                TSLEVEL.setText("SELECT  GP  MANUALLY");
+                TSLEVEL.setBackground(Color.orange);
+                Font font = new Font("SansSerif", Font.BOLD,12);
+                TSLEVEL.setFont(font);
+            }else{
+                TSLEVEL.setText("INVALID  GP  ENTRY");
+                TSLEVEL.setBackground(Color.pink);
+                Font font = new Font("SansSerif", Font.BOLD,12);
+                TSLEVEL.setFont(font);
+            }
+
+        }
     }
 
     private void setTheFilteredList() {
@@ -813,10 +883,14 @@ public class EmplyeeSalaryTemplate implements ActionListener{
                     {
                         int level = Util.getLevelFor7thPay(Integer.parseInt(TBasic.getText()), Integer.parseInt(TGP.getText()), (String) JPAY_BAND.getItemAt(JPAY_BAND.getSelectedIndex()));
                         TSLEVEL.setText(s_level + " => (" + level + ")");
+                        Font font = new Font("SansSerif", Font.BOLD,12);
+                        TSLEVEL.setFont(font);
                         TSLEVEL.setBackground(null);
                     }else{
                         TSLEVEL.setText("INVALID GP ENTRY");
-                        TSLEVEL.setBackground(Color.red);
+                        TSLEVEL.setBackground(Color.pink);
+                        Font font = new Font("SansSerif", Font.BOLD,12);
+                        TSLEVEL.setFont(font);
                     }
 
                 } else{
@@ -826,12 +900,17 @@ public class EmplyeeSalaryTemplate implements ActionListener{
                 }
             }else{
                 TSLEVEL.setText("INVALID GP ENTRY");
-                TSLEVEL.setBackground(Color.red);
+                TSLEVEL.setBackground(Color.pink);
+                Font font = new Font("SansSerif", Font.BOLD,12);
+                TSLEVEL.setFont(font);
             }
         }catch (Exception ex)
         {
             TSLEVEL.setBackground(Color.red);
             TSLEVEL.setText("Basic Pay or GP is missing");
+            TSLEVEL.setBackground(Color.pink);
+            Font font = new Font("SansSerif", Font.BOLD,12);
+            TSLEVEL.setFont(font);
         }
     }
 
