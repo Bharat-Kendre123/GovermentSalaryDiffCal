@@ -23,7 +23,7 @@ public class ExcelSheetCreator {
 
     public static String statementDuration ="";
     public static String statementDuration2019 ="" ;
-    public static void createExcelSheetFromDiffValues(List<Employee> employeeSheetList, boolean dcpsFlag, String nameOfEmployee) throws IOException {
+    public static void createExcelSheetFromDiffValues(List<Employee> employeeSheetList, boolean dcpsFlag, String nameOfEmployee,int recoveredAmt) throws IOException {
 
 
 
@@ -317,7 +317,8 @@ public class ExcelSheetCreator {
         //FOR TOTAL ROW BEFORE 2019
         UtilForStyling.setTotalRowStyle(workbook,spreadsheetFor2019,rowidFor2019,AdditionFor2019,rowNumberFor2019);
 
-        UtilForStyling.setInstallments(workbook,spreadsheet,Util.getInstallmentAmount(Addition[33]),Addition[33],rowid);
+        int toatlAfterRecovery=Addition[33]-recoveredAmt;
+        UtilForStyling.setInstallments(workbook,spreadsheet,Util.getInstallmentAmount(toatlAfterRecovery),Addition[33],recoveredAmt,toatlAfterRecovery);
         //Write the workbook in file system
 
         // auto column width

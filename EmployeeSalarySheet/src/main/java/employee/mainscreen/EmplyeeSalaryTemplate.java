@@ -23,8 +23,8 @@ import java.util.Set;
 
 public class EmplyeeSalaryTemplate implements ActionListener{
 
-    JLabel Name, Basic,GP,TA,WA,DCPS, HRA6,HRA7,CA_OtherA,NPA,FromDate,ToDate,DOJ,PAY_BAND,NPA7,PROMO,INCRE;
-    JTextField TName, TBasic,TGP,TDOJD,TDOJY,TSLEVEL;
+    JLabel Name, Basic,GP,TA,WA,DCPS, HRA6,HRA7,CA_OtherA,NPA,FromDate,ToDate,DOJ,PAY_BAND,NPA7,PROMO,INCRE,RECOVERED_AMOUNT;
+    JTextField TName, TBasic,TGP,TDOJD,TDOJY,TSLEVEL,JRECOVERED;
     JComboBox JTA,JCA_OtherA,JWA,JDCPS ,JHRA6,JHRA7,JNPA,FMonth,FYear,TMonth,TYear,JDOJM,JNcrement,JPAY_BAND,JNPA7,JFROMD,JTOD,JPROMO,JINCRE;
     JFrame f;
     JButton WithoutIncrement,increment;
@@ -113,6 +113,14 @@ public class EmplyeeSalaryTemplate implements ActionListener{
         JNcrement =new JComboBox(DCPSLinRupees);
         JNcrement.setBounds(350, 90-height, 50, 30);
         f.add(JNcrement);
+
+        RECOVERED_AMOUNT=new JLabel("RECOVERED :");
+        RECOVERED_AMOUNT.setBounds(340, 450-height, 80, 30);
+        f.add(RECOVERED_AMOUNT);
+
+        JRECOVERED = new JTextField("0");
+        JRECOVERED.setBounds(430, 450-height, 100, 30);
+        f.add(JRECOVERED);
 
         TGP = new JTextField();
         TGP.setBounds(130,130-height, 200,30);
@@ -299,8 +307,10 @@ public class EmplyeeSalaryTemplate implements ActionListener{
             //DCPS
             String dcps = (String)JDCPS.getItemAt(JDCPS.getSelectedIndex());
             boolean isDSCP =Util.isDSCP(dcps);
-            ExcelSheetCreator.createExcelSheetFromDiffValues(list,isDSCP,(String)TName.getText());
-
+            int recoveredAmt=Integer.parseInt((String)JRECOVERED.getText());
+            ExcelSheetCreator.createExcelSheetFromDiffValues(list,isDSCP,(String)TName.getText(),recoveredAmt);
+            // no global properties get affected by increment
+            JRECOVERED.setText("0");
         }
         else if(e.getSource() == inProgress)
         {
@@ -315,7 +325,8 @@ public class EmplyeeSalaryTemplate implements ActionListener{
             //DCPS
             String dcps = (String)JDCPS.getItemAt(JDCPS.getSelectedIndex());
             boolean isDSCP =Util.isDSCP(dcps);
-            ExcelSheetCreator.createExcelSheetFromDiffValues(employeeList,isDSCP,(String)TName.getText());
+            int recoveredAmt=Integer.parseInt((String)JRECOVERED.getText());
+            ExcelSheetCreator.createExcelSheetFromDiffValues(employeeList,isDSCP,(String)TName.getText(),recoveredAmt);
             employeeList.clear();
             resetGlobalProperties();
         }else if(e.getSource() == refresh)
@@ -449,6 +460,7 @@ public class EmplyeeSalaryTemplate implements ActionListener{
         isBeforejulyIncrement=false;
         firstTimeIcre=false;
         IncrementTime =0;
+        JRECOVERED.setText("0");
     }
 
     private void doPromotion() {
