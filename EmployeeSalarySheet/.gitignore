@@ -1,3 +1,12 @@
 /target/
 
-/.idea
+/.idea/*.xml
+
+/.classpath
+
+/*.xlsx
+
+*.iml
+
+.settings/*.prefs
+/target
