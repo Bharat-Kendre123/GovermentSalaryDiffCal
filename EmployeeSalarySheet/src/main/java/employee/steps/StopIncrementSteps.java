@@ -45,7 +45,7 @@ public class StopIncrementSteps implements ActionListener{
 	{
 		f=new JFrame("Steps");
 		f.setLocation(new Point(600,0));
-
+		f.setResizable(false);
 		title =new JLabel("STOP INCREMENT STEPS :-");
 		title.setBounds(xaxix,100, width,30);
 		title.setFont(new Font("Courier New", Font.ITALIC, 12));

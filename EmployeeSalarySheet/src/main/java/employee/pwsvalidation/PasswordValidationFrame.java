@@ -24,7 +24,7 @@ public class PasswordValidationFrame implements ActionListener{
 	public PasswordValidationFrame()
 	{
 		f=new JFrame("Authentication Window");
-		
+		f.setResizable(false);
 		welcomeText =new JLabel("WELCOME TO");
 		welcomeText.setBounds(170,180, 500,30);
 		welcomeText.setFont(new Font("Courier New", Font.ITALIC, 12));

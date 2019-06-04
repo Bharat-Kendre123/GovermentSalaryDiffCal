@@ -31,7 +31,7 @@ public class StepButtons implements ActionListener{
 	{
 		f=new JFrame("Steps Window");
 		f.setLocation(new Point(600,0));
-		
+		f.setResizable(false);
 		heading =new JLabel("CLICK THE BUTTON TO GET STEPS");
 		heading.setBounds(50,50, 500,30);
 		heading.setFont(new Font("Courier New", Font.ITALIC, 12));

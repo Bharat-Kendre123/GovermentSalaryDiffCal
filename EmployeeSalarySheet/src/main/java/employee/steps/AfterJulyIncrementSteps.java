@@ -49,7 +49,7 @@ public class AfterJulyIncrementSteps implements ActionListener{
 	public AfterJulyIncrementSteps(String step)
 	{
 		f=new JFrame("Steps");
-		
+		f.setResizable(false);
 		f.setLocation(new Point(600,0));
 		title =new JLabel("AFTER JULY INCREMENT STEPS :-");
 		title.setBounds(xaxix,50, width,30);

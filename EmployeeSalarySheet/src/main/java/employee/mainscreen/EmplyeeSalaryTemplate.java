@@ -54,6 +54,7 @@ public class EmplyeeSalaryTemplate implements ActionListener{
     public EmplyeeSalaryTemplate() {
 
         f=new JFrame("Employee Salary Detail");
+        f.setResizable(false);
         Point p =new Point(10,0);
         f.setLocation(p);
         Name= new JLabel("Name : ");

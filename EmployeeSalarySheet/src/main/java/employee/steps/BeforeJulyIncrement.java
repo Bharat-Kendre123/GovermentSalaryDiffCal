@@ -58,7 +58,7 @@ public class BeforeJulyIncrement implements ActionListener{
 	{
 		f=new JFrame("Steps");
 		f.setLocation(new Point(600,0));
-		
+		f.setResizable(false);
 
 		title =new JLabel("BEFORE JULY INCREMENT STEPS :-");
 		title.setBounds(xaxix,10, width,30);
