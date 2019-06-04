@@ -294,13 +294,13 @@ public class UtilForStyling {
         rowId++;  // INCREASE ROW
         XSSFRow recoveryRow = spreadsheet.getRow(rowId);
         Cell recoveryCell=recoveryRow.createCell(35) ;
-        recoveryCell.setCellValue("RECOVERED AMOUNT");
+        recoveryCell.setCellValue("RECOVERY AMOUNT");
         recoveryCell.setCellStyle(admissibleStyle);
         for(int i=36;i<=36;i++)
             recoveryRow.createCell(i).setCellStyle(admissibleStyle);
         spreadsheet.addMergedRegion(new CellRangeAddress(rowId,rowId,35,36)) ;
 
-        // rowId++;
+     
         Cell recoveryCellAmt=recoveryRow.createCell(37) ;
         recoveryCellAmt.setCellValue(adjustableAmount);
         recoveryCellAmt.setCellStyle(admissibleStyle);

@@ -114,7 +114,7 @@ public class EmplyeeSalaryTemplate implements ActionListener{
         JNcrement.setBounds(350, 90-height, 50, 30);
         f.add(JNcrement);
 
-        RECOVERED_AMOUNT=new JLabel("RECOVERED :");
+        RECOVERED_AMOUNT=new JLabel("RECOVERY :");
         RECOVERED_AMOUNT.setBounds(340, 450-height, 80, 30);
         f.add(RECOVERED_AMOUNT);
 
