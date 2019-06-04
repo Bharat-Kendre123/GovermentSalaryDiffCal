@@ -308,6 +308,27 @@ public class UtilForStyling {
             recoveryRow.createCell(i).setCellStyle(admissibleStyle);
         spreadsheet.addMergedRegion(new CellRangeAddress(rowId,rowId,37,38)) ;
 
+        
+        // ----------------------- NET AMOUNT-----------------------------------------
+
+        rowId++;  // INCREASE ROW
+        XSSFRow netPayble = spreadsheet.getRow(rowId);
+        Cell netInstCell=netPayble.createCell(35) ;
+        netInstCell.setCellValue("NET AMOUNT");
+        netInstCell.setCellStyle(admissibleStyle);
+        for(int i=36;i<=36;i++)
+            netPayble.createCell(i).setCellStyle(admissibleStyle);
+        spreadsheet.addMergedRegion(new CellRangeAddress(rowId,rowId,35,36)) ;
+
+
+        Cell netInstCellAmt=netPayble.createCell(37) ;
+        netInstCellAmt.setCellValue(toatlAfterRecovery);
+        netInstCellAmt.setCellStyle(admissibleStyle);
+        for(int i=38;i<=38;i++)
+            netPayble.createCell(i).setCellStyle(admissibleStyle);
+        spreadsheet.addMergedRegion(new CellRangeAddress(rowId,rowId,37,38)) ;
+        
+        
         // ----------------------- 1st INSTALLEMENT-----------------------------------------
 
         rowId++;  // INCREASE ROW
@@ -402,24 +423,6 @@ public class UtilForStyling {
             fifthInstRow.createCell(i).setCellStyle(admissibleStyle);
         spreadsheet.addMergedRegion(new CellRangeAddress(rowId,rowId,37,38)) ;
 
-        // ----------------------- NET AMOUNT-----------------------------------------
-
-        rowId++;  // INCREASE ROW
-        XSSFRow netPayble = spreadsheet.getRow(rowId);
-        Cell netInstCell=netPayble.createCell(35) ;
-        netInstCell.setCellValue("NET AMOUNT");
-        netInstCell.setCellStyle(admissibleStyle);
-        for(int i=36;i<=36;i++)
-            netPayble.createCell(i).setCellStyle(admissibleStyle);
-        spreadsheet.addMergedRegion(new CellRangeAddress(rowId,rowId,35,36)) ;
-
-
-        Cell netInstCellAmt=netPayble.createCell(37) ;
-        netInstCellAmt.setCellValue(toatlAfterRecovery);
-        netInstCellAmt.setCellStyle(admissibleStyle);
-        for(int i=38;i<=38;i++)
-            netPayble.createCell(i).setCellStyle(admissibleStyle);
-        spreadsheet.addMergedRegion(new CellRangeAddress(rowId,rowId,37,38)) ;
     }
 
     public static void setColumnWidth(XSSFSheet spreadsheet) {
