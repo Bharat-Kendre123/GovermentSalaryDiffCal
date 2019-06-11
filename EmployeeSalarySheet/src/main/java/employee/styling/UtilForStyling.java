@@ -4,6 +4,8 @@ import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.xssf.usermodel.*;
 
+import employee.utility.Util;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Bkendre
@@ -92,27 +94,59 @@ public class UtilForStyling {
         return   style1;
     }
 
-    public static XSSFCellStyle setBorderBold(XSSFWorkbook workbook)
+    public static XSSFCellStyle setBorderBold(XSSFWorkbook workbook, int flag )
     {
         XSSFCellStyle style1 = getStyle(workbook);
         style1.setAlignment(HorizontalAlignment.CENTER);
         style1.setWrapText(true);
         style1.setAlignment(HorizontalAlignment.CENTER);
         style1.setWrapText(true);
-        style1.setBorderRight(BorderStyle.MEDIUM);
         style1.setRightBorderColor(IndexedColors.BLACK.getIndex());
+        style1.setBorderRight(BorderStyle.MEDIUM);
         style1.setBorderLeft(BorderStyle.MEDIUM);
         style1.setLeftBorderColor(IndexedColors.BLACK.getIndex());
-        style1.setBorderTop(BorderStyle.MEDIUM);
         style1.setTopBorderColor(IndexedColors.BLACK.getIndex());
-        style1.setBorderBottom(BorderStyle.MEDIUM);
         style1.setBottomBorderColor(IndexedColors.BLACK.getIndex());
+        if(flag==1) {
+        	style1.setBorderTop(BorderStyle.MEDIUM);           
+            style1.setBorderBottom(BorderStyle.NONE);
+            
+        }else if(flag==2) {
+        	style1.setBorderTop(BorderStyle.NONE);
+            style1.setBorderBottom(BorderStyle.THICK);
+        }else {
+        	style1.setBorderTop(BorderStyle.NONE);
+        	style1.setBorderBottom(BorderStyle.NONE);
+        }        
         XSSFFont font = workbook.createFont();
         font.setFontHeight(fontHeight);
         style1.setFont(font);
         return style1;
     }
 
+
+    public static XSSFCellStyle setBorderBold1(XSSFWorkbook workbook)
+    {
+        XSSFCellStyle style1 = getStyle(workbook);
+        style1.setAlignment(HorizontalAlignment.CENTER);
+        style1.setWrapText(true);
+        style1.setAlignment(HorizontalAlignment.CENTER);
+        style1.setWrapText(true);
+        style1.setRightBorderColor(IndexedColors.BLACK.getIndex());
+        style1.setBorderRight(BorderStyle.MEDIUM);
+        style1.setBorderLeft(BorderStyle.MEDIUM);
+        style1.setLeftBorderColor(IndexedColors.BLACK.getIndex());
+        style1.setTopBorderColor(IndexedColors.BLACK.getIndex());
+        style1.setBottomBorderColor(IndexedColors.BLACK.getIndex());
+      
+        	style1.setBorderTop(BorderStyle.MEDIUM);           
+            style1.setBorderBottom(BorderStyle.MEDIUM);
+                
+        XSSFFont font = workbook.createFont();
+        font.setFontHeight(fontHeight);
+        style1.setFont(font);
+        return style1;
+    }
 
     public static  XSSFCellStyle getStyle(XSSFWorkbook workbook)
     {
@@ -269,162 +303,7 @@ public class UtilForStyling {
         spreadsheetFor2019.addMergedRegion(new CellRangeAddress(1,1,2,32)) ;
     }
 
-    public static void setInstallments(XSSFWorkbook workbook, XSSFSheet spreadsheet, int[] installmentAmounts,int totalAmount, int adjustableAmount,int toatlAfterRecovery) {
-
-        //  --------------TOTAL AMOUNT------------------------------
-        int rowId=5;
-        XSSFCellStyle admissibleStyle  =setBorderBold(workbook);
-        XSSFRow xrowFor2019 = spreadsheet.getRow(rowId);
-        Cell installment2019=xrowFor2019.createCell(35) ;
-        installment2019.setCellValue("TOTAL AMOUNT");
-        installment2019.setCellStyle(admissibleStyle);
-        for(int i=36;i<=36;i++)
-            xrowFor2019.createCell(i).setCellStyle(admissibleStyle);
-        spreadsheet.addMergedRegion(new CellRangeAddress(rowId,rowId,35,36)) ;
-
-        // rowId++;
-        Cell installmentAmount2019=xrowFor2019.createCell(37) ;
-        installmentAmount2019.setCellValue(totalAmount);
-        installmentAmount2019.setCellStyle(admissibleStyle);
-        for(int i=38;i<=38;i++)
-            xrowFor2019.createCell(i).setCellStyle(admissibleStyle);
-        spreadsheet.addMergedRegion(new CellRangeAddress(rowId,rowId,37,38)) ;
-
-        //---------------------RECOVERY AMOUNT-----------------------------------
-        rowId++;  // INCREASE ROW
-        XSSFRow recoveryRow = spreadsheet.getRow(rowId);
-        Cell recoveryCell=recoveryRow.createCell(35) ;
-        recoveryCell.setCellValue("RECOVERY AMOUNT");
-        recoveryCell.setCellStyle(admissibleStyle);
-        for(int i=36;i<=36;i++)
-            recoveryRow.createCell(i).setCellStyle(admissibleStyle);
-        spreadsheet.addMergedRegion(new CellRangeAddress(rowId,rowId,35,36)) ;
-
-     
-        Cell recoveryCellAmt=recoveryRow.createCell(37) ;
-        recoveryCellAmt.setCellValue(adjustableAmount);
-        recoveryCellAmt.setCellStyle(admissibleStyle);
-        for(int i=38;i<=38;i++)
-            recoveryRow.createCell(i).setCellStyle(admissibleStyle);
-        spreadsheet.addMergedRegion(new CellRangeAddress(rowId,rowId,37,38)) ;
-
-        
-        // ----------------------- NET AMOUNT-----------------------------------------
-
-        rowId++;  // INCREASE ROW
-        XSSFRow netPayble = spreadsheet.getRow(rowId);
-        Cell netInstCell=netPayble.createCell(35) ;
-        netInstCell.setCellValue("NET AMOUNT");
-        netInstCell.setCellStyle(admissibleStyle);
-        for(int i=36;i<=36;i++)
-            netPayble.createCell(i).setCellStyle(admissibleStyle);
-        spreadsheet.addMergedRegion(new CellRangeAddress(rowId,rowId,35,36)) ;
-
-
-        Cell netInstCellAmt=netPayble.createCell(37) ;
-        netInstCellAmt.setCellValue(toatlAfterRecovery);
-        netInstCellAmt.setCellStyle(admissibleStyle);
-        for(int i=38;i<=38;i++)
-            netPayble.createCell(i).setCellStyle(admissibleStyle);
-        spreadsheet.addMergedRegion(new CellRangeAddress(rowId,rowId,37,38)) ;
-        
-        
-        // ----------------------- 1st INSTALLEMENT-----------------------------------------
-
-        rowId++;  // INCREASE ROW
-        XSSFRow firstInstRow = spreadsheet.getRow(rowId);
-        Cell firstInstCell=firstInstRow.createCell(35) ;
-        firstInstCell.setCellValue("1st INST 2019");
-        firstInstCell.setCellStyle(admissibleStyle);
-        for(int i=36;i<=36;i++)
-            firstInstRow.createCell(i).setCellStyle(admissibleStyle);
-        spreadsheet.addMergedRegion(new CellRangeAddress(rowId,rowId,35,36)) ;
-
-        Cell firstInstCellAmt=firstInstRow.createCell(37) ;
-        firstInstCellAmt.setCellValue(installmentAmounts[0]);
-        firstInstCellAmt.setCellStyle(admissibleStyle);
-        for(int i=38;i<=38;i++)
-            firstInstRow.createCell(i).setCellStyle(admissibleStyle);
-        spreadsheet.addMergedRegion(new CellRangeAddress(rowId,rowId,37,38)) ;
-      // ----------------------- 2nd INSTALLEMENT-----------------------------------------
-
-        rowId++;  // INCREASE ROW
-        XSSFRow secondInstRow = spreadsheet.getRow(rowId);
-        Cell secondtInstCell=secondInstRow.createCell(35) ;
-        secondtInstCell.setCellValue("2nd INST 2020");
-        secondtInstCell.setCellStyle(admissibleStyle);
-        for(int i=36;i<=36;i++)
-            secondInstRow.createCell(i).setCellStyle(admissibleStyle);
-        spreadsheet.addMergedRegion(new CellRangeAddress(rowId,rowId,35,36)) ;
-
-
-        Cell secondInstCellAmt=secondInstRow.createCell(37) ;
-        secondInstCellAmt.setCellValue(installmentAmounts[1]);
-        secondInstCellAmt.setCellStyle(admissibleStyle);
-        for(int i=38;i<=38;i++)
-            secondInstRow.createCell(i).setCellStyle(admissibleStyle);
-        spreadsheet.addMergedRegion(new CellRangeAddress(rowId,rowId,37,38)) ;
-
-
-        // ----------------------- 3rd INSTALLEMENT-----------------------------------------
-
-        rowId++;  // INCREASE ROW
-        XSSFRow thirdInstRow = spreadsheet.getRow(rowId);
-        Cell thirdInstCell=thirdInstRow.createCell(35) ;
-        thirdInstCell.setCellValue("3rd INST 2021");
-        thirdInstCell.setCellStyle(admissibleStyle);
-        for(int i=36;i<=36;i++)
-            thirdInstRow.createCell(i).setCellStyle(admissibleStyle);
-        spreadsheet.addMergedRegion(new CellRangeAddress(rowId,rowId,35,36)) ;
-
-
-        Cell thirdInstCellAmt=thirdInstRow.createCell(37) ;
-        thirdInstCellAmt.setCellValue(installmentAmounts[2]);
-        thirdInstCellAmt.setCellStyle(admissibleStyle);
-        for(int i=38;i<=38;i++)
-            thirdInstRow.createCell(i).setCellStyle(admissibleStyle);
-        spreadsheet.addMergedRegion(new CellRangeAddress(rowId,rowId,37,38)) ;
-
-        // ----------------------- 4th INSTALLEMENT-----------------------------------------
-
-        rowId++;  // INCREASE ROW
-        XSSFRow forthInstRow = spreadsheet.getRow(rowId);
-        Cell forthInstCell=forthInstRow.createCell(35) ;
-        forthInstCell.setCellValue("4th INST 2022");
-        forthInstCell.setCellStyle(admissibleStyle);
-        for(int i=36;i<=36;i++)
-            forthInstRow.createCell(i).setCellStyle(admissibleStyle);
-        spreadsheet.addMergedRegion(new CellRangeAddress(rowId,rowId,35,36)) ;
-
-
-        Cell forthInstCellAmt=forthInstRow.createCell(37) ;
-        forthInstCellAmt.setCellValue(installmentAmounts[3]);
-        forthInstCellAmt.setCellStyle(admissibleStyle);
-        for(int i=38;i<=38;i++)
-            forthInstRow.createCell(i).setCellStyle(admissibleStyle);
-        spreadsheet.addMergedRegion(new CellRangeAddress(rowId,rowId,37,38)) ;
-
-        // ----------------------- 5th INSTALLEMENT-----------------------------------------
-
-        rowId++;  // INCREASE ROW
-        XSSFRow fifthInstRow = spreadsheet.getRow(rowId);
-        Cell fifthInstCell=fifthInstRow.createCell(35) ;
-        fifthInstCell.setCellValue("5th INST 2023");
-        fifthInstCell.setCellStyle(admissibleStyle);
-        for(int i=36;i<=36;i++)
-            fifthInstRow.createCell(i).setCellStyle(admissibleStyle);
-        spreadsheet.addMergedRegion(new CellRangeAddress(rowId,rowId,35,36)) ;
-
-
-        Cell fifthInstCellAmt=fifthInstRow.createCell(37) ;
-        fifthInstCellAmt.setCellValue(installmentAmounts[4]);
-        fifthInstCellAmt.setCellStyle(admissibleStyle);
-        for(int i=38;i<=38;i++)
-            fifthInstRow.createCell(i).setCellStyle(admissibleStyle);
-        spreadsheet.addMergedRegion(new CellRangeAddress(rowId,rowId,37,38)) ;
-
-    }
-
+  
     public static void setColumnWidth(XSSFSheet spreadsheet) {
 
 
@@ -466,4 +345,131 @@ public class UtilForStyling {
         spreadsheet.setColumnWidth(21,1200);
 
     }
+    
+    public static void setInstallments1(XSSFWorkbook workbook, XSSFSheet spreadsheet, int[] additionArray, int recoveryAmt) {
+
+    	int payToNPA=additionArray[additionArray.length-4];
+    	int dcpsTotal=additionArray[additionArray.length-2];
+    	int netAmount=additionArray[additionArray.length-1]-recoveryAmt;
+    	
+    	int[] installments= Util.getInstallmentAmount(netAmount);
+        //  --------------Note ------------------------------
+        int rowId=5;
+        XSSFCellStyle upper  =setBorderBold(workbook,1);
+        XSSFCellStyle inner  =setBorderBold(workbook,3);
+        XSSFCellStyle lower  =setBorderBold(workbook,2);
+        XSSFRow xrowFor2019 = spreadsheet.getRow(rowId);
+        Cell installment2019=xrowFor2019.createCell(35) ;
+        installment2019.setCellValue("Note :-");
+        installment2019.setCellStyle(upper);
+        for(int i=36;i<=38;i++)
+            xrowFor2019.createCell(i).setCellStyle(upper);
+        spreadsheet.addMergedRegion(new CellRangeAddress(rowId,rowId,35,38)) ;
+
+        //---------------------Basic Pay-----------------------------------
+        rowId++;  // INCREASE ROW
+        XSSFRow recoveryRow = spreadsheet.getRow(rowId);
+        Cell recoveryCell=recoveryRow.createCell(35) ;
+        recoveryCell.setCellValue("B.P ARR AMT. = "+payToNPA);
+        recoveryCell.setCellStyle(inner);
+        for(int i=36;i<=38;i++)
+            recoveryRow.createCell(i).setCellStyle(inner);
+        spreadsheet.addMergedRegion(new CellRangeAddress(rowId,rowId,35,38)) ;
+
+     
+        // ----------------------- Recovery Amt-----------------------------------------
+
+        rowId++;  // INCREASE ROW
+        XSSFRow netPayble = spreadsheet.getRow(rowId);
+        Cell netInstCell=netPayble.createCell(35) ;
+        netInstCell.setCellValue("RECOVERY AMT. = "+ recoveryAmt);
+        netInstCell.setCellStyle(inner);
+        for(int i=36;i<=38;i++)
+            netPayble.createCell(i).setCellStyle(inner);
+        spreadsheet.addMergedRegion(new CellRangeAddress(rowId,rowId,35,38)) ;
+
+       
+        // ----------------------- DCPS-----------------------------------------
+
+        rowId++;  // INCREASE ROW
+        XSSFRow firstInstRow = spreadsheet.getRow(rowId);
+        Cell firstInstCell=firstInstRow.createCell(35) ;
+        firstInstCell.setCellValue("D.C.P.S. ARR = "+dcpsTotal);
+        firstInstCell.setCellStyle(inner);
+        for(int i=36;i<=38;i++)
+            firstInstRow.createCell(i).setCellStyle(inner);
+        spreadsheet.addMergedRegion(new CellRangeAddress(rowId,rowId,35,38)) ;
+
+             // ----------------------- NET AMT-----------------------------------------
+
+        rowId++;  // INCREASE ROW
+        XSSFRow secondInstRow = spreadsheet.getRow(rowId);
+        Cell secondtInstCell=secondInstRow.createCell(35) ;
+        secondtInstCell.setCellValue("Net AMT = "+netAmount);
+        secondtInstCell.setCellStyle(lower);
+        for(int i=36;i<=38;i++)
+            secondInstRow.createCell(i).setCellStyle(lower);
+        spreadsheet.addMergedRegion(new CellRangeAddress(rowId,rowId,35,38)) ;
+
+
+        // ----------------------- 3rd INSTALLEMENT-----------------------------------------
+
+        rowId++;  // INCREASE ROW
+        XSSFRow thirdInstRow = spreadsheet.getRow(rowId);
+        Cell thirdInstCell=thirdInstRow.createCell(35) ;
+        thirdInstCell.setCellValue("3rd INST 2021");
+        thirdInstCell.setCellStyle(admissibleStyle);
+        for(int i=36;i<=36;i++)
+            thirdInstRow.createCell(i).setCellStyle(admissibleStyle);
+        spreadsheet.addMergedRegion(new CellRangeAddress(rowId,rowId,35,36)) ;
+
+
+        Cell thirdInstCellAmt=thirdInstRow.createCell(37) ;
+        thirdInstCellAmt.setCellValue(installmentAmounts[2]);
+        thirdInstCellAmt.setCellStyle(admissibleStyle);
+        for(int i=38;i<=38;i++)
+            thirdInstRow.createCell(i).setCellStyle(admissibleStyle);
+        spreadsheet.addMergedRegion(new CellRangeAddress(rowId,rowId,37,38)) ;
+
+/*        // ----------------------- 4th INSTALLEMENT-----------------------------------------
+
+        rowId++;  // INCREASE ROW
+        XSSFRow forthInstRow = spreadsheet.getRow(rowId);
+        Cell forthInstCell=forthInstRow.createCell(35) ;
+        forthInstCell.setCellValue("4th INST 2022");
+        forthInstCell.setCellStyle(admissibleStyle);
+        for(int i=36;i<=36;i++)
+            forthInstRow.createCell(i).setCellStyle(admissibleStyle);
+        spreadsheet.addMergedRegion(new CellRangeAddress(rowId,rowId,35,36)) ;
+
+
+        Cell forthInstCellAmt=forthInstRow.createCell(37) ;
+        forthInstCellAmt.setCellValue(installmentAmounts[3]);
+        forthInstCellAmt.setCellStyle(admissibleStyle);
+        for(int i=38;i<=38;i++)
+            forthInstRow.createCell(i).setCellStyle(admissibleStyle);
+        spreadsheet.addMergedRegion(new CellRangeAddress(rowId,rowId,37,38)) ;
+
+        // ----------------------- 5th INSTALLEMENT-----------------------------------------
+
+        rowId++;  // INCREASE ROW
+        XSSFRow fifthInstRow = spreadsheet.getRow(rowId);
+        Cell fifthInstCell=fifthInstRow.createCell(35) ;
+        fifthInstCell.setCellValue("5th INST 2023");
+        fifthInstCell.setCellStyle(admissibleStyle);
+        for(int i=36;i<=36;i++)
+            fifthInstRow.createCell(i).setCellStyle(admissibleStyle);
+        spreadsheet.addMergedRegion(new CellRangeAddress(rowId,rowId,35,36)) ;
+
+
+        Cell fifthInstCellAmt=fifthInstRow.createCell(37) ;
+        fifthInstCellAmt.setCellValue(installmentAmounts[4]);
+        fifthInstCellAmt.setCellStyle(admissibleStyle);
+        for(int i=38;i<=38;i++)
+            fifthInstRow.createCell(i).setCellStyle(admissibleStyle);
+        spreadsheet.addMergedRegion(new CellRangeAddress(rowId,rowId,37,38)) ;
+*/
+    }
+
+    
 }

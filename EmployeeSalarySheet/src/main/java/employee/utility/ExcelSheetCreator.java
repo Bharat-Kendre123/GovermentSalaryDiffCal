@@ -34,7 +34,7 @@ public class ExcelSheetCreator {
         XSSFSheet spreadsheet = workbook.createSheet("2016-2018_salary_Detail");
 
         XSSFCellStyle xtyleForTextAlignement=UtilForStyling.textAlignmentAtCenter(workbook);
-        XSSFCellStyle borderboldStyle =UtilForStyling.setBorderBold(workbook);
+        XSSFCellStyle borderboldStyle =UtilForStyling.setBorderBold1(workbook);
         // 2019 spreadsheet
         int []AdditionFor2019 = new int[34];
         XSSFSheet spreadsheetFor2019;
@@ -318,7 +318,7 @@ public class ExcelSheetCreator {
         UtilForStyling.setTotalRowStyle(workbook,spreadsheetFor2019,rowidFor2019,AdditionFor2019,rowNumberFor2019);
 
         int toatlAfterRecovery=Addition[33]-recoveredAmt;
-        UtilForStyling.setInstallments(workbook,spreadsheet,Util.getInstallmentAmount(toatlAfterRecovery),Addition[33],recoveredAmt,toatlAfterRecovery);
+        UtilForStyling.setInstallments1(workbook,spreadsheet,Util.getInstallmentAmount(toatlAfterRecovery),Addition[33],recoveredAmt,toatlAfterRecovery);
         //Write the workbook in file system
 
         // auto column width
@@ -327,7 +327,7 @@ public class ExcelSheetCreator {
             spreadsheetFor2019.autoSizeColumn(i);
         }
 
-        FileOutputStream out = new FileOutputStream(new File(nameOfEmployee+".xlsx"));
+        FileOutputStream out = new FileOutputStream(new File("C:\\Users\\Bkendre\\Desktop\\Calculator\\files\\"+nameOfEmployee+".xlsx"));
         workbook.write(out);
         out.close();
         System.out.println("Writesheet.xlsx written successfully");

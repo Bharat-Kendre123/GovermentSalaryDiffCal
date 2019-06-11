@@ -2,7 +2,7 @@
 
 /.idea/*.xml
 /.idea/*/*.xml
-/.idea/*
+
 /.classpath
 
 /*.xlsx
@@ -11,6 +11,3 @@
 
 .settings/*.prefs
 /target
-
-
-.project
