@@ -1,4 +1,6 @@
-package main.java.employee.data;
+package  employee.data;
+import employee.data.SalaryData;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,7 +17,7 @@ public class PayBandMapObject {
     public static Map<String, List> levelList=new HashMap<>();
     static {
 
-        payBandLevelArrayMaping.put("1S-4440-7440-1300",SalaryData.s1);
+        payBandLevelArrayMaping.put("1S-4440-7440-1300", SalaryData.s1);
         payBandLevelArrayMaping.put("1S-4440-7440-1400",SalaryData.s2);
         payBandLevelArrayMaping.put("1S-4440-7440-1600",SalaryData.s3);
         payBandLevelArrayMaping.put("1S-4440-7440-1650",SalaryData.s4);

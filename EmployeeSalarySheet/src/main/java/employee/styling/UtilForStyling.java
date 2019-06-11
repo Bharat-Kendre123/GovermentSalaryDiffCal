@@ -475,7 +475,7 @@ public class UtilForStyling {
         cellFirst2020.setCellStyle(headerStyle);
 
         Cell cellSecond2020=secondInstallmentRow.createCell(36) ;
-        cellSecond2020.setCellValue(installmentIndex);
+        cellSecond2020.setCellValue(installments[installmentIndex]);
         cellSecond2020.setCellStyle(headerStyle);
 
         Cell cellThird2020=secondInstallmentRow.createCell(37) ;
@@ -496,7 +496,7 @@ public class UtilForStyling {
         cellFirst2021.setCellStyle(headerStyle);
 
         Cell cellSecond2021=thirdInstallmentRow.createCell(36) ;
-        cellSecond2021.setCellValue(installmentIndex);
+        cellSecond2021.setCellValue(installments[installmentIndex]);
         cellSecond2021.setCellStyle(headerStyle);
 
         Cell cellThird2021=thirdInstallmentRow.createCell(37) ;
@@ -516,7 +516,7 @@ public class UtilForStyling {
         cellFirst2022.setCellStyle(headerStyle);
 
         Cell cellSecond2022=forthInstallmentRow.createCell(36) ;
-        cellSecond2022.setCellValue(installmentIndex);
+        cellSecond2022.setCellValue(installments[installmentIndex]);
         cellSecond2022.setCellStyle(headerStyle);
 
         Cell cellThird2022=forthInstallmentRow.createCell(37) ;
@@ -527,7 +527,7 @@ public class UtilForStyling {
         cellForth2022.setCellValue(installments[installmentIndex]);
         cellForth2022.setCellStyle(headerStyle);
 
-        // Forth  INSTALLMENT
+        // Fifth  INSTALLMENT
         rowId++;  // INCREASE ROW
         installmentIndex++;
         XSSFRow fifthInstallmentRow = spreadsheet.getRow(rowId);
@@ -536,7 +536,7 @@ public class UtilForStyling {
         cellFirst2023.setCellStyle(headerStyle);
 
         Cell cellSecond2023=fifthInstallmentRow.createCell(36) ;
-        cellSecond2023.setCellValue(installmentIndex);
+        cellSecond2023.setCellValue(installments[installmentIndex]);
         cellSecond2023.setCellStyle(headerStyle);
 
         Cell cellThird2023=fifthInstallmentRow.createCell(37) ;
