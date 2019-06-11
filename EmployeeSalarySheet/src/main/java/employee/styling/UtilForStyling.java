@@ -370,7 +370,7 @@ public class UtilForStyling {
         rowId++;  // INCREASE ROW
         XSSFRow recoveryRow = spreadsheet.getRow(rowId);
         Cell recoveryCell=recoveryRow.createCell(35) ;
-        recoveryCell.setCellValue("B.P ARR AMT. = "+payToNPA);
+        recoveryCell.setCellValue("B.P Arrear Amt. = "+payToNPA);
         recoveryCell.setCellStyle(inner);
         for(int i=36;i<=38;i++)
             recoveryRow.createCell(i).setCellStyle(inner);
@@ -382,7 +382,7 @@ public class UtilForStyling {
         rowId++;  // INCREASE ROW
         XSSFRow netPayble = spreadsheet.getRow(rowId);
         Cell netInstCell=netPayble.createCell(35) ;
-        netInstCell.setCellValue("RECOVERY AMT. = "+ recoveryAmt);
+        netInstCell.setCellValue("Recovery Amt. = "+ recoveryAmt);
         netInstCell.setCellStyle(inner);
         for(int i=36;i<=38;i++)
             netPayble.createCell(i).setCellStyle(inner);
@@ -394,81 +394,179 @@ public class UtilForStyling {
         rowId++;  // INCREASE ROW
         XSSFRow firstInstRow = spreadsheet.getRow(rowId);
         Cell firstInstCell=firstInstRow.createCell(35) ;
-        firstInstCell.setCellValue("D.C.P.S. ARR = "+dcpsTotal);
+        firstInstCell.setCellValue("D.C.P.S. Arrear = "+dcpsTotal);
         firstInstCell.setCellStyle(inner);
         for(int i=36;i<=38;i++)
             firstInstRow.createCell(i).setCellStyle(inner);
         spreadsheet.addMergedRegion(new CellRangeAddress(rowId,rowId,35,38)) ;
 
-             // ----------------------- NET AMT-----------------------------------------
+        // ----------------------- NET AMT-----------------------------------------
 
         rowId++;  // INCREASE ROW
         XSSFRow secondInstRow = spreadsheet.getRow(rowId);
         Cell secondtInstCell=secondInstRow.createCell(35) ;
-        secondtInstCell.setCellValue("Net AMT = "+netAmount);
-        secondtInstCell.setCellStyle(lower);
+        secondtInstCell.setCellValue("Net Amt = "+netAmount);
+        secondtInstCell.setCellStyle(inner);
         for(int i=36;i<=38;i++)
-            secondInstRow.createCell(i).setCellStyle(lower);
+            secondInstRow.createCell(i).setCellStyle(inner);
         spreadsheet.addMergedRegion(new CellRangeAddress(rowId,rowId,35,38)) ;
 
 
-        // ----------------------- 3rd INSTALLEMENT-----------------------------------------
+        // ----------------------- Net Amount Division-----------------------------------------
 
         rowId++;  // INCREASE ROW
         XSSFRow thirdInstRow = spreadsheet.getRow(rowId);
         Cell thirdInstCell=thirdInstRow.createCell(35) ;
-        thirdInstCell.setCellValue("3rd INST 2021");
-        thirdInstCell.setCellStyle(admissibleStyle);
-        for(int i=36;i<=36;i++)
-            thirdInstRow.createCell(i).setCellStyle(admissibleStyle);
-        spreadsheet.addMergedRegion(new CellRangeAddress(rowId,rowId,35,36)) ;
+        thirdInstCell.setCellValue("Hence, Net Amt = "+netAmount+"/5");
+        thirdInstCell.setCellStyle(lower);
+        for(int i=36;i<=38;i++)
+            thirdInstRow.createCell(i).setCellStyle(lower);
+        spreadsheet.addMergedRegion(new CellRangeAddress(rowId,rowId,35,38)) ;
 
 
-        Cell thirdInstCellAmt=thirdInstRow.createCell(37) ;
-        thirdInstCellAmt.setCellValue(installmentAmounts[2]);
-        thirdInstCellAmt.setCellStyle(admissibleStyle);
-        for(int i=38;i<=38;i++)
-            thirdInstRow.createCell(i).setCellStyle(admissibleStyle);
-        spreadsheet.addMergedRegion(new CellRangeAddress(rowId,rowId,37,38)) ;
-
-/*        // ----------------------- 4th INSTALLEMENT-----------------------------------------
-
+        // Table Header part
+        XSSFCellStyle headerStyle  =getStyleForTotalRow(workbook);
+        headerStyle.setWrapText(false);
         rowId++;  // INCREASE ROW
-        XSSFRow forthInstRow = spreadsheet.getRow(rowId);
-        Cell forthInstCell=forthInstRow.createCell(35) ;
-        forthInstCell.setCellValue("4th INST 2022");
-        forthInstCell.setCellStyle(admissibleStyle);
-        for(int i=36;i<=36;i++)
-            forthInstRow.createCell(i).setCellStyle(admissibleStyle);
-        spreadsheet.addMergedRegion(new CellRangeAddress(rowId,rowId,35,36)) ;
+        XSSFRow heaer = spreadsheet.getRow(rowId);
+        Cell headerCellFirst=heaer.createCell(35) ;
+        headerCellFirst.setCellValue("Insta. No.");
+        headerCellFirst.setCellStyle(headerStyle);
 
+        Cell headerCellSecond=heaer.createCell(36) ;
+        headerCellSecond.setCellValue("B.P. Arr.");
+        headerCellSecond.setCellStyle(headerStyle);
 
-        Cell forthInstCellAmt=forthInstRow.createCell(37) ;
-        forthInstCellAmt.setCellValue(installmentAmounts[3]);
-        forthInstCellAmt.setCellStyle(admissibleStyle);
-        for(int i=38;i<=38;i++)
-            forthInstRow.createCell(i).setCellStyle(admissibleStyle);
-        spreadsheet.addMergedRegion(new CellRangeAddress(rowId,rowId,37,38)) ;
+        Cell headerCellThird=heaer.createCell(37) ;
+        headerCellThird.setCellValue("DCPS P. Arr.");
+        headerCellThird.setCellStyle(headerStyle);
 
-        // ----------------------- 5th INSTALLEMENT-----------------------------------------
+        Cell headerCellForth=heaer.createCell(38) ;
+        headerCellForth.setCellValue("Net Amt.");
+        headerCellForth.setCellStyle(headerStyle);
 
+        // FIRST INSTALLMENT
         rowId++;  // INCREASE ROW
-        XSSFRow fifthInstRow = spreadsheet.getRow(rowId);
-        Cell fifthInstCell=fifthInstRow.createCell(35) ;
-        fifthInstCell.setCellValue("5th INST 2023");
-        fifthInstCell.setCellStyle(admissibleStyle);
-        for(int i=36;i<=36;i++)
-            fifthInstRow.createCell(i).setCellStyle(admissibleStyle);
-        spreadsheet.addMergedRegion(new CellRangeAddress(rowId,rowId,35,36)) ;
+        int installmentIndex=0;
+        XSSFRow firstInstallmentRow = spreadsheet.getRow(rowId);
+        Cell cellFirst2019=firstInstallmentRow.createCell(35) ;
+        cellFirst2019.setCellValue("1st insta 2019+Adj Amt");
+        cellFirst2019.setCellStyle(headerStyle);
+
+        Cell cellSecond2019=firstInstallmentRow.createCell(36) ;
+        cellSecond2019.setCellValue(installments[installmentIndex]+" + "+dcpsTotal+" = "+(installments[0]+dcpsTotal));
+        cellSecond2019.setCellStyle(headerStyle);
+
+        Cell cellThird2019=firstInstallmentRow.createCell(37) ;
+        cellThird2019.setCellValue(dcpsTotal);
+        cellThird2019.setCellStyle(headerStyle);
+
+        Cell cellForth2019=firstInstallmentRow.createCell(38) ;
+        cellForth2019.setCellValue(installments[installmentIndex]);
+        cellForth2019.setCellStyle(headerStyle);
 
 
-        Cell fifthInstCellAmt=fifthInstRow.createCell(37) ;
-        fifthInstCellAmt.setCellValue(installmentAmounts[4]);
-        fifthInstCellAmt.setCellStyle(admissibleStyle);
-        for(int i=38;i<=38;i++)
-            fifthInstRow.createCell(i).setCellStyle(admissibleStyle);
-        spreadsheet.addMergedRegion(new CellRangeAddress(rowId,rowId,37,38)) ;
-*/
+        // Second  INSTALLMENT
+        rowId++;  // INCREASE ROW
+        installmentIndex++;
+        XSSFRow secondInstallmentRow = spreadsheet.getRow(rowId);
+        Cell cellFirst2020=secondInstallmentRow.createCell(35) ;
+        cellFirst2020.setCellValue(" 2nd Insta. 2020");
+        cellFirst2020.setCellStyle(headerStyle);
+
+        Cell cellSecond2020=secondInstallmentRow.createCell(36) ;
+        cellSecond2020.setCellValue(installmentIndex);
+        cellSecond2020.setCellStyle(headerStyle);
+
+        Cell cellThird2020=secondInstallmentRow.createCell(37) ;
+        cellThird2020.setCellValue("-");
+        cellThird2020.setCellStyle(headerStyle);
+
+        Cell cellForth2020=secondInstallmentRow.createCell(38) ;
+        cellForth2020.setCellValue(installments[installmentIndex]);
+        cellForth2020.setCellStyle(headerStyle);
+
+
+        // Third  INSTALLMENT
+        rowId++;
+        installmentIndex++;
+        XSSFRow thirdInstallmentRow = spreadsheet.getRow(rowId);
+        Cell cellFirst2021=thirdInstallmentRow.createCell(35) ;
+        cellFirst2021.setCellValue(" 3rd Insta. 2021");
+        cellFirst2021.setCellStyle(headerStyle);
+
+        Cell cellSecond2021=thirdInstallmentRow.createCell(36) ;
+        cellSecond2021.setCellValue(installmentIndex);
+        cellSecond2021.setCellStyle(headerStyle);
+
+        Cell cellThird2021=thirdInstallmentRow.createCell(37) ;
+        cellThird2021.setCellValue("-");
+        cellThird2021.setCellStyle(headerStyle);
+
+        Cell cellForth2021=thirdInstallmentRow.createCell(38) ;
+        cellForth2021.setCellValue(installments[installmentIndex]);
+        cellForth2021.setCellStyle(headerStyle);
+
+        // Forth  INSTALLMENT
+        rowId++;  // INCREASE ROW
+        installmentIndex++;
+        XSSFRow forthInstallmentRow = spreadsheet.getRow(rowId);
+        Cell cellFirst2022=forthInstallmentRow.createCell(35) ;
+        cellFirst2022.setCellValue(" 4th Insta. 2022");
+        cellFirst2022.setCellStyle(headerStyle);
+
+        Cell cellSecond2022=forthInstallmentRow.createCell(36) ;
+        cellSecond2022.setCellValue(installmentIndex);
+        cellSecond2022.setCellStyle(headerStyle);
+
+        Cell cellThird2022=forthInstallmentRow.createCell(37) ;
+        cellThird2022.setCellValue("-");
+        cellThird2022.setCellStyle(headerStyle);
+
+        Cell cellForth2022=forthInstallmentRow.createCell(38) ;
+        cellForth2022.setCellValue(installments[installmentIndex]);
+        cellForth2022.setCellStyle(headerStyle);
+
+        // Forth  INSTALLMENT
+        rowId++;  // INCREASE ROW
+        installmentIndex++;
+        XSSFRow fifthInstallmentRow = spreadsheet.getRow(rowId);
+        Cell cellFirst2023=fifthInstallmentRow.createCell(35) ;
+        cellFirst2023.setCellValue(" 5th Insta. 2023");
+        cellFirst2023.setCellStyle(headerStyle);
+
+        Cell cellSecond2023=fifthInstallmentRow.createCell(36) ;
+        cellSecond2023.setCellValue(installmentIndex);
+        cellSecond2023.setCellStyle(headerStyle);
+
+        Cell cellThird2023=fifthInstallmentRow.createCell(37) ;
+        cellThird2023.setCellValue("-");
+        cellThird2023.setCellStyle(headerStyle);
+
+        Cell cellForth2023=fifthInstallmentRow.createCell(38) ;
+        cellForth2023.setCellValue(installments[installmentIndex]);
+        cellForth2023.setCellStyle(headerStyle);
+
+
+        // Forth  INSTALLMENT
+        rowId++;  // INCREASE ROW
+        installmentIndex++;
+        XSSFRow totalRow = spreadsheet.getRow(rowId);
+        Cell cellFirstToatl=totalRow.createCell(35) ;
+        cellFirstToatl.setCellValue(" Total ");
+        cellFirstToatl.setCellStyle(headerStyle);
+
+        Cell cellSecondTotal=totalRow.createCell(36) ;
+        cellSecondTotal.setCellValue(payToNPA);
+        cellSecondTotal.setCellStyle(headerStyle);
+
+        Cell cellThirdTotal=totalRow.createCell(37) ;
+        cellThirdTotal.setCellValue(dcpsTotal);
+        cellThirdTotal.setCellStyle(headerStyle);
+
+        Cell cellForthTotal=totalRow.createCell(38) ;
+        cellForthTotal.setCellValue(netAmount);
+        cellForthTotal.setCellStyle(headerStyle);
     }
 
     

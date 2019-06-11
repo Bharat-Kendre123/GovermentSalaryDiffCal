@@ -1,13 +1,2 @@
-/target/
-
-/.idea/*.xml
-/.idea/*/*.xml
-
-/.classpath
-
-/*.xlsx
-
-*.iml
-
-.settings/*.prefs
-/target
+/employee/
+/main/
