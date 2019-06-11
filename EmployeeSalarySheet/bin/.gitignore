@@ -1,5 +1,8 @@
 /target/
 
+/.idea/*.xml
+/.idea/*/*.xml
+/.idea/*
 /.classpath
 
 /*.xlsx
@@ -11,4 +14,3 @@
 
 
 .project
-
