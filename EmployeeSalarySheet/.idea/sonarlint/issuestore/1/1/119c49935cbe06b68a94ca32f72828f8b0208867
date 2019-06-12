@@ -1,21 +1,21 @@
 
-psquid:S3923"[Remove this conditional structure or edit its code blocks so that they're not all the same.(»Çëñ
-Ksquid:S1444"1Make this "public static gradePayMap" field final(±œò—ùÿÿÿÿ
-=squid:S1125"(Remove the literal "true" boolean value.(­Ô¹É
-<squid:S1125"(Remove the literal "true" boolean value.(Ô—Ø<
-<squid:S1125"(Remove the literal "true" boolean value.(Ô—Ø<
-<squid:S1125"(Remove the literal "true" boolean value.(Ô—Ø<
-<squid:S1125"(Remove the literal "true" boolean value.(Ô—Ø<
-ˆ"squid:ClassVariableVisibilityCheck"WMake gradePayMap a static final constant or non-public and provide accessors if needed.(±œò—ùÿÿÿÿ
-Gsquid:S1481"2Remove this unused "new7PaySalary" local variable.(ÃÑÑá
-gsquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(½ÿáÒ
-gsquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(¾ë§
-Osquid:S1118":Add a private constructor to hide the implicit public one.(×¼­Æ
-Dsquid:S00108")Either remove or fill this block of code.(¬Àáªøÿÿÿÿ
-Dsquid:S00108")Either remove or fill this block of code.(¬Àáªøÿÿÿÿ
-^squid:S3358"DExtract this nested ternary operation into an independent statement.(ÜÜý¢ûÿÿÿÿ
-7squid:S2386"Make this member "protected".(±œò—ùÿÿÿÿ
-fsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ”ºQ
-lsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÈŒæŠùÿÿÿÿ
-lsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°£×ûþÿÿÿÿ
-lsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŒêÄ¢úÿÿÿÿ
+jsquid:S3776¢"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(¾ë§
+@squid:S1125ß"(Remove the literal "true" boolean value.(­Ô¹É
+?squid:S1125³"(Remove the literal "true" boolean value.(Ô—Ø<
+?squid:S1125¶"(Remove the literal "true" boolean value.(Ô—Ø<
+ssquid:S3923Ð"[Remove this conditional structure or edit its code blocks so that they're not all the same.(»Çëñ
+Gsquid:S00108")Either remove or fill this block of code.(¬Àáªøÿÿÿÿ
+isquid:S00117ô"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ”ºQ
+jsquid:S3776ý"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(½ÿáÒ
+Msquid:S1444"1Make this "public static gradePayMap" field final(±œò—ùÿÿÿÿ
+Qsquid:S1118":Add a private constructor to hide the implicit public one.(×¼­Æ
+asquid:S3358Œ"DExtract this nested ternary operation into an independent statement.(ÜÜý¢ûÿÿÿÿ
+9squid:S2386"Make this member "protected".(±œò—ùÿÿÿÿ
+osquid:S00117ö"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°£×ûþÿÿÿÿ
+osquid:S00117÷"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŒêÄ¢úÿÿÿÿ
+osquid:S00117õ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÈŒæŠùÿÿÿÿ
+?squid:S1125Ž"(Remove the literal "true" boolean value.(Ô—Ø<
+?squid:S1125‘"(Remove the literal "true" boolean value.(Ô—Ø<
+Š"squid:ClassVariableVisibilityCheck"WMake gradePayMap a static final constant or non-public and provide accessors if needed.(±œò—ùÿÿÿÿ
+Isquid:S1481q"2Remove this unused "new7PaySalary" local variable.(ÃÑÑá
+Gsquid:S00108‹")Either remove or fill this block of code.(¬Àáªøÿÿÿÿ

@@ -1,4 +1,4 @@
 
-bsquid:S1192%"LDefine a constant instead of duplicating this literal "Courier New" 8 times.(µÏóP
-rsquid:S00115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(èÏ»ş
-ksquid:S11927"ODefine a constant instead of duplicating this literal "STOP INCREMENT" 3 times.(ÛÃòúÿÿÿÿ
+bsquid:S1192&"LDefine a constant instead of duplicating this literal "Courier New" 9 times.(µÏóP
+ksquid:S11928"ODefine a constant instead of duplicating this literal "STOP INCREMENT" 3 times.(ÛÃòúÿÿÿÿ
+rsquid:S00115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ÿÎÑû

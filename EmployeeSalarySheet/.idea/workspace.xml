@@ -7,7 +7,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f23569b9-6e90-4eac-a059-f591562a9f59" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/1/119c49935cbe06b68a94ca32f72828f8b0208867" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/1/119c49935cbe06b68a94ca32f72828f8b0208867" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/c/1cadcf1c483bb4aab259e510241eeba044c208d3" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/c/1cadcf1c483bb4aab259e510241eeba044c208d3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/1/315a64864e21ac05d12ef47132c15b71b2cceb8d" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/1/315a64864e21ac05d12ef47132c15b71b2cceb8d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/3/33587e353357e7004136e521572f6aaa74396c1f" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/3/33587e353357e7004136e521572f6aaa74396c1f" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/d/5d2ade6d8874588b1c3c0507fad0d412ca3ab45d" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/d/5d2ade6d8874588b1c3c0507fad0d412ca3ab45d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/8/680a5dc0278cb5b78b2e5ecbc30079b9b9043c7d" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/8/680a5dc0278cb5b78b2e5ecbc30079b9b9043c7d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/8/98ba8318790d809cead9dfa5bd4afe7b925b97b9" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/8/98ba8318790d809cead9dfa5bd4afe7b925b97b9" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/2/a27cd50c7eda7e6279cac275e6d0f0107586306a" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/2/a27cd50c7eda7e6279cac275e6d0f0107586306a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/0/e00e38b50205af54c22f265eb3e599af4d474b44" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/0/e00e38b50205af54c22f265eb3e599af4d474b44" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/employee/data/PayBandMapObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/employee/data/PayBandMapObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/employee/data/SalaryData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/employee/data/SalaryData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/employee/mainscreen/EmplyeeSalaryTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/employee/mainscreen/EmplyeeSalaryTemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/employee/pwsvalidation/PasswordValidationFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/employee/pwsvalidation/PasswordValidationFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/employee/steps/AfterJulyIncrementSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/employee/steps/AfterJulyIncrementSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/employee/steps/BeforeJulyIncrement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/employee/steps/BeforeJulyIncrement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/employee/steps/DoctorCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/employee/steps/DoctorCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/employee/steps/NoIncrementSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/employee/steps/NoIncrementSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/employee/steps/NormalIncrementSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/employee/steps/NormalIncrementSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/employee/steps/StepButtons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/employee/steps/StepButtons.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/employee/steps/StopIncrementSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/employee/steps/StopIncrementSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/employee/steps/TrippleOrSixTimeIncrement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/employee/steps/TrippleOrSixTimeIncrement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/employee/styling/UtilForJanIncrement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/employee/styling/UtilForJanIncrement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/employee/styling/UtilForJulyIncrement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/employee/styling/UtilForJulyIncrement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/employee/styling/UtilForStyling.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/employee/styling/UtilForStyling.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/employee/utility/EmplyeeListSplitter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/employee/utility/EmplyeeListSplitter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/employee/utility/ExcelSheetCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/employee/utility/ExcelSheetCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/employee/utility/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/employee/utility/Util.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,8 +48,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/employee/mainscreen/EmplyeeSalaryTemplate.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="497">
-              <caret line="583" lean-forward="true" selection-start-line="583" selection-end-line="583" />
+            <state relative-caret-position="323">
+              <caret line="20" column="61" lean-forward="true" selection-start-line="20" selection-start-column="61" selection-end-line="20" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -89,13 +117,13 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane" />
       <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560343836511" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560346049749" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
@@ -207,7 +235,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19029851" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1924307" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -215,14 +243,14 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2034632" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32900432" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2034632" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.10822511" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32900432" />
-      <window_info anchor="bottom" id="SonarLint" order="8" />
+      <window_info anchor="bottom" id="SonarLint" order="8" weight="0.32900432" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32900432" />
@@ -452,8 +480,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/employee/mainscreen/EmplyeeSalaryTemplate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="583" lean-forward="true" selection-start-line="583" selection-end-line="583" />
+        <state relative-caret-position="323">
+          <caret line="20" column="61" lean-forward="true" selection-start-line="20" selection-start-column="61" selection-end-line="20" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

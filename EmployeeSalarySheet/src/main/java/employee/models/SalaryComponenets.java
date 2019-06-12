@@ -1,4 +1,5 @@
 package employee.models;
+
 public class SalaryComponenets {
 
     private int basicPay;
