@@ -15,7 +15,7 @@ public class AfterJulyIncrementSteps implements ActionListener{
 
 
 
-	public static String firstStep="1. ENTER B.P,G.P AND SELECT \"PAY BAND\"";
+	public static String firstStep="1. ENTER B.P,G.P, AND SELECT \"PAY BAND\"";
 	public static String secondStep="2. ENTER HRA,TA,WA ETC..";
 	public static String thirdStep="3. SELECT NON PROMOTIONAL DURATION";
 	public static String forthStep="4. PRESS \"PROGRESS\" BUTTON";

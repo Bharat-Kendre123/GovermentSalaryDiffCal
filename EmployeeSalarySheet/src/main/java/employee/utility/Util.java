@@ -59,7 +59,7 @@ public class Util {
     }
 
 
-    public static int getAdmissibleBasicForPromotion(int oldAdmissibleBasic, String payBand,boolean doDoublencrement)
+    public static int getAdmissibleBasicForPromotion(int oldAdmissibleBasic, String payBand,boolean doDoublencrement)  // doubleincrement= true to do the 2 increments.
     {
         int[] data = PayBandMapObject.payBandLevelArrayMaping.get(payBand);
         int counter=0;

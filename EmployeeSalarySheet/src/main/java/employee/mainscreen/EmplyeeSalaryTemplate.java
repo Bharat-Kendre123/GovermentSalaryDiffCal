@@ -13,24 +13,20 @@ import employee.utility.Util;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
 import java.time.YearMonth;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 
 public class EmplyeeSalaryTemplate implements ActionListener{
 
     JLabel Name, Basic,GP,TA,WA,DCPS, HRA6,HRA7,CA_OtherA,NPA,FromDate,ToDate,DOJ,PAY_BAND,NPA7,PROMO,INCRE,RECOVERED_AMOUNT;
     JTextField TName, TBasic,TGP,TDOJD,TDOJY,TSLEVEL,JRECOVERED;
-    JComboBox JTA,JCA_OtherA,JWA,JDCPS ,JHRA6,JHRA7,JNPA,FMonth,FYear,TMonth,TYear,JDOJM,JNcrement,JPAY_BAND,JNPA7,JFROMD,JTOD,JPROMO,JINCRE;
+    JComboBox JTA,JCA_OtherA,JWA,JDCPS ,JHRA6,JHRA7,JNPA,FMonth,FYear,TMonth,TYear,JDOJM,JNcrement,JPAY_BAND,JNPA7,JFROMD,JTOD,JPROMO,JINCRE,Normal_Or_Dr;
     JFrame f;
     JButton WithoutIncrement,increment;
     JButton inProgress,done,refresh,BJULYPROM,AUTO_PB;
     JButton steps;
-    Employee employee;
     List<Employee> employeeList =new ArrayList<>();
     int lastGradPay   =0;
     boolean doIncrement = false;
@@ -40,9 +36,7 @@ public class EmplyeeSalaryTemplate implements ActionListener{
     int IncrementTime  = 0;
     int firstTimeAdmissible  = 0;
     
-    // JFRAME FOR AUTHENTICATION
-    
-    JFrame authenticationFrame;
+
     public static final int height=45;
     public static void main(String[] args) {
         new EmplyeeSalaryTemplate();
@@ -114,6 +108,11 @@ public class EmplyeeSalaryTemplate implements ActionListener{
         JNcrement =new JComboBox(DCPSLinRupees);
         JNcrement.setBounds(350, 90-height, 50, 30);
         f.add(JNcrement);
+
+        String list []={"Normal","Doctor"};
+        Normal_Or_Dr =new JComboBox(list);
+        Normal_Or_Dr.setBounds(410, 90-height, 80, 30);
+        f.add(Normal_Or_Dr);
 
         RECOVERED_AMOUNT=new JLabel("RECOVERY :");
         RECOVERED_AMOUNT.setBounds(340, 450-height, 80, 30);
@@ -300,7 +299,7 @@ public class EmplyeeSalaryTemplate implements ActionListener{
 
             if("Jan".equalsIgnoreCase((String) JNcrement.getItemAt(JNcrement.getSelectedIndex())))
             {
-                 list = getlistOnBbasisOfIncrement();
+                 list = getlistOnBbasisOfJanIncrement();
             }else{
                 list = getListOnBasisOfJulyIncrement();
             }
@@ -309,18 +308,30 @@ public class EmplyeeSalaryTemplate implements ActionListener{
             String dcps = (String)JDCPS.getItemAt(JDCPS.getSelectedIndex());
             boolean isDSCP =Util.isDSCP(dcps);
             int recoveredAmt=Integer.parseInt((String)JRECOVERED.getText());
-            ExcelSheetCreator.createExcelSheetFromDiffValues(list,isDSCP,(String)TName.getText(),recoveredAmt);
+            ExcelSheetCreator.createExcelSheetFromDiffValues(list,isDSCP,TName.getText(),recoveredAmt);
             // no global properties get affected by increment
             JRECOVERED.setText("0");
         }
         else if(e.getSource() == inProgress)
         {
-            if("Jan".equalsIgnoreCase((String) JNcrement.getItemAt(JNcrement.getSelectedIndex())))
-            {
-                employeeList.addAll(getlistOnBbasisOfIncrement());
+            if("Normal".equalsIgnoreCase((String) Normal_Or_Dr.getItemAt(Normal_Or_Dr.getSelectedIndex()))){
+                if("Jan".equalsIgnoreCase((String) JNcrement.getItemAt(JNcrement.getSelectedIndex())))
+                {
+                    employeeList.addAll(getlistOnBbasisOfJanIncrement());
+                }else{
+                    employeeList.addAll(getListOnBasisOfJulyIncrement());
+                }
             }else{
-                employeeList.addAll(getListOnBasisOfJulyIncrement());
+                if("Jan".equalsIgnoreCase((String) JNcrement.getItemAt(JNcrement.getSelectedIndex())))
+                {
+                    employeeList.addAll(getlistOnBbasisOfJanIncrementForDoctors());
+                }else{
+                    employeeList.addAll(getListOnBasisOfJulyIncrementForDoctor());
+                }
             }
+
+
+
         }else if(e.getSource() == done)
         {
             //DCPS
@@ -666,10 +677,12 @@ public class EmplyeeSalaryTemplate implements ActionListener{
     private void noIncrement() throws Exception {
 
         int basic =0;
+        int admissible=0;
         // BASIC FOR ADMISSIBLE, DRAWN  AND DIFFERENCE
         if(employeeList.size()>0)
         {
             basic =employeeList.get(employeeList.size()-1).getDrawnSalary().getBasicPay();
+            admissible=employeeList.get(employeeList.size()-1).getAdmissibleSalary().getBasicPay();
         } else{
             basic =  Integer.parseInt(TBasic.getText());
         }
@@ -700,7 +713,12 @@ public class EmplyeeSalaryTemplate implements ActionListener{
             employee.setToYear(salaryCalculatonDuraton.getToYear());
             employee.getDrawnSalary().setBasicPay(basic);
             employee.getDrawnSalary().setGradepay(Integer.parseInt(TGP.getText()));
-            employee.getAdmissibleSalary().setBasicPay(Util.getAdmissibleBasicPay(basic,Integer.parseInt(TGP.getText()),(String)JPAY_BAND.getItemAt(JPAY_BAND.getSelectedIndex())));
+            if(admissible==0){
+                employee.getAdmissibleSalary().setBasicPay(Util.getAdmissibleBasicPay(basic,Integer.parseInt(TGP.getText()),(String)JPAY_BAND.getItemAt(JPAY_BAND.getSelectedIndex())));
+            }else{
+                employee.getAdmissibleSalary().setBasicPay(admissible);
+            }
+
             employee.getAdmissibleSalary().setGradepay(0);
             employee.getDiff().setBasicPay(employee.getAdmissibleSalary().getBasicPay()- (employee.getDrawnSalary().getBasicPay()+employee.getDrawnSalary().getGradepay()));
             employee.getDiff().setGradepay(employee.getAdmissibleSalary().getGradepay()-employee.getDrawnSalary().getGradepay());
@@ -737,7 +755,7 @@ public class EmplyeeSalaryTemplate implements ActionListener{
 
     }
 
-    private List<Employee> getlistOnBbasisOfIncrement() throws Exception {
+    private List<Employee> getlistOnBbasisOfJanIncrement(){
 
         int joiningYear=Integer.parseInt(TDOJY.getText());
         int JoiningMonth=Integer.parseInt((String) JDOJM.getItemAt(JDOJM.getSelectedIndex()));
@@ -847,6 +865,178 @@ public class EmplyeeSalaryTemplate implements ActionListener{
             employee.getDrawnSalary().setBasicPay(basic);
             employee.getDrawnSalary().setGradepay(Integer.parseInt(TGP.getText()));
             employee.getAdmissibleSalary().setBasicPay(Util.getAdmissibleBasicPay(basic,Integer.parseInt(TGP.getText()),(String)JPAY_BAND.getItemAt(JPAY_BAND.getSelectedIndex())));
+            employee.getAdmissibleSalary().setGradepay(0);
+            employee.getDiff().setBasicPay(employee.getAdmissibleSalary().getBasicPay()- (employee.getDrawnSalary().getBasicPay()+employee.getDrawnSalary().getGradepay()));
+            employee.getDiff().setGradepay(employee.getAdmissibleSalary().getGradepay()-employee.getDrawnSalary().getGradepay());
+
+            // TRAVEL ALLOWANCES
+            employee.getAdmissibleSalary().setTa(Integer.parseInt((String)JTA.getItemAt(JTA.getSelectedIndex())));
+            employee.getDrawnSalary().setTa(Integer.parseInt((String)JTA.getItemAt(JTA.getSelectedIndex())));
+            employee.getDiff().setTa(0);
+
+            //OTHER ALLOWANCES
+            employee.getAdmissibleSalary().setCaAndOtherA(Integer.parseInt((String) JCA_OtherA.getItemAt(JCA_OtherA.getSelectedIndex())));
+            employee.getDrawnSalary().setCaAndOtherA(Integer.parseInt((String) JCA_OtherA.getItemAt(JCA_OtherA.getSelectedIndex())));
+            employee.getDiff().setCaAndOtherA(0);
+
+            // WASHING ALLOWANCES
+            employee.getAdmissibleSalary().setWa(Integer.parseInt((String)JWA.getItemAt(JWA.getSelectedIndex())));
+            employee.getDrawnSalary().setWa(Integer.parseInt((String)JWA.getItemAt(JWA.getSelectedIndex())));
+            employee.getDiff().setWa(0);
+
+
+            //HRA
+            employee.getAdmissibleSalary().setHra(Util.getHRA7(Integer.parseInt((String)JHRA7.getItemAt(JHRA7.getSelectedIndex())),employee.getAdmissibleSalary().getBasicPay()));
+            employee.getDrawnSalary().setHra(Util.getHRA(Integer.parseInt((String)JHRA6.getItemAt(JHRA6.getSelectedIndex())),(employee.getDrawnSalary().getBasicPay()+employee.getDrawnSalary().getGradepay())));
+            employee.getDiff().setHra(employee.getAdmissibleSalary().getHra()-employee.getDrawnSalary().getHra());
+
+            //NPA
+            int[] npa  =Util.calculateNPA((String)JNPA.getItemAt(JNPA.getSelectedIndex()),basic,Integer.parseInt(TGP.getText()),employee.getAdmissibleSalary().getBasicPay(),(String)JNPA7.getItemAt(JNPA7.getSelectedIndex()));
+            employee.getAdmissibleSalary().setNpa(npa[1]);
+            employee.getDrawnSalary().setNpa(npa[0]);
+            employee.getDiff().setNpa(npa[1]-npa[0]);
+            employees1.add(employee);
+        }
+        return employees1;
+
+    }
+
+    private List<Employee> getlistOnBbasisOfJanIncrementForDoctors(){
+
+        int joiningYear=Integer.parseInt(TDOJY.getText());
+        int JoiningMonth=Integer.parseInt((String) JDOJM.getItemAt(JDOJM.getSelectedIndex()));
+        int joningDay=Integer.parseInt(TDOJD.getText());
+        int fromDay =Integer.parseInt((String) JFROMD.getItemAt(JFROMD.getSelectedIndex()));
+        int fromMonth=Integer.parseInt((String) FMonth.getItemAt(FMonth.getSelectedIndex()));
+        int toMonth=  Integer.parseInt((String) TMonth.getItemAt(TMonth.getSelectedIndex()));
+        int toDay =Integer.parseInt((String) JTOD.getItemAt(JTOD.getSelectedIndex()));
+        int fromYear= Integer.parseInt((String) FYear.getItemAt(FYear.getSelectedIndex())) ;
+        int toYear=  Integer.parseInt((String) TYear.getItemAt(TYear.getSelectedIndex()));
+
+        List<SalaryCalculatonDuraton> salaryCalculatonDuratons = UtilForJanIncrement.getListOnBasisOfJanIncrementYeary(joningDay, JoiningMonth, joiningYear, fromDay, fromMonth, fromYear, toDay, toMonth, toYear) ;
+        int basic =Integer.parseInt(TBasic.getText());
+        int gradePay =Integer.parseInt(TGP.getText());
+
+        List<Employee> employees1 = new ArrayList();
+
+        int oldAdmissibleBasic=0;
+        boolean isFirstAdmissibleAmt=true;  // for first time we will take the admissible amt on the basis of basic pay
+        for(SalaryCalculatonDuraton salaryCalculatonDuraton:salaryCalculatonDuratons)
+        {
+            Employee employee = new Employee();
+            employee.setInComplete(salaryCalculatonDuraton.isInComplete());
+            employee.setStartMonthNotCompelete(salaryCalculatonDuraton.isStartMonthNotCompelete());
+            employee.setEndMonthNotCompelete(salaryCalculatonDuraton.isEndMonthNotCompelete());
+            employee.setFromDay(salaryCalculatonDuraton.getFromDay());
+            employee.setFromMonth(salaryCalculatonDuraton.getFromMonth());
+            employee.setFromYear(salaryCalculatonDuraton.getFromYear());
+            employee.setToDay(salaryCalculatonDuraton.getToDay());
+            employee.setToMonth(salaryCalculatonDuraton.getToMonth());
+            employee.setToYear(salaryCalculatonDuraton.getToYear());
+            employee.getAdmissibleSalary().setBasicPay(oldAdmissibleBasic); // for other than first or no increment state
+            if(salaryCalculatonDuraton.isIncrement())
+            {
+                basic  = basic+Util.roundOffIncrement((int)(Math.round((basic+gradePay)*3/100.0)));
+
+                oldAdmissibleBasic =Util.getAdmissibleBasicForPromotion(oldAdmissibleBasic,(String)JPAY_BAND.getItemAt(JPAY_BAND.getSelectedIndex()), false) ; //false for singel increment indication
+                employee.getAdmissibleSalary().setBasicPay(oldAdmissibleBasic);
+                    // new admissible directly setting in oldAdmissibleBasic
+
+            }
+            if(isFirstAdmissibleAmt){
+                oldAdmissibleBasic=Util.getAdmissibleBasicPay(basic,Integer.parseInt(TGP.getText()),(String)JPAY_BAND.getItemAt(JPAY_BAND.getSelectedIndex()));
+                employee.getAdmissibleSalary().setBasicPay(oldAdmissibleBasic);
+                isFirstAdmissibleAmt=false;
+            }
+            employee.getDrawnSalary().setBasicPay(basic);
+            employee.getDrawnSalary().setGradepay(Integer.parseInt(TGP.getText()));
+            //employee.getAdmissibleSalary().setBasicPay(Util.getAdmissibleBasicPay(basic,Integer.parseInt(TGP.getText()),(String)JPAY_BAND.getItemAt(JPAY_BAND.getSelectedIndex())));
+            employee.getAdmissibleSalary().setGradepay(0);
+            employee.getDiff().setBasicPay(employee.getAdmissibleSalary().getBasicPay()- (employee.getDrawnSalary().getBasicPay()+employee.getDrawnSalary().getGradepay()));
+            employee.getDiff().setGradepay(employee.getAdmissibleSalary().getGradepay()-employee.getDrawnSalary().getGradepay());
+
+            // TRAVEL ALLOWANCES
+            employee.getAdmissibleSalary().setTa(Integer.parseInt((String)JTA.getItemAt(JTA.getSelectedIndex())));
+            employee.getDrawnSalary().setTa(Integer.parseInt((String)JTA.getItemAt(JTA.getSelectedIndex())));
+            employee.getDiff().setTa(0);
+
+            //OTHER ALLOWANCES
+            employee.getAdmissibleSalary().setCaAndOtherA(Integer.parseInt((String) JCA_OtherA.getItemAt(JCA_OtherA.getSelectedIndex())));
+            employee.getDrawnSalary().setCaAndOtherA(Integer.parseInt((String) JCA_OtherA.getItemAt(JCA_OtherA.getSelectedIndex())));
+            employee.getDiff().setCaAndOtherA(0);
+
+            // WASHING ALLOWANCES
+            employee.getAdmissibleSalary().setWa(Integer.parseInt((String)JWA.getItemAt(JWA.getSelectedIndex())));
+            employee.getDrawnSalary().setWa(Integer.parseInt((String)JWA.getItemAt(JWA.getSelectedIndex())));
+            employee.getDiff().setWa(0);
+
+
+            //HRA
+            employee.getAdmissibleSalary().setHra(Util.getHRA7(Integer.parseInt((String)JHRA7.getItemAt(JHRA7.getSelectedIndex())),employee.getAdmissibleSalary().getBasicPay()));
+            employee.getDrawnSalary().setHra(Util.getHRA(Integer.parseInt((String)JHRA6.getItemAt(JHRA6.getSelectedIndex())),(employee.getDrawnSalary().getBasicPay()+employee.getDrawnSalary().getGradepay())));
+            employee.getDiff().setHra(employee.getAdmissibleSalary().getHra()-employee.getDrawnSalary().getHra());
+
+            //NPA
+            int[] npa  =Util.calculateNPA((String)JNPA.getItemAt(JNPA.getSelectedIndex()),basic,Integer.parseInt(TGP.getText()),employee.getAdmissibleSalary().getBasicPay(),(String)JNPA7.getItemAt(JNPA7.getSelectedIndex()));
+            employee.getAdmissibleSalary().setNpa(npa[1]);
+            employee.getDrawnSalary().setNpa(npa[0]);
+            employee.getDiff().setNpa(npa[1]-npa[0]);
+            employees1.add(employee);
+        }
+        return employees1;
+
+    }
+    private List<Employee> getListOnBasisOfJulyIncrementForDoctor()
+    {
+        int joiningYear=Integer.parseInt(TDOJY.getText());
+        int JoiningMonth=Integer.parseInt((String) JDOJM.getItemAt(JDOJM.getSelectedIndex()));
+        int joningDay=Integer.parseInt(TDOJD.getText());
+        int fromDay =Integer.parseInt((String) JFROMD.getItemAt(JFROMD.getSelectedIndex()));
+        int fromMonth=Integer.parseInt((String) FMonth.getItemAt(FMonth.getSelectedIndex()));
+        int toMonth=  Integer.parseInt((String) TMonth.getItemAt(TMonth.getSelectedIndex()));
+        int toDay =Integer.parseInt((String) JTOD.getItemAt(JTOD.getSelectedIndex()));
+        int fromYear= Integer.parseInt((String) FYear.getItemAt(FYear.getSelectedIndex())) ;
+        int toYear=  Integer.parseInt((String) TYear.getItemAt(TYear.getSelectedIndex()));
+
+        List<SalaryCalculatonDuraton> salaryCalculatonDuratons = UtilForJulyIncrement.getListOnBasisOfJulyIncrementYeary(joningDay, JoiningMonth, joiningYear, fromDay, fromMonth, fromYear, toDay, toMonth, toYear) ;
+
+        int basic =Integer.parseInt(TBasic.getText());
+        int gradePay =Integer.parseInt(TGP.getText());
+
+        List<Employee> employees1 = new ArrayList();
+
+        int oldAdmissibleBasic=0;
+        boolean isFirstAdmissibleAmt=true;  // for first time we will take the admissible amt on the basis of basic pay
+        for(SalaryCalculatonDuraton salaryCalculatonDuraton:salaryCalculatonDuratons)
+        {
+            Employee employee = new Employee();
+            employee.setInComplete(salaryCalculatonDuraton.isInComplete());
+            employee.setStartMonthNotCompelete(salaryCalculatonDuraton.isStartMonthNotCompelete());
+            employee.setEndMonthNotCompelete(salaryCalculatonDuraton.isEndMonthNotCompelete());
+            employee.setFromDay(salaryCalculatonDuraton.getFromDay());
+            employee.setFromMonth(salaryCalculatonDuraton.getFromMonth());
+            employee.setFromYear(salaryCalculatonDuraton.getFromYear());
+            employee.setToDay(salaryCalculatonDuraton.getToDay());
+            employee.setToMonth(salaryCalculatonDuraton.getToMonth());
+            employee.setToYear(salaryCalculatonDuraton.getToYear());
+            employee.getAdmissibleSalary().setBasicPay(oldAdmissibleBasic);
+            if(salaryCalculatonDuraton.isIncrement())
+            {
+                basic  = basic+Util.roundOffIncrement((int)(Math.round((basic+gradePay)*3/100.0)));
+
+                oldAdmissibleBasic =Util.getAdmissibleBasicForPromotion(oldAdmissibleBasic,(String)JPAY_BAND.getItemAt(JPAY_BAND.getSelectedIndex()), false) ; //false for singel increment indication
+                employee.getAdmissibleSalary().setBasicPay(oldAdmissibleBasic);
+                    // new admissible directly setting in oldAdmissibleBasic
+            }
+
+            if(isFirstAdmissibleAmt){
+                oldAdmissibleBasic=Util.getAdmissibleBasicPay(basic,Integer.parseInt(TGP.getText()),(String)JPAY_BAND.getItemAt(JPAY_BAND.getSelectedIndex()));
+                employee.getAdmissibleSalary().setBasicPay(oldAdmissibleBasic);
+                isFirstAdmissibleAmt=false;
+            }
+            employee.getDrawnSalary().setBasicPay(basic);
+            employee.getDrawnSalary().setGradepay(Integer.parseInt(TGP.getText()));
+
             employee.getAdmissibleSalary().setGradepay(0);
             employee.getDiff().setBasicPay(employee.getAdmissibleSalary().getBasicPay()- (employee.getDrawnSalary().getBasicPay()+employee.getDrawnSalary().getGradepay()));
             employee.getDiff().setGradepay(employee.getAdmissibleSalary().getGradepay()-employee.getDrawnSalary().getGradepay());

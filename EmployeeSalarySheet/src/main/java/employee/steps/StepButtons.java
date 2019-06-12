@@ -19,9 +19,10 @@ public class StepButtons implements ActionListener{
 	JButton beforeJulyIncrement;
 	JButton afterJulyIncrement;
 	JButton trippleOrSixTimeIncrement;
+	JButton doctorIncrement;
 	JButton closeButton;
 
-	public static final int hieght=90;
+	public static final int hieght=50;
 	public static void main(String [] a)
 	{
 		new StepButtons();
@@ -75,9 +76,15 @@ public class StepButtons implements ActionListener{
 		trippleOrSixTimeIncrement.setFont(new Font("Courier New", Font.ITALIC, 20));
 		trippleOrSixTimeIncrement.addActionListener(this);
 		f.add(trippleOrSixTimeIncrement);
+
+		doctorIncrement=new JButton("DOCTOR CASE");
+		doctorIncrement.setBounds(50, 470+hieght, 400, 50);
+		doctorIncrement.setFont(new Font("Courier New", Font.ITALIC, 20));
+		doctorIncrement.addActionListener(this);
+		f.add(doctorIncrement);
 		
 		closeButton=new JButton("CLOSE");
-		closeButton.setBounds(50, 500+hieght, 400, 50);
+		closeButton.setBounds(50, 550+hieght, 400, 50);
 		closeButton.setFont(new Font("Courier New", Font.ITALIC, 20));
 		closeButton.addActionListener(this);
 		f.add(closeButton);
@@ -111,6 +118,9 @@ public class StepButtons implements ActionListener{
 		else if(e.getSource()==trippleOrSixTimeIncrement)
 		{
 			new TrippleOrSixTimeIncrement("STOP INCREMENT");
+		}else if(e.getSource()==doctorIncrement)
+		{
+			new DoctorCase("DOCTOR CASE");
 		}else if(e.getSource()==closeButton)
 		{
 			f.dispose();
