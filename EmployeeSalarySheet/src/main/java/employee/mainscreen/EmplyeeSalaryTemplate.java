@@ -368,7 +368,7 @@ public class EmplyeeSalaryTemplate implements ActionListener{
         {
             if("Jan".equalsIgnoreCase((String) JNcrement.getItemAt(JNcrement.getSelectedIndex())))
             {
-                employeeList.addAll(getlistOnBbasisOfIncrementForPromotion());
+                employeeList.addAll(getlistOnBbasisOfJanIncrementForPromotion());
             }else{
                 employeeList.addAll(getListOnBasisOfJulyIncrementAfterPromoton());
             }
@@ -584,7 +584,7 @@ public class EmplyeeSalaryTemplate implements ActionListener{
 
     }
 
-    private List<Employee> getlistOnBbasisOfIncrementForPromotion() throws Exception {
+    private List<Employee> getlistOnBbasisOfJanIncrementForPromotion() throws Exception {
 
         int joiningYear=Integer.parseInt(TDOJY.getText());
         int JoiningMonth=Integer.parseInt((String) JDOJM.getItemAt(JDOJM.getSelectedIndex()));

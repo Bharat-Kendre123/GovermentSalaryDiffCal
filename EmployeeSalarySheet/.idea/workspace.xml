@@ -7,14 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f23569b9-6e90-4eac-a059-f591562a9f59" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/2/a27cd50c7eda7e6279cac275e6d0f0107586306a" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/2/a27cd50c7eda7e6279cac275e6d0f0107586306a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/employee/mainscreen/EmplyeeSalaryTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/employee/mainscreen/EmplyeeSalaryTemplate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/employee/steps/AfterJulyIncrementSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/employee/steps/AfterJulyIncrementSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/employee/steps/StepButtons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/employee/steps/StepButtons.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/employee/utility/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/employee/utility/Util.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,10 +18,13 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/employee/steps/DoctorCase.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/employee/mainscreen/EmplyeeSalaryTemplate.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="51" column="21" lean-forward="true" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
+            <state relative-caret-position="497">
+              <caret line="583" lean-forward="true" selection-start-line="583" selection-end-line="583" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -47,14 +43,14 @@
       <find>done</find>
       <find>promotion</find>
       <find>BJULYPROM</find>
-      <find>firstTimeAdmissible</find>
-      <find>firstTimeIcre</find>
       <find>WithoutIncrement</find>
       <find>getlistOnBbasisOfJanIncrementForDoctors</find>
       <find>JAN</find>
       <find>Normal</find>
       <find>steps</find>
       <find>noincre</find>
+      <find>firstTimeIcre</find>
+      <find>firstTimeAdmissible</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -76,8 +72,8 @@
         <option value="$PROJECT_DIR$/src/main/java/employee/utility/Util.java" />
         <option value="$PROJECT_DIR$/src/main/java/employee/steps/AfterJulyIncrementSteps.java" />
         <option value="$PROJECT_DIR$/src/main/java/employee/steps/DoctorCase.java" />
-        <option value="$PROJECT_DIR$/src/main/java/employee/mainscreen/EmplyeeSalaryTemplate.java" />
         <option value="$PROJECT_DIR$/src/main/java/employee/steps/StepButtons.java" />
+        <option value="$PROJECT_DIR$/src/main/java/employee/mainscreen/EmplyeeSalaryTemplate.java" />
       </list>
     </option>
   </component>
@@ -94,91 +90,12 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="EmployeeSalarySheet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EmployeeSalarySheet" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EmployeeSalarySheet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EmployeeSalarySheet" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EmployeeSalarySheet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EmployeeSalarySheet" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EmployeeSalarySheet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EmployeeSalarySheet" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EmployeeSalarySheet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EmployeeSalarySheet" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="employee" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EmployeeSalarySheet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EmployeeSalarySheet" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="employee" type="462c0819:PsiDirectoryNode" />
-              <item name="mainscreen" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EmployeeSalarySheet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EmployeeSalarySheet" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="employee" type="462c0819:PsiDirectoryNode" />
-              <item name="steps" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EmployeeSalarySheet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EmployeeSalarySheet" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="employee" type="462c0819:PsiDirectoryNode" />
-              <item name="styling" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EmployeeSalarySheet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EmployeeSalarySheet" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EmployeeSalarySheet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EmployeeSalarySheet" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EmployeeSalarySheet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="ProjectPane" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560343469804" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560343836511" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
@@ -287,7 +204,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19029851" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -504,16 +422,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/employee/mainscreen/EmplyeeSalaryTemplate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="716" column="115" lean-forward="true" selection-start-line="716" selection-start-column="115" selection-end-line="716" selection-end-column="115" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/employee/steps/StopIncrementSteps.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="163">
@@ -537,8 +445,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/employee/steps/DoctorCase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
+        <state relative-caret-position="-342">
           <caret line="51" column="21" lean-forward="true" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/employee/mainscreen/EmplyeeSalaryTemplate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="497">
+          <caret line="583" lean-forward="true" selection-start-line="583" selection-end-line="583" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
