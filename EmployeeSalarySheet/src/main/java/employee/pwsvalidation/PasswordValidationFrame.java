@@ -38,6 +38,7 @@ public class PasswordValidationFrame implements ActionListener {
         f.add(heading);
 
         passwordTextField = new JPasswordField();
+        passwordTextField.setHorizontalAlignment(JTextField.CENTER);
         passwordTextField.setBounds(90, 300, 300, 30);
         //passwordTextField.setFont(f);
         f.add(passwordTextField);

@@ -115,8 +115,10 @@ public class EmplyeeSalaryTemplate implements ActionListener {
 
         // TEST FIELDS
         TName = new JTextField();
+        TName.setHorizontalAlignment(JTextField.CENTER);
         TName.setBounds(130, 50 - height, 200, 30);
         TBasic = new JTextField();
+        TBasic.setHorizontalAlignment(JTextField.CENTER);
         TBasic.setBounds(130, 90 - height, 200, 30);
         String DCPSLinRupees[] = {"Jan", "July"};
         JNcrement = new JComboBox(DCPSLinRupees);
@@ -133,10 +135,12 @@ public class EmplyeeSalaryTemplate implements ActionListener {
         f.add(RECOVERED_AMOUNT);
 
         JRECOVERED = new JTextField("0");
+        JRECOVERED.setHorizontalAlignment(JTextField.CENTER);
         JRECOVERED.setBounds(430, 450 - height, 100, 30);
         f.add(JRECOVERED);
 
         TGP = new JTextField();
+        TGP.setHorizontalAlignment(JTextField.CENTER);
         TGP.setBounds(130, 130 - height, 200, 30);
 
         f.add(TName);
@@ -149,6 +153,7 @@ public class EmplyeeSalaryTemplate implements ActionListener {
         f.add(JPAY_BAND);
 
         TSLEVEL = new JTextField("LEVEL WILL DISPLAY HERE");
+        TSLEVEL.setHorizontalAlignment(JTextField.CENTER);
         TSLEVEL.setBounds(350, 170 - height, 200, 30);
         Font font = new Font("SansSerif", Font.BOLD, 12);
         TSLEVEL.setFont(font);
@@ -209,6 +214,7 @@ public class EmplyeeSalaryTemplate implements ActionListener {
         f.add(JNPA);
 
         TDOJD = new JTextField();
+        TDOJD.setHorizontalAlignment(JTextField.CENTER);
         TDOJD.setBounds(130, 450 - height, 50, 30);
         f.add(TDOJD);
         String monthList[] = {"01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"};
@@ -218,6 +224,7 @@ public class EmplyeeSalaryTemplate implements ActionListener {
 
         String yearList[] = {"2016", "2017", "2018", "2019", "2020"};
         TDOJY = new JTextField();
+        TDOJY.setHorizontalAlignment(JTextField.CENTER);
         TDOJY.setBounds(250, 450 - height, 70, 30);
         f.add(TDOJY);
 
