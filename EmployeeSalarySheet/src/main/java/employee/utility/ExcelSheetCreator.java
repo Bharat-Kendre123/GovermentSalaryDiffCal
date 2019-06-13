@@ -68,7 +68,7 @@ public class ExcelSheetCreator {
         rowid++;
 
         // TITAL + COLUMN NAME STYLING
-        UtilForStyling.setTitleStyle(workbook, rowid, spreadsheet, columnLsit, false);
+        UtilForStyling.setTitleStyle(workbook, rowid, spreadsheet, columnLsit, dcpsFlag);
         rowid = rowid + 2;
 
         row = spreadsheet.createRow(rowid++);
@@ -300,8 +300,11 @@ public class ExcelSheetCreator {
         UtilForStyling.setTotalRowStyle(workbook, spreadsheetFor2019, rowidFor2019, AdditionFor2019, rowNumberFor2019);
 
 
-        UtilForStyling.setInstallments1(workbook, spreadsheet, Addition, recoveredAmt);
+        UtilForStyling.setInstallments1(workbook, spreadsheet, Addition, recoveredAmt,dcpsFlag);
         //Write the workbook in file system
+
+
+        spreadsheet.setColumnWidth(34,350); // to set the minimum gap between main table and right side small table
 
         // auto column width
         for (int i = 0; i < 39; i++) {

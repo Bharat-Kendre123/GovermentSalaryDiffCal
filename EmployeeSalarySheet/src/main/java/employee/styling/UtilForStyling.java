@@ -214,7 +214,7 @@ public class UtilForStyling {
 
 
     //COMMON METHOD FOR BOTH SHEET
-    public static void setTitleStyle(XSSFWorkbook workbook, int rowidFor2019, XSSFSheet spreadsheetFor2019, String[] columnLsit, boolean is2019) {
+    public static void setTitleStyle(XSSFWorkbook workbook, int rowidFor2019, XSSFSheet spreadsheetFor2019, String[] columnLsit, boolean dcpsFlag) {
         // tital for 2019 sheet ++ style
         XSSFCellStyle admissibleStyle = UtilForStyling.getStyleForAdmiDrwanDifff(workbook, 1);
         XSSFRow xrowFor2019 = spreadsheetFor2019.createRow(rowidFor2019++);
@@ -254,9 +254,14 @@ public class UtilForStyling {
             Cell cell = xrowFor2019.createCell(cellidFor2019++);
             cell.setCellValue(columnName);
             cell.setCellStyle(style1);
+
             if (counter == columnLsit.length - 1) {
                 cell.setCellStyle(styleForBoldBorder);
+                if(!dcpsFlag)
+                cell.setCellValue("Credit to G.P.F ACC");
             }
+
+
             counter++;
         }
 
@@ -329,7 +334,7 @@ public class UtilForStyling {
 
     }
 
-    public static void setInstallments1(XSSFWorkbook workbook, XSSFSheet spreadsheet, int[] additionArray, int recoveryAmt) {
+    public static void setInstallments1(XSSFWorkbook workbook, XSSFSheet spreadsheet, int[] additionArray, int recoveryAmt,boolean dcpsFlag) {
 
         int payToNPA = additionArray[additionArray.length - 4];
         int dcpsTotal = additionArray[additionArray.length - 2];
@@ -388,7 +393,12 @@ public class UtilForStyling {
         rowId++;  // INCREASE ROW
         XSSFRow secondInstRow = spreadsheet.getRow(rowId);
         Cell secondtInstCell = secondInstRow.createCell(35);
-        secondtInstCell.setCellValue("Net Amt = " + netAmount);
+        if(dcpsFlag){
+            secondtInstCell.setCellValue("Net Amt = " + netAmount);
+        }else{
+            secondtInstCell.setCellValue("Credit to G.P.F ACC = " + netAmount);
+        }
+
         secondtInstCell.setCellStyle(inner);
         for (int i = 36; i <= 38; i++)
             secondInstRow.createCell(i).setCellStyle(inner);
@@ -400,7 +410,11 @@ public class UtilForStyling {
         rowId++;  // INCREASE ROW
         XSSFRow thirdInstRow = spreadsheet.getRow(rowId);
         Cell thirdInstCell = thirdInstRow.createCell(35);
-        thirdInstCell.setCellValue("Hence, Net Amt = " + netAmount + "/5");
+        if(dcpsFlag) {
+            thirdInstCell.setCellValue("Hence, Net Amt = " + netAmount + "/5");
+        }else{
+            thirdInstCell.setCellValue("Hence, Credit to G.P.F ACC = " + netAmount + "/5");
+        }
         thirdInstCell.setCellStyle(lower);
         for (int i = 36; i <= 38; i++)
             thirdInstRow.createCell(i).setCellStyle(lower);
@@ -425,7 +439,12 @@ public class UtilForStyling {
         headerCellThird.setCellStyle(headerStyle);
 
         Cell headerCellForth = heaer.createCell(38);
-        headerCellForth.setCellValue("Net Amt.");
+        if(dcpsFlag){
+            headerCellForth.setCellValue("Net Amt.");
+        }else{
+            headerCellForth.setCellValue("Cr to GPF Acc");
+        }
+
         headerCellForth.setCellStyle(headerStyle);
 
         // FIRST INSTALLMENT
