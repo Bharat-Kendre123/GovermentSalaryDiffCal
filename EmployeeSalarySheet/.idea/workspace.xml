@@ -45,7 +45,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/employee/mainscreen/EmplyeeSalaryTemplate.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="476">
-              <caret line="1240" column="30" lean-forward="true" selection-start-line="1240" selection-start-column="30" selection-end-line="1240" selection-end-column="30" />
+              <caret line="1240" column="30" selection-start-line="1240" selection-start-column="30" selection-end-line="1240" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -302,7 +302,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20309168" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -601,7 +601,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/employee/mainscreen/EmplyeeSalaryTemplate.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
-          <caret line="1240" column="30" lean-forward="true" selection-start-line="1240" selection-start-column="30" selection-end-line="1240" selection-end-column="30" />
+          <caret line="1240" column="30" selection-start-line="1240" selection-start-column="30" selection-end-line="1240" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
