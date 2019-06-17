@@ -1,14 +1,0 @@
-
-€squid:S4144±"cUpdate this method so that its implementation is not identical to "getStyleForTotalRow" on line 60.(à„½Ôøÿÿÿÿ
-gsquid:CommentedOutCodeLine6"<This block of commented-out lines of code should be removed.(¦¹ážøÿÿÿÿ
-Qsquid:S1118":Add a private constructor to hide the implicit public one.(¹§“µ
-Esquid:S1172å"-Remove this unused method parameter "is2019".(‹ÿÚœ
-Qsquid:S1854Ñ"9Remove this useless assignment to local variable "rowid".(­°Âñ
-Xsquid:S1854‚"@Remove this useless assignment to local variable "rowidFor2019".(œî–
-]squid:S1854"@Remove this useless assignment to local variable "rowidFor2019".(É•¼Éúÿÿÿÿ
-]squid:S1854©"@Remove this useless assignment to local variable "rowidFor2019".(É•¼Éúÿÿÿÿ
-\squid:S1854©"DRemove this useless assignment to local variable "installmentIndex".(ÓÄÖã
-Zsquid:S3358,"DExtract this nested ternary operation into an independent statement.(ÆÂ÷)
-9squid:S2386"Make this member "protected".(žÂãÌøÿÿÿÿ
-wsquid:S00115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(”Ã­ûÿÿÿÿ
-jsquid:S00117Ë"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÓÏ‚×
