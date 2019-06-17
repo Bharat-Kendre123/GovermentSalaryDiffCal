@@ -1,1 +1,1 @@
-# GovermentSalaryDiffCal
+# Salary Difference calculator
