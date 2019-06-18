@@ -574,6 +574,20 @@ public class UtilForStyling {
         Cell cellForthTotal = totalRow.createCell(38);
         cellForthTotal.setCellValue(netAmount);
         cellForthTotal.setCellStyle(headerStyle);
+
+
+        if(recoveryAmt>0){
+            rowId=rowId+2;  // INCREASE ROW
+
+            XSSFRow statementRow = spreadsheet.getRow(rowId);
+            Cell statementCell = statementRow.createCell(35);
+            statementCell.setCellValue("Note:- OverPayment Recovery Statement Copy Enclosed");
+            statementCell.setCellStyle(headerStyle);
+            for (int i = 36; i <= 38; i++)
+                statementRow.createCell(i).setCellStyle(headerStyle);
+
+            spreadsheet.addMergedRegion(new CellRangeAddress(rowId, rowId, 35, 38));
+        }
     }
 
 
