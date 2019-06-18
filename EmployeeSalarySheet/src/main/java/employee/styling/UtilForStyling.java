@@ -339,8 +339,13 @@ public class UtilForStyling {
         int payToNPA = additionArray[additionArray.length - 4];
         int dcpsTotal = additionArray[additionArray.length - 2];
         int netAmount = additionArray[additionArray.length - 1] - recoveryAmt;
-
         int[] installments = Util.getInstallmentAmount(netAmount);
+
+        int totalBPArrear=dcpsTotal;
+        for(int temp:installments)
+            totalBPArrear+=temp;
+
+
         //  --------------Note ------------------------------
         int rowId = 5;
         XSSFCellStyle upper = setBorderBold(workbook, 1);
@@ -550,7 +555,7 @@ public class UtilForStyling {
         cellForth2023.setCellStyle(headerStyle);
 
 
-        // Forth  INSTALLMENT
+        // Total amount
         rowId++;  // INCREASE ROW
         installmentIndex++;
         XSSFRow totalRow = spreadsheet.getRow(rowId);
@@ -559,7 +564,7 @@ public class UtilForStyling {
         cellFirstToatl.setCellStyle(headerStyle);
 
         Cell cellSecondTotal = totalRow.createCell(36);
-        cellSecondTotal.setCellValue(payToNPA);
+        cellSecondTotal.setCellValue(totalBPArrear);
         cellSecondTotal.setCellStyle(headerStyle);
 
         Cell cellThirdTotal = totalRow.createCell(37);
@@ -569,6 +574,20 @@ public class UtilForStyling {
         Cell cellForthTotal = totalRow.createCell(38);
         cellForthTotal.setCellValue(netAmount);
         cellForthTotal.setCellStyle(headerStyle);
+
+
+        if(recoveryAmt>0){
+            rowId=rowId+2;  // INCREASE ROW
+
+            XSSFRow statementRow = spreadsheet.getRow(rowId);
+            Cell statementCell = statementRow.createCell(35);
+            statementCell.setCellValue("Note:- OverPayment Recovery Statement Copy Enclosed");
+            statementCell.setCellStyle(headerStyle);
+            for (int i = 36; i <= 38; i++)
+                statementRow.createCell(i).setCellStyle(headerStyle);
+
+            spreadsheet.addMergedRegion(new CellRangeAddress(rowId, rowId, 35, 38));
+        }
     }
 
 
