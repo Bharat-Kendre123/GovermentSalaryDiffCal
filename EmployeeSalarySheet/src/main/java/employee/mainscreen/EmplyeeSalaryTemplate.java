@@ -569,7 +569,8 @@ public class EmplyeeSalaryTemplate implements ActionListener {
         } else {
             int basicAtthisTime = employeeList.get(employeeList.size() - 1).getDrawnSalary().getBasicPay();
             int gradePay = employeeList.get(employeeList.size() - 1).getDrawnSalary().getGradepay();
-            int incrementedBasic = basicAtthisTime + Util.roundOffIncrement((int) (Math.round((basicAtthisTime + gradePay) * 3 / 100.0)));
+            //int incrementedBasic = basicAtthisTime + Util.roundOffIncrement((int) (Math.round((basicAtthisTime + gradePay) * 3 / 100.0)));
+            int incrementedBasic = basicAtthisTime + Util.roundOffIncrement(roundOff(basicAtthisTime,gradePay));
             TBasic.setText(incrementedBasic + "");
         }
     }
@@ -620,7 +621,8 @@ public class EmplyeeSalaryTemplate implements ActionListener {
             employee.setToMonth(salaryCalculatonDuraton.getToMonth());
             employee.setToYear(salaryCalculatonDuraton.getToYear());
             if (salaryCalculatonDuraton.isIncrement()) {
-                basic = basic + Util.roundOffIncrement((int) (Math.round((basic + gradePay) * 3 / 100.0)));
+                //basic = basic + Util.roundOffIncrement((int) (Math.round((basic + gradePay) * 3 / 100.0)));
+                basic = basic + Util.roundOffIncrement(roundOff(basic,gradePay));
                 newAdmissibleBasic = Util.getAdmissibleBasicForPromotion(newAdmissibleBasic, (String) JPAY_BAND.getItemAt(JPAY_BAND.getSelectedIndex()), doIncrement);
             }
             employee.getDrawnSalary().setBasicPay(basic);
@@ -706,7 +708,8 @@ public class EmplyeeSalaryTemplate implements ActionListener {
             employee.setToMonth(salaryCalculatonDuraton.getToMonth());
             employee.setToYear(salaryCalculatonDuraton.getToYear());
             if (salaryCalculatonDuraton.isIncrement()) {
-                basic = basic + Util.roundOffIncrement((int) (Math.round((basic + gradePay) * 3 / 100.0)));
+                //basic = basic + Util.roundOffIncrement((int) (Math.round((basic + gradePay) * 3 / 100.0)));
+                basic = basic + Util.roundOffIncrement(roundOff(basic,gradePay));
                 newAdmissibleBasic = Util.getAdmissibleBasicForPromotion(newAdmissibleBasic, (String) JPAY_BAND.getItemAt(JPAY_BAND.getSelectedIndex()), doIncrement);
             }
             employee.getDrawnSalary().setBasicPay(basic);
@@ -877,11 +880,17 @@ public class EmplyeeSalaryTemplate implements ActionListener {
             employee.setToMonth(salaryCalculatonDuraton.getToMonth());
             employee.setToYear(salaryCalculatonDuraton.getToYear());
             if (salaryCalculatonDuraton.isIncrement()) {
-                basic = basic + Util.roundOffIncrement((int) (Math.round((basic + gradePay) * 3 / 100.0)));
+
+                //basic = basic + Util.roundOffIncrement((int) (Math.round((basic + gradePay) * 3 / 100.0)));
+                basic = basic + Util.roundOffIncrement(roundOff(basic,gradePay));
+
+
                 if(isAdmissibleinputLocal){
-                    admissibleBasicPayInput=admissibleBasicPayInput + Util.roundOffIncrement((int) (Math.round((admissibleBasicPayInput) * 3 / 100.0)));
+                    //admissibleBasicPayInput=admissibleBasicPayInput + Util.roundOffIncrement((int) (Math.round((admissibleBasicPayInput) * 3 / 100.0)));
+                    admissibleBasicPayInput=admissibleBasicPayInput + Util.roundOffIncrement(roundOff(admissibleBasicPayInput,0));
                     admissibleBasicPayInput=Util.getAdmissibleBasicPayForManualInput(admissibleBasicPayInput,(String) JPAY_BAND.getItemAt(JPAY_BAND.getSelectedIndex()));
                 }
+
             }
             employee.getDrawnSalary().setBasicPay(basic);
             employee.getDrawnSalary().setGradepay(Integer.parseInt(TGP.getText()));
@@ -966,11 +975,17 @@ public class EmplyeeSalaryTemplate implements ActionListener {
             employee.setToMonth(salaryCalculatonDuraton.getToMonth());
             employee.setToYear(salaryCalculatonDuraton.getToYear());
             if (salaryCalculatonDuraton.isIncrement()) {
-                basic = basic + Util.roundOffIncrement((int) (Math.round((basic + gradePay) * 3 / 100.0)));
+
+                //basic = basic + Util.roundOffIncrement((int) (Math.round((basic + gradePay) * 3 / 100.0)));
+                basic = basic + Util.roundOffIncrement(roundOff(basic,gradePay));
+
+
                 if(isAdmissibleinputLocal){
-                    admissibleBasicPayInput=admissibleBasicPayInput + Util.roundOffIncrement((int) (Math.round((admissibleBasicPayInput) * 3 / 100.0)));
+                    //admissibleBasicPayInput=admissibleBasicPayInput + Util.roundOffIncrement((int) (Math.round((admissibleBasicPayInput) * 3 / 100.0)));
+                    admissibleBasicPayInput=admissibleBasicPayInput + Util.roundOffIncrement(roundOff(admissibleBasicPayInput,0));
                     admissibleBasicPayInput=Util.getAdmissibleBasicPayForManualInput(admissibleBasicPayInput,(String) JPAY_BAND.getItemAt(JPAY_BAND.getSelectedIndex()));
                 }
+
             }
             employee.getDrawnSalary().setBasicPay(basic);
             employee.getDrawnSalary().setGradepay(Integer.parseInt(TGP.getText()));
@@ -1048,7 +1063,8 @@ public class EmplyeeSalaryTemplate implements ActionListener {
             employee.setToYear(salaryCalculatonDuraton.getToYear());
             employee.getAdmissibleSalary().setBasicPay(oldAdmissibleBasic); // for other than first or no increment state
             if (salaryCalculatonDuraton.isIncrement()) {
-                basic = basic + Util.roundOffIncrement((int) (Math.round((basic + gradePay) * 3 / 100.0)));
+                //basic = basic + Util.roundOffIncrement((int) (Math.round((basic + gradePay) * 3 / 100.0)));
+                basic = basic + Util.roundOffIncrement(roundOff(basic,gradePay));
 
                 oldAdmissibleBasic = Util.getAdmissibleBasicForPromotion(oldAdmissibleBasic, (String) JPAY_BAND.getItemAt(JPAY_BAND.getSelectedIndex()), false); //false for singel increment indication
                 employee.getAdmissibleSalary().setBasicPay(oldAdmissibleBasic);
@@ -1132,7 +1148,8 @@ public class EmplyeeSalaryTemplate implements ActionListener {
             employee.setToYear(salaryCalculatonDuraton.getToYear());
             employee.getAdmissibleSalary().setBasicPay(oldAdmissibleBasic);
             if (salaryCalculatonDuraton.isIncrement()) {
-                basic = basic + Util.roundOffIncrement((int) (Math.round((basic + gradePay) * 3 / 100.0)));
+                //basic = basic + Util.roundOffIncrement((int) (Math.round((basic + gradePay) * 3 / 100.0)));
+                basic = basic + Util.roundOffIncrement(roundOff(basic,gradePay));
 
                 oldAdmissibleBasic = Util.getAdmissibleBasicForPromotion(oldAdmissibleBasic, (String) JPAY_BAND.getItemAt(JPAY_BAND.getSelectedIndex()), false); //false for singel increment indication
                 employee.getAdmissibleSalary().setBasicPay(oldAdmissibleBasic);
@@ -1279,8 +1296,10 @@ public class EmplyeeSalaryTemplate implements ActionListener {
 
         if ("Double".equalsIgnoreCase(selectedIncrement)) {
             int basicAtthisTime = employeeList.get(employeeList.size() - 1).getDrawnSalary().getBasicPay();
-            incrementedBasic = basicAtthisTime + Util.roundOffIncrement((int) (Math.round((basicAtthisTime + lastGradPay) * 3 / 100.0)));
-            incrementedBasic = incrementedBasic + Util.roundOffIncrement((int) (Math.round((incrementedBasic + currentGradePay) * 3 / 100.0)));
+            //incrementedBasic = basicAtthisTime + Util.roundOffIncrement((int) (Math.round((basicAtthisTime + lastGradPay) * 3 / 100.0)));
+            incrementedBasic = basicAtthisTime + Util.roundOffIncrement(roundOff(basicAtthisTime,lastGradPay));
+            //incrementedBasic = incrementedBasic + Util.roundOffIncrement((int) (Math.round((incrementedBasic + currentGradePay) * 3 / 100.0)));
+            incrementedBasic = incrementedBasic + Util.roundOffIncrement(roundOff(incrementedBasic,currentGradePay));
             doIncrement = true;
             IncrementTime = 2;      // double increment
         } else if ("Triple".equalsIgnoreCase(selectedIncrement)) {
@@ -1290,12 +1309,14 @@ public class EmplyeeSalaryTemplate implements ActionListener {
             if (employeeList.size() > 0) {
                 suddenncrement = true;
                 basicAtthisTime = employeeList.get(employeeList.size() - 1).getDrawnSalary().getBasicPay();
-                incrementedBasic = basicAtthisTime + Util.roundOffIncrement((int) (Math.round((basicAtthisTime + currentGradePay) * 3 / 100.0) * 3));
+                //incrementedBasic = basicAtthisTime + Util.roundOffIncrement((int) (Math.round((basicAtthisTime + currentGradePay) * 3 / 100.0) * 3));
+                incrementedBasic = basicAtthisTime + Util.roundOffIncrement(roundOff(basicAtthisTime,currentGradePay)*3);
             } else { // Integer.parseInt(TBasic.getText())
                 basicAtthisTime = Integer.parseInt(TBasic.getText());
                 firstTimeAdmissible = Util.getAdmissibleBasicPay(basicAtthisTime, currentGradePay, (String) JPAY_BAND.getItemAt(JPAY_BAND.getSelectedIndex()));
                 firstTimeIcre = true;
-                incrementedBasic = basicAtthisTime + Util.roundOffIncrement((int) (Math.round((basicAtthisTime + currentGradePay) * 3 / 100.0) * 3));
+                //incrementedBasic = basicAtthisTime + Util.roundOffIncrement((int) (Math.round((basicAtthisTime + currentGradePay) * 3 / 100.0) * 3));
+                incrementedBasic = basicAtthisTime + Util.roundOffIncrement(roundOff(basicAtthisTime,currentGradePay)*3);
             }
 
         } else if ("Six Time".equalsIgnoreCase(selectedIncrement)) {
@@ -1305,12 +1326,14 @@ public class EmplyeeSalaryTemplate implements ActionListener {
 
                 suddenncrement = true;
                 basicAtthisTime = employeeList.get(employeeList.size() - 1).getDrawnSalary().getBasicPay();
-                incrementedBasic = basicAtthisTime + Util.roundOffIncrement((int) (Math.round((basicAtthisTime + currentGradePay) * 3 / 100.0) * 6));
+                //incrementedBasic = basicAtthisTime + Util.roundOffIncrement((int) (Math.round((basicAtthisTime + currentGradePay) * 3 / 100.0) * 6));
+                incrementedBasic = basicAtthisTime + Util.roundOffIncrement(roundOff(basicAtthisTime,currentGradePay) * 6);
             } else { // Integer.parseInt(TBasic.getText())
                 basicAtthisTime = Integer.parseInt(TBasic.getText());
                 firstTimeAdmissible = Util.getAdmissibleBasicPay(basicAtthisTime, currentGradePay, (String) JPAY_BAND.getItemAt(JPAY_BAND.getSelectedIndex()));
                 firstTimeIcre = true;
-                incrementedBasic = basicAtthisTime + Util.roundOffIncrement((int) (Math.round((basicAtthisTime + currentGradePay) * 3 / 100.0) * 6));
+                //incrementedBasic = basicAtthisTime + Util.roundOffIncrement((int) (Math.round((basicAtthisTime + currentGradePay) * 3 / 100.0) * 6));
+                incrementedBasic = basicAtthisTime + Util.roundOffIncrement(roundOff(basicAtthisTime,currentGradePay) * 6);
             }
         }
 
@@ -1318,6 +1341,21 @@ public class EmplyeeSalaryTemplate implements ActionListener {
         setPaybandLevel();
         lastGradPay = 0;
     }
+
+
+    private int roundOff(int basicAtthisTime, int lastGradPay) {
+
+        int temp1=0;
+        double original=(basicAtthisTime + lastGradPay) * 3 / 100.0;
+        temp1=(int)original;
+        if(temp1%10==0){
+            return temp1;
+        }else{
+            return (int) (Math.round(original));
+        }
+
+    }
+
 
 
 }
