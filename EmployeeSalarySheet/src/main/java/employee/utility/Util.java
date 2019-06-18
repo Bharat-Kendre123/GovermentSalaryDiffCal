@@ -401,12 +401,25 @@ public class Util {
 
     }
 
+    private static int roundOff(int basicAtthisTime, int lastGradPay) {
+
+        int temp1=0;
+        double original=(basicAtthisTime + lastGradPay) * 3 / 100.0;
+        temp1=(int)original;
+        if(temp1%10==0){
+            return temp1;
+        }else{
+            return (int) (Math.round(original));
+        }
+
+    }
     public static int doLookupAndGetTheAdmiissibleBasicPay(int lastAdmissibleBasic, String payBand, int incrementTime) {
 
         int incrementedBasic = 0;
 
         if (incrementTime > 0) {
-            incrementedBasic = lastAdmissibleBasic + Util.roundOffIncrement((int) (Math.round((lastAdmissibleBasic) * 3 / 100.0) * incrementTime));
+            //incrementedBasic = lastAdmissibleBasic + Util.roundOffIncrement((int) (Math.round((lastAdmissibleBasic) * 3 / 100.0) * incrementTime));
+            incrementedBasic = lastAdmissibleBasic + Util.roundOffIncrement(roundOff(lastAdmissibleBasic,0) * incrementTime);
             int reminderUpTo100Place = incrementedBasic % 100;
             if (reminderUpTo100Place > 50) {
                 incrementedBasic = incrementedBasic + (100 - reminderUpTo100Place);
