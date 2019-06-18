@@ -339,8 +339,13 @@ public class UtilForStyling {
         int payToNPA = additionArray[additionArray.length - 4];
         int dcpsTotal = additionArray[additionArray.length - 2];
         int netAmount = additionArray[additionArray.length - 1] - recoveryAmt;
-
         int[] installments = Util.getInstallmentAmount(netAmount);
+
+        int totalBPArrear=dcpsTotal;
+        for(int temp:installments)
+            totalBPArrear+=temp;
+
+
         //  --------------Note ------------------------------
         int rowId = 5;
         XSSFCellStyle upper = setBorderBold(workbook, 1);
@@ -550,7 +555,7 @@ public class UtilForStyling {
         cellForth2023.setCellStyle(headerStyle);
 
 
-        // Forth  INSTALLMENT
+        // Total amount
         rowId++;  // INCREASE ROW
         installmentIndex++;
         XSSFRow totalRow = spreadsheet.getRow(rowId);
@@ -559,7 +564,7 @@ public class UtilForStyling {
         cellFirstToatl.setCellStyle(headerStyle);
 
         Cell cellSecondTotal = totalRow.createCell(36);
-        cellSecondTotal.setCellValue(payToNPA);
+        cellSecondTotal.setCellValue(totalBPArrear);
         cellSecondTotal.setCellStyle(headerStyle);
 
         Cell cellThirdTotal = totalRow.createCell(37);
