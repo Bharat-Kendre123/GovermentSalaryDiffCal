@@ -457,7 +457,7 @@ public class UtilForStyling {
         int installmentIndex = 0;
         XSSFRow firstInstallmentRow = spreadsheet.getRow(rowId);
         Cell cellFirst2019 = firstInstallmentRow.createCell(35);
-        cellFirst2019.setCellValue("1st insta 2019+Adj Amt");
+        cellFirst2019.setCellValue("1st insta 2019+NPS ARR");
         cellFirst2019.setCellStyle(headerStyle);
 
         Cell cellSecond2019 = firstInstallmentRow.createCell(36);
