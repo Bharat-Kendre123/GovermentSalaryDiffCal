@@ -359,7 +359,7 @@ public class Util {
     public static int[] getInstallmentAmount(int totalAmount) {
         int reminder = totalAmount % 5;
         int installmentAmount = (totalAmount - reminder) / 5;
-        return new int[]{installmentAmount, installmentAmount, installmentAmount, installmentAmount, installmentAmount + reminder};
+        return new int[]{installmentAmount+ reminder, installmentAmount, installmentAmount, installmentAmount, installmentAmount };
     }
 
     public static void setDuratonStatement(List<Employee> employeeSheetList) {
