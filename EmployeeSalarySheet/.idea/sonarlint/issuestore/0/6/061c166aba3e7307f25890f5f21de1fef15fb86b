@@ -1,0 +1,96 @@
+
+?squid:S1444"(Make this "public static s1" field final(œ‹ Û
+?squid:S14448"(Make this "public static s2" field final(¹öæ
+Dsquid:S1444d"(Make this "public static s3" field final(ëÖØûøÿÿÿÿ
+Esquid:S1444"(Make this "public static s4" field final(Øş÷µÿÿÿÿÿ
+Esquid:S1444»"(Make this "public static s5" field final(àŸ¤°ıÿÿÿÿ
+@squid:S1444ç"(Make this "public static s6" field final(˜”§Ñ
+Esquid:S1444’"(Make this "public static s7" field final(ÖµÛÄùÿÿÿÿ
+Esquid:S1444½"(Make this "public static s8" field final(âõ©Äúÿÿÿÿ
+@squid:S1444è"(Make this "public static s9" field final(´¿Ëÿ
+Asquid:S1444“")Make this "public static s10" field final(ñÈ”
+Fsquid:S1444½")Make this "public static s11" field final(Å©»Åøÿÿÿÿ
+Asquid:S1444è")Make this "public static s12" field final(Ñ¤¤­
+Asquid:S1444“")Make this "public static s13" field final(¯²¿Ó
+Asquid:S1444¾")Make this "public static s14" field final(ñ¨Î£
+Fsquid:S1444é")Make this "public static s15" field final(ÔÎû’úÿÿÿÿ
+Asquid:S1444•")Make this "public static s16" field final(¤µöÒ
+Fsquid:S1444À")Make this "public static s17" field final(ùÏ²ãúÿÿÿÿ
+Asquid:S1444ë")Make this "public static s18" field final(¢ïø’
+@squid:S1444–")Make this "public static s19" field final(í€åh
+Asquid:S1444Á")Make this "public static s20" field final(Ó·’³
+Asquid:S1444í")Make this "public static s21" field final(Ò†ä¿
+Asquid:S1444™")Make this "public static s22" field final(Ø“¥ø
+@squid:S1444Ä")Make this "public static s23" field final(—_
+Fsquid:S1444ï")Make this "public static s24" field final(âªà­ÿÿÿÿÿ
+Fsquid:S1444˜")Make this "public static s25" field final(¨÷øúÿÿÿÿ
+Asquid:S1444¾")Make this "public static s26" field final(ìùÆé
+Asquid:S1444â")Make this "public static s27" field final(ÌÚĞó
+Asquid:S1444ü")Make this "public static s28" field final(öõİ¤
+Fsquid:S1444“	")Make this "public static s29" field final(¨÷ŠÁúÿÿÿÿ
+Fsquid:S1444¨	")Make this "public static s30" field final(ğ÷Ï¬şÿÿÿÿ
+Asquid:S1444º	")Make this "public static s31" field final(—ÓŞ¾
+|"squid:ClassVariableVisibilityCheck"NMake s1 a static final constant or non-public and provide accessors if needed.(œ‹ Û
+|"squid:ClassVariableVisibilityCheck8"NMake s2 a static final constant or non-public and provide accessors if needed.(¹öæ
+"squid:ClassVariableVisibilityCheckd"NMake s3 a static final constant or non-public and provide accessors if needed.(ëÖØûøÿÿÿÿ
+‚"squid:ClassVariableVisibilityCheck"NMake s4 a static final constant or non-public and provide accessors if needed.(Øş÷µÿÿÿÿÿ
+‚"squid:ClassVariableVisibilityCheck»"NMake s5 a static final constant or non-public and provide accessors if needed.(àŸ¤°ıÿÿÿÿ
+}"squid:ClassVariableVisibilityCheckç"NMake s6 a static final constant or non-public and provide accessors if needed.(˜”§Ñ
+‚"squid:ClassVariableVisibilityCheck’"NMake s7 a static final constant or non-public and provide accessors if needed.(ÖµÛÄùÿÿÿÿ
+‚"squid:ClassVariableVisibilityCheck½"NMake s8 a static final constant or non-public and provide accessors if needed.(âõ©Äúÿÿÿÿ
+}"squid:ClassVariableVisibilityCheckè"NMake s9 a static final constant or non-public and provide accessors if needed.(´¿Ëÿ
+~"squid:ClassVariableVisibilityCheck“"OMake s10 a static final constant or non-public and provide accessors if needed.(ñÈ”
+ƒ"squid:ClassVariableVisibilityCheck½"OMake s11 a static final constant or non-public and provide accessors if needed.(Å©»Åøÿÿÿÿ
+~"squid:ClassVariableVisibilityCheckè"OMake s12 a static final constant or non-public and provide accessors if needed.(Ñ¤¤­
+~"squid:ClassVariableVisibilityCheck“"OMake s13 a static final constant or non-public and provide accessors if needed.(¯²¿Ó
+~"squid:ClassVariableVisibilityCheck¾"OMake s14 a static final constant or non-public and provide accessors if needed.(ñ¨Î£
+ƒ"squid:ClassVariableVisibilityChecké"OMake s15 a static final constant or non-public and provide accessors if needed.(ÔÎû’úÿÿÿÿ
+~"squid:ClassVariableVisibilityCheck•"OMake s16 a static final constant or non-public and provide accessors if needed.(¤µöÒ
+ƒ"squid:ClassVariableVisibilityCheckÀ"OMake s17 a static final constant or non-public and provide accessors if needed.(ùÏ²ãúÿÿÿÿ
+~"squid:ClassVariableVisibilityCheckë"OMake s18 a static final constant or non-public and provide accessors if needed.(¢ïø’
+}"squid:ClassVariableVisibilityCheck–"OMake s19 a static final constant or non-public and provide accessors if needed.(í€åh
+~"squid:ClassVariableVisibilityCheckÁ"OMake s20 a static final constant or non-public and provide accessors if needed.(Ó·’³
+~"squid:ClassVariableVisibilityCheckí"OMake s21 a static final constant or non-public and provide accessors if needed.(Ò†ä¿
+~"squid:ClassVariableVisibilityCheck™"OMake s22 a static final constant or non-public and provide accessors if needed.(Ø“¥ø
+}"squid:ClassVariableVisibilityCheckÄ"OMake s23 a static final constant or non-public and provide accessors if needed.(—_
+ƒ"squid:ClassVariableVisibilityCheckï"OMake s24 a static final constant or non-public and provide accessors if needed.(âªà­ÿÿÿÿÿ
+ƒ"squid:ClassVariableVisibilityCheck˜"OMake s25 a static final constant or non-public and provide accessors if needed.(¨÷øúÿÿÿÿ
+~"squid:ClassVariableVisibilityCheck¾"OMake s26 a static final constant or non-public and provide accessors if needed.(ìùÆé
+~"squid:ClassVariableVisibilityCheckâ"OMake s27 a static final constant or non-public and provide accessors if needed.(ÌÚĞó
+~"squid:ClassVariableVisibilityCheckü"OMake s28 a static final constant or non-public and provide accessors if needed.(öõİ¤
+ƒ"squid:ClassVariableVisibilityCheck“	"OMake s29 a static final constant or non-public and provide accessors if needed.(¨÷ŠÁúÿÿÿÿ
+ƒ"squid:ClassVariableVisibilityCheck¨	"OMake s30 a static final constant or non-public and provide accessors if needed.(ğ÷Ï¬şÿÿÿÿ
+~"squid:ClassVariableVisibilityCheckº	"OMake s31 a static final constant or non-public and provide accessors if needed.(—ÓŞ¾
+Qsquid:S1118
+":Add a private constructor to hide the implicit public one.(“ˆùÖ
+4squid:S2386"Make this member "protected".(œ‹ Û
+4squid:S23868"Make this member "protected".(¹öæ
+9squid:S2386d"Make this member "protected".(ëÖØûøÿÿÿÿ
+:squid:S2386"Make this member "protected".(Øş÷µÿÿÿÿÿ
+:squid:S2386»"Make this member "protected".(àŸ¤°ıÿÿÿÿ
+5squid:S2386ç"Make this member "protected".(˜”§Ñ
+:squid:S2386’"Make this member "protected".(ÖµÛÄùÿÿÿÿ
+:squid:S2386½"Make this member "protected".(âõ©Äúÿÿÿÿ
+5squid:S2386è"Make this member "protected".(´¿Ëÿ
+5squid:S2386“"Make this member "protected".(ñÈ”
+:squid:S2386½"Make this member "protected".(Å©»Åøÿÿÿÿ
+5squid:S2386è"Make this member "protected".(Ñ¤¤­
+5squid:S2386“"Make this member "protected".(¯²¿Ó
+5squid:S2386¾"Make this member "protected".(ñ¨Î£
+:squid:S2386é"Make this member "protected".(ÔÎû’úÿÿÿÿ
+5squid:S2386•"Make this member "protected".(¤µöÒ
+:squid:S2386À"Make this member "protected".(ùÏ²ãúÿÿÿÿ
+5squid:S2386ë"Make this member "protected".(¢ïø’
+4squid:S2386–"Make this member "protected".(í€åh
+5squid:S2386Á"Make this member "protected".(Ó·’³
+5squid:S2386í"Make this member "protected".(Ò†ä¿
+5squid:S2386™"Make this member "protected".(Ø“¥ø
+4squid:S2386Ä"Make this member "protected".(—_
+:squid:S2386ï"Make this member "protected".(âªà­ÿÿÿÿÿ
+:squid:S2386˜"Make this member "protected".(¨÷øúÿÿÿÿ
+5squid:S2386¾"Make this member "protected".(ìùÆé
+5squid:S2386â"Make this member "protected".(ÌÚĞó
+5squid:S2386ü"Make this member "protected".(öõİ¤
+:squid:S2386“	"Make this member "protected".(¨÷ŠÁúÿÿÿÿ
+:squid:S2386¨	"Make this member "protected".(ğ÷Ï¬şÿÿÿÿ
+5squid:S2386º	"Make this member "protected".(—ÓŞ¾
