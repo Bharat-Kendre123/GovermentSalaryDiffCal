@@ -352,6 +352,9 @@ public class UtilForStyling {
         XSSFCellStyle inner = setBorderBold(workbook, 3);
         XSSFCellStyle lower = setBorderBold(workbook, 2);
         XSSFRow xrowFor2019 = spreadsheet.getRow(rowId);
+        if(xrowFor2019==null){
+            xrowFor2019= spreadsheet.createRow(rowId);
+        }
         Cell installment2019 = xrowFor2019.createCell(35);
         installment2019.setCellValue("Note :-");
         installment2019.setCellStyle(upper);
@@ -362,6 +365,9 @@ public class UtilForStyling {
         //---------------------Basic Pay-----------------------------------
         rowId++;  // INCREASE ROW
         XSSFRow recoveryRow = spreadsheet.getRow(rowId);
+        if(recoveryRow==null){
+            recoveryRow= spreadsheet.createRow(rowId);
+        }
         Cell recoveryCell = recoveryRow.createCell(35);
         recoveryCell.setCellValue("B.P Arrear Amt. = " + payToNPA);
         recoveryCell.setCellStyle(inner);
@@ -374,6 +380,9 @@ public class UtilForStyling {
 
         rowId++;  // INCREASE ROW
         XSSFRow netPayble = spreadsheet.getRow(rowId);
+        if(netPayble==null){
+            netPayble= spreadsheet.createRow(rowId);
+        }
         Cell netInstCell = netPayble.createCell(35);
         netInstCell.setCellValue("Recovery Amt. = " + recoveryAmt);
         netInstCell.setCellStyle(inner);
@@ -386,6 +395,9 @@ public class UtilForStyling {
 
         rowId++;  // INCREASE ROW
         XSSFRow firstInstRow = spreadsheet.getRow(rowId);
+        if(firstInstRow==null){
+            firstInstRow= spreadsheet.createRow(rowId);
+        }
         Cell firstInstCell = firstInstRow.createCell(35);
         firstInstCell.setCellValue("D.C.P.S. Arrear = " + dcpsTotal);
         firstInstCell.setCellStyle(inner);
@@ -397,6 +409,9 @@ public class UtilForStyling {
 
         rowId++;  // INCREASE ROW
         XSSFRow secondInstRow = spreadsheet.getRow(rowId);
+        if(secondInstRow==null){
+            secondInstRow= spreadsheet.createRow(rowId);
+        }
         Cell secondtInstCell = secondInstRow.createCell(35);
         if(dcpsFlag){
             secondtInstCell.setCellValue("Net Amt = " + netAmount);
@@ -414,6 +429,9 @@ public class UtilForStyling {
 
         rowId++;  // INCREASE ROW
         XSSFRow thirdInstRow = spreadsheet.getRow(rowId);
+        if(thirdInstRow==null){
+            thirdInstRow= spreadsheet.createRow(rowId);
+        }
         Cell thirdInstCell = thirdInstRow.createCell(35);
         if(dcpsFlag) {
             thirdInstCell.setCellValue("Hence, Net Amt = " + netAmount + "/5");
@@ -431,6 +449,9 @@ public class UtilForStyling {
         headerStyle.setWrapText(false);
         rowId++;  // INCREASE ROW
         XSSFRow heaer = spreadsheet.getRow(rowId);
+        if(heaer==null){
+            heaer= spreadsheet.createRow(rowId);
+        }
         Cell headerCellFirst = heaer.createCell(35);
         headerCellFirst.setCellValue("Insta. No.");
         headerCellFirst.setCellStyle(headerStyle);
@@ -456,6 +477,9 @@ public class UtilForStyling {
         rowId++;  // INCREASE ROW
         int installmentIndex = 0;
         XSSFRow firstInstallmentRow = spreadsheet.getRow(rowId);
+        if(firstInstallmentRow==null){
+            firstInstallmentRow= spreadsheet.createRow(rowId);
+        }
         Cell cellFirst2019 = firstInstallmentRow.createCell(35);
         cellFirst2019.setCellValue("1st insta 2019+NPS ARR");
         cellFirst2019.setCellStyle(headerStyle);
@@ -477,6 +501,9 @@ public class UtilForStyling {
         rowId++;  // INCREASE ROW
         installmentIndex++;
         XSSFRow secondInstallmentRow = spreadsheet.getRow(rowId);
+        if(secondInstallmentRow==null){
+            secondInstallmentRow= spreadsheet.createRow(rowId);
+        }
         Cell cellFirst2020 = secondInstallmentRow.createCell(35);
         cellFirst2020.setCellValue(" 2nd Insta. 2020");
         cellFirst2020.setCellStyle(headerStyle);
@@ -498,6 +525,9 @@ public class UtilForStyling {
         rowId++;
         installmentIndex++;
         XSSFRow thirdInstallmentRow = spreadsheet.getRow(rowId);
+        if(thirdInstallmentRow==null){
+            thirdInstallmentRow= spreadsheet.createRow(rowId);
+        }
         Cell cellFirst2021 = thirdInstallmentRow.createCell(35);
         cellFirst2021.setCellValue(" 3rd Insta. 2021");
         cellFirst2021.setCellStyle(headerStyle);
@@ -518,6 +548,9 @@ public class UtilForStyling {
         rowId++;  // INCREASE ROW
         installmentIndex++;
         XSSFRow forthInstallmentRow = spreadsheet.getRow(rowId);
+        if(forthInstallmentRow==null){
+            forthInstallmentRow= spreadsheet.createRow(rowId);
+        }
         Cell cellFirst2022 = forthInstallmentRow.createCell(35);
         cellFirst2022.setCellValue(" 4th Insta. 2022");
         cellFirst2022.setCellStyle(headerStyle);
@@ -538,6 +571,9 @@ public class UtilForStyling {
         rowId++;  // INCREASE ROW
         installmentIndex++;
         XSSFRow fifthInstallmentRow = spreadsheet.getRow(rowId);
+        if(fifthInstallmentRow==null){
+            fifthInstallmentRow= spreadsheet.createRow(rowId);
+        }
         Cell cellFirst2023 = fifthInstallmentRow.createCell(35);
         cellFirst2023.setCellValue(" 5th Insta. 2023");
         cellFirst2023.setCellStyle(headerStyle);
@@ -559,6 +595,9 @@ public class UtilForStyling {
         rowId++;  // INCREASE ROW
         installmentIndex++;
         XSSFRow totalRow = spreadsheet.getRow(rowId);
+        if(totalRow==null){
+            totalRow= spreadsheet.createRow(rowId);
+        }
         Cell cellFirstToatl = totalRow.createCell(35);
         cellFirstToatl.setCellValue(" Total ");
         cellFirstToatl.setCellStyle(headerStyle);
@@ -580,6 +619,9 @@ public class UtilForStyling {
             rowId=rowId+2;  // INCREASE ROW
 
             XSSFRow statementRow = spreadsheet.getRow(rowId);
+            if(statementRow==null){
+                statementRow= spreadsheet.createRow(rowId);
+            }
             Cell statementCell = statementRow.createCell(35);
             statementCell.setCellValue("Note:- OverPayment Recovery Statement Copy Enclosed");
             statementCell.setCellStyle(headerStyle);
