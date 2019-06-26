@@ -16,7 +16,7 @@ import java.util.List;
 
 public class ExcelSheetCreator {
 
-    public static final String[] monthList = {"JAN", "FEB", "MAr", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "ACT", "NOV", "DEC"};
+    public static final String[] monthList = {"JAN", "FEB", "MAr", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"};
 
     public static final String[] columnLsit = {"Sr.No.", "Month", "Pay", "D.A", "T.A", "C.A/Other A.", "W.A", "H.R.A.", "N.P.A", "Total From pay to NPA", "P.T", "D.C.P.S", "Pay", "GradePay", "D.A", "T.A", "C.A/Other A.", "W.A", "H.R.A", "N.P.A", "Total From pay to NPA", "P.T", "D.C.P.S", "Pay", "D.A", "T.A", "C.A/Other A.", "WA", "H.R.A", "N.P.A", "Total From pay to NPA", "P.T", "D.C.P.S", "Net Amount"};
 
