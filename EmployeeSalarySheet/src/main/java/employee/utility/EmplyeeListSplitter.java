@@ -74,9 +74,12 @@ public class EmplyeeListSplitter {
         splittedList.add(getExcactSalaryForThisDuration(e1, noOfDaysWorkFromMonth, totalDaysOFromfMonth));
 
         // directly set the other part of employee. Just set the from date part
-        employee.setFromDay(1);
-        employee.setFromMonth(fromMonth + 1);
-        splittedList.add(employee);
+        if(employee.getFromMonth()!=employee.getToMonth()){
+            employee.setFromDay(1);
+            employee.setFromMonth(fromMonth + 1);
+            splittedList.add(employee);
+        }
+
         return splittedList;
 
     }

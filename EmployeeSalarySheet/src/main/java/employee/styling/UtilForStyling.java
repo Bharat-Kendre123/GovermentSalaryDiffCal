@@ -203,7 +203,7 @@ public class UtilForStyling {
             if (cellIdforTotal == 1) {
                 cellForTaoatl.setCellValue("Total");
             } else if (cellIdforTotal == 0) {
-                cellForTaoatl.setCellValue(rowNumber);
+                cellForTaoatl.setCellValue("");  // row number for total is not required
             } else {
                 cellForTaoatl.setCellValue(Addition[cellIdforTotal]);
             }
