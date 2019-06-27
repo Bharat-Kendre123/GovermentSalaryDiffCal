@@ -1,3 +1,18 @@
 /target/
 
-/.idea
+/.classpath
+
+/*.xlsx
+
+*.iml
+
+.settings/*.prefs
+/target
+
+
+.project
+
+EmployeeSalarySheet/.idea/sonarlint/*
+EmployeeSalarySheet/.idea/sonarlint/*
+
+C:/workspace/work/GovermentSalaryDiffCal/EmployeeSalarySheet/.idea/

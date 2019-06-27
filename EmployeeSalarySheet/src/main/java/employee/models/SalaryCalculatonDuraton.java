@@ -1,4 +1,5 @@
 package employee.models;
+
 import java.time.YearMonth;
 
 /**
@@ -10,9 +11,9 @@ import java.time.YearMonth;
  */
 public class SalaryCalculatonDuraton {
 
-    public int  fromDay;
-    public int  fromMonth;
-    public int  fromYear;
+    public int fromDay;
+    public int fromMonth;
+    public int fromYear;
     public int toDay;
     public int toMonth;
     public int toYear;
@@ -31,19 +32,18 @@ public class SalaryCalculatonDuraton {
         this.toYear = toYear;
 
         /*for from month we can dirrectly check the date is mid day of month orr not
-        *  because start date is always 1 but eend day may be diffferent. So we arre calulating date
-        *  and check it
-        * */
-        YearMonth lengthOfMonth= YearMonth.of(toYear,toMonth);
-        if(fromDay!=1 || lengthOfMonth.lengthOfMonth()!=toDay )
-        {
+         *  because start date is always 1 but eend day may be diffferent. So we arre calulating date
+         *  and check it
+         * */
+        YearMonth lengthOfMonth = YearMonth.of(toYear, toMonth);
+        if (fromDay != 1 || lengthOfMonth.lengthOfMonth() != toDay) {
             inComplete = true;
-            if(fromDay!=1 && lengthOfMonth.lengthOfMonth()!=toDay){
+            if (fromDay != 1 && lengthOfMonth.lengthOfMonth() != toDay) {
                 isStartMonthNotCompelete = true;
                 isEndMonthNotCompelete = true;
-            }else if(fromDay!=1){
+            } else if (fromDay != 1) {
                 isStartMonthNotCompelete = true;
-            }else{
+            } else {
                 isEndMonthNotCompelete = true;
             }
         }

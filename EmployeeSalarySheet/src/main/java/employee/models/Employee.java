@@ -1,5 +1,6 @@
 package employee.models;
-public class Employee implements Cloneable{
+
+public class Employee implements Cloneable {
 
     private SalaryComponenets admissibleSalary;
     private SalaryComponenets drawnSalary;
@@ -16,9 +17,9 @@ public class Employee implements Cloneable{
     public boolean monthFlag;
 
     public Employee() {
-        admissibleSalary=new SalaryComponenets();
-        drawnSalary=new SalaryComponenets();
-        diff    = new SalaryComponenets();
+        admissibleSalary = new SalaryComponenets();
+        drawnSalary = new SalaryComponenets();
+        diff = new SalaryComponenets();
     }
 
     public SalaryComponenets getAdmissibleSalary() {

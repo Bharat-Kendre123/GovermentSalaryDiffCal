@@ -1,0 +1,27 @@
+
+Ksquid:S1444"/Make this "public static forthStep" field final(Ì…å¥şÿÿÿÿ
+Msquid:S1444"1Make this "public static seventhStep" field final(ßÈë‘øÿÿÿÿ
+„"squid:ClassVariableVisibilityCheck"VMake secondStep a static final constant or non-public and provide accessors if needed.(ü…èæ
+Gsquid:S1444"0Make this "public static secondStep" field final(ü…èæ
+ƒ"squid:ClassVariableVisibilityCheck"UMake eightStep a static final constant or non-public and provide accessors if needed.(ã·„´
+Ksquid:S1444"/Make this "public static sixthStep" field final(„ Æøÿÿÿÿ
+ƒ"squid:ClassVariableVisibilityCheck"UMake firstStep a static final constant or non-public and provide accessors if needed.(òí’ã
+ˆ"squid:ClassVariableVisibilityCheck"UMake fifthStep a static final constant or non-public and provide accessors if needed.(ß‰Ï÷üÿÿÿÿ
+isquid:S11928"MDefine a constant instead of duplicating this literal "Courier New" 11 times.(”¤„øÿÿÿÿ
+Ksquid:S1444"/Make this "public static fifthStep" field final(ß‰Ï÷üÿÿÿÿ
+csquid:CommentedOutCodeLine‚"<This block of commented-out lines of code should be removed.(ÚÔª…
+ƒ"squid:ClassVariableVisibilityCheck"UMake thirdStep a static final constant or non-public and provide accessors if needed.(§ò‡Ü
+Gsquid:S11721"+Remove this unused method parameter "step".(¯Û¹Œúÿÿÿÿ
+Osquid:S1135"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+ˆ"squid:ClassVariableVisibilityCheck"UMake forthStep a static final constant or non-public and provide accessors if needed.(Ì…å¥şÿÿÿÿ
+Fsquid:S1444"/Make this "public static eightStep" field final(ã·„´
+ˆ"squid:ClassVariableVisibilityCheck"UMake sixthStep a static final constant or non-public and provide accessors if needed.(„ Æøÿÿÿÿ
+rsquid:S00115/"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ËàÎ¶
+qsquid:S00115-"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(‹ûù
+Fsquid:S1444"/Make this "public static firstStep" field final(òí’ã
+Š"squid:ClassVariableVisibilityCheck"WMake seventhStep a static final constant or non-public and provide accessors if needed.(ßÈë‘øÿÿÿÿ
+Wsquid:UselessImportCheck"3Remove this unused import 'javax.swing.JTextField'.(İË—
+€"squid:ClassVariableVisibilityCheck"RMake nighth a static final constant or non-public and provide accessors if needed.(©¯Åâ
+rsquid:S00115."ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(¢‡ğÀ
+Fsquid:S1444"/Make this "public static thirdStep" field final(§ò‡Ü
+Csquid:S1444",Make this "public static nighth" field final(©¯Åâ

@@ -1,0 +1,9 @@
+
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(€Ïùƒüÿÿÿÿ
+\squid:S1126"BReplace this if-then-else statement by a single method invocation.(« ƒ¬þÿÿÿÿ
+\squid:S1126"BReplace this if-then-else statement by a single method invocation.(« ƒ¬þÿÿÿÿ
+>squid:S1481")Remove this unused "list" local variable.(¹ÃäÍ
+gsquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 27 to the 15 allowed.(­â«ü
+Rsquid:S00107"<Method has 9 parameters, which is greater than 7 authorized.(ßÀ»ð
+Msquid:S1854"8Remove this useless assignment to local variable "list".(¹ÃäÍ
