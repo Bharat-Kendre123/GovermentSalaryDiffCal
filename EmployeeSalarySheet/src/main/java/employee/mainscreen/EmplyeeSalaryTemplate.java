@@ -880,14 +880,17 @@ public class EmplyeeSalaryTemplate implements ActionListener {
             employee.setToMonth(salaryCalculatonDuraton.getToMonth());
             employee.setToYear(salaryCalculatonDuraton.getToYear());
             if (salaryCalculatonDuraton.isIncrement()) {
+
                 //basic = basic + Util.roundOffIncrement((int) (Math.round((basic + gradePay) * 3 / 100.0)));
                 basic = basic + Util.roundOffIncrement(roundOff(basic,gradePay));
-                basic = basic + Util.roundOffIncrement((int) (Math.round((basic + gradePay) * 3 / 100.0)));
+
+
                 if(isAdmissibleinputLocal){
                     //admissibleBasicPayInput=admissibleBasicPayInput + Util.roundOffIncrement((int) (Math.round((admissibleBasicPayInput) * 3 / 100.0)));
                     admissibleBasicPayInput=admissibleBasicPayInput + Util.roundOffIncrement(roundOff(admissibleBasicPayInput,0));
                     admissibleBasicPayInput=Util.getAdmissibleBasicPayForManualInput(admissibleBasicPayInput,(String) JPAY_BAND.getItemAt(JPAY_BAND.getSelectedIndex()));
                 }
+
             }
             employee.getDrawnSalary().setBasicPay(basic);
             employee.getDrawnSalary().setGradepay(Integer.parseInt(TGP.getText()));
@@ -972,15 +975,17 @@ public class EmplyeeSalaryTemplate implements ActionListener {
             employee.setToMonth(salaryCalculatonDuraton.getToMonth());
             employee.setToYear(salaryCalculatonDuraton.getToYear());
             if (salaryCalculatonDuraton.isIncrement()) {
+
                 //basic = basic + Util.roundOffIncrement((int) (Math.round((basic + gradePay) * 3 / 100.0)));
                 basic = basic + Util.roundOffIncrement(roundOff(basic,gradePay));
+
+
                 if(isAdmissibleinputLocal){
                     //admissibleBasicPayInput=admissibleBasicPayInput + Util.roundOffIncrement((int) (Math.round((admissibleBasicPayInput) * 3 / 100.0)));
                     admissibleBasicPayInput=admissibleBasicPayInput + Util.roundOffIncrement(roundOff(admissibleBasicPayInput,0));
                     admissibleBasicPayInput=Util.getAdmissibleBasicPayForManualInput(admissibleBasicPayInput,(String) JPAY_BAND.getItemAt(JPAY_BAND.getSelectedIndex()));
                 }
-                //basic = basic + Util.roundOffIncrement((int) (Math.round((basic + gradePay) * 3 / 100.0)));
-                basic = basic + Util.roundOffIncrement(roundOff(basic,gradePay));
+
             }
             employee.getDrawnSalary().setBasicPay(basic);
             employee.getDrawnSalary().setGradepay(Integer.parseInt(TGP.getText()));
