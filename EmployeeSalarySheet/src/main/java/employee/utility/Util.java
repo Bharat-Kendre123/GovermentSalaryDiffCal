@@ -102,6 +102,31 @@ public class Util {
         return new7PaySalary;
     }
 
+
+    public static int getAdmissibleBasicPayForManualInput(int admissibleBasic, String key) {
+
+
+        int reminderUpTo100Place = admissibleBasic % 100;
+        if (reminderUpTo100Place > 50) {
+            admissibleBasic = admissibleBasic + (100 - reminderUpTo100Place);
+        } else {
+            admissibleBasic = admissibleBasic - reminderUpTo100Place;
+        }
+
+        int new7PaySalary = 0;
+        int[] i = PayBandMapObject.payBandLevelArrayMaping.get(key);
+        if (i == null) {
+            i = PayBandMapObject.payBandLevelArrayMaping.get(67000);
+        }
+        for (int data : i) {
+            if (admissibleBasic == data || admissibleBasic < data) {
+                new7PaySalary = data;
+                break;
+            }
+        }
+        return new7PaySalary;
+    }
+
     public static int getLevelFor7thPay(int basic6PaySalary, int gradepayOf6, String key) {
         int salary = (int) Math.round(((basic6PaySalary + gradepayOf6) * 2.57));
         int new7PaySalary = 0;
@@ -119,6 +144,29 @@ public class Util {
         return counter;
     }
 
+    public static int getLevelFor7thPayForAdmissibleBasicPayInput(int basic7PaySalary,String key) {
+        int salary = basic7PaySalary;
+
+        int[] i = PayBandMapObject.payBandLevelArrayMaping.get(key);
+        if (i == null) {
+            i = PayBandMapObject.payBandLevelArrayMaping.get(67000);
+        }
+        int counter = 0;
+        int level=0;
+
+        for (int data : i) {
+            counter++;
+            if (salary == data || salary < data) {
+                level=counter;
+                break;
+            }
+            if(i.length == counter){
+                level=-1;
+            }
+        }
+
+        return level;
+    }
 
     public static int getHRA(int per, int salary) {
         return ((int) Math.round(salary * per / 100.0));
