@@ -465,7 +465,7 @@ public class EmplyeeSalaryTemplate implements ActionListener {
 
     // reset all loball properties
     private void resetGlobalProperties() {
-        lastGradPay = 0;
+       // lastGradPay = 0;
         doIncrement = false;
         isBeforejulyIncrement = false;
         firstTimeIcre = false;
