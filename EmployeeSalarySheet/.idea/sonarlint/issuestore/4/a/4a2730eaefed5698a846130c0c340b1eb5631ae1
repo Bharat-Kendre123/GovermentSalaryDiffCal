@@ -1,0 +1,10 @@
+
+Ksquid:EmptyStatementUsageCheckI"Remove this empty statement.(Åñ­õþÿÿÿÿ
+bsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¾áÒÕ
+gsquid:CommentedOutCodeLineM"<This block of commented-out lines of code should be removed.(™®£Žùÿÿÿÿ
+Esquid:S1659")Declare "welcomeText" on a separate line.(ØÃòþÿÿÿÿ
+Bsquid:S1659"&Declare "wrongPws" on a separate line.(ØÃòþÿÿÿÿ
+Ksquid:EmptyStatementUsageCheckC"Remove this empty statement.(Åñ­õþÿÿÿÿ
+gsquid:CommentedOutCodeLine+"<This block of commented-out lines of code should be removed.(™®£Žùÿÿÿÿ
+\squid:CallToDeprecatedMethod<"/Remove this use of "getText"; it is deprecated.(´ßŽùÿÿÿÿ
+Nsquid:S1135;"2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿ

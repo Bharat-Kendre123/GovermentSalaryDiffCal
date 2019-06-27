@@ -1,0 +1,30 @@
+
+4squid:S2386"Make this member "protected".(¿šşÃ
+_squid:S2184ó"BCast one of the operands of this addition operation to a "double".(´åáàıÿÿÿÿ
+Zsquid:S2184ø"BCast one of the operands of this addition operation to a "double".(ˆóäª
+bsquid:S1192"FDefine a constant instead of duplicating this literal "N.P.A" 6 times.(Ôñ…áùÿÿÿÿ
+dsquid:S1192"HDefine a constant instead of duplicating this literal "D.C.P.S" 6 times.(Ôñ…áùÿÿÿÿ
+osquid:S3776"SRefactor this method to reduce its Cognitive Complexity from 194 to the 15 allowed.(‡ÌˆÌûÿÿÿÿ
+Qsquid:S1854©"9Remove this useless assignment to local variable "rowid".(ıúØÃ
+osquid:S00117Í"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©ØÁùÿÿÿÿ
+_squid:S2184›"BCast one of the operands of this addition operation to a "double".(´åáàıÿÿÿÿ
+]squid:S2184ı"ECast one of the operands of this subtraction operation to a "double".(ãÚ¨†
+Zsquid:S2184 "BCast one of the operands of this addition operation to a "double".(ˆóäª
+Zsquid:S2184–"BCast one of the operands of this addition operation to a "double".(ŒÇ€Å
+rsquid:S1192"VDefine a constant instead of duplicating this literal "Total From pay to NPA" 6 times.(Ôñ…áùÿÿÿÿ
+isquid:S00117>"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“£¡
+‹"squid:ClassVariableVisibilityCheck"]Make statementDuration a static final constant or non-public and provide accessors if needed.(Ü”™
+9squid:S2386"Make this member "protected".(­Çäõÿÿÿÿÿ
+"squid:ClassVariableVisibilityCheck"aMake statementDuration2019 a static final constant or non-public and provide accessors if needed.(ä‘ûé
+isquid:S1192"MDefine a constant instead of duplicating this literal "C.A/Other A." 6 times.(Ôñ…áùÿÿÿÿ
+nsquid:S00117u"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©ØÁùÿÿÿÿ
+Qsquid:S1118":Add a private constructor to hide the implicit public one.(Â…ğ²
+P
+squid:S106¾"9Replace this use of System.out or System.err by a logger.(¼Šæ£
+bsquid:S1192"FDefine a constant instead of duplicating this literal "H.R.A" 4 times.(Ôñ…áùÿÿÿÿ
+Rsquid:S1444";Make this "public static statementDuration2019" field final(ä‘ûé
+9squid:S2386"Make this member "protected".(Ôñ…áùÿÿÿÿ
+]squid:S2184¤"ECast one of the operands of this subtraction operation to a "double".(ãÚ¨†
+Zsquid:S2184î"BCast one of the operands of this addition operation to a "double".(ŒÇ€Å
+nsquid:S00117("QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†Â÷ùüÿÿÿÿ
+Nsquid:S1444"7Make this "public static statementDuration" field final(Ü”™

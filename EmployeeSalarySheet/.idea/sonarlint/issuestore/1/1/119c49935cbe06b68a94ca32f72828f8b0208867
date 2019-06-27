@@ -1,0 +1,22 @@
+
+hsquid:S3358±"DExtract this nested ternary operation into an independent statement.(ÜÜý¢ûÿÿÿÿ8õ·÷¾¹-
+@squid:S2386"Make this member "protected".(±œò—ùÿÿÿÿ8õ·÷¾¹-
+psquid:S00117ò"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ”ºQ8õ·÷¾¹-
+‘"squid:ClassVariableVisibilityCheck"WMake gradePayMap a static final constant or non-public and provide accessors if needed.(±œò—ùÿÿÿÿ8õ·÷¾¹-
+Fsquid:S1125·"(Remove the literal "true" boolean value.(Ô—Ø<8õ·÷¾¹-
+qsquid:S3776Œ"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(‚ÖŠ„8õ·÷¾¹-
+Tsquid:S1444"1Make this "public static gradePayMap" field final(±œò—ùÿÿÿÿ8õ·÷¾¹-
+Gsquid:S1125ñ"(Remove the literal "true" boolean value.(­Ô¹É8õ·÷¾¹-
+vsquid:S3776©"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(Åñ¨Öùÿÿÿÿ8õ·÷¾¹-
+vsquid:S00117ô"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°£×ûþÿÿÿÿ8õ·÷¾¹-
+Fsquid:S1125š"(Remove the literal "true" boolean value.(Ô—Ø<8õ·÷¾¹-
+vsquid:S00117ó"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÈŒæŠùÿÿÿÿ8õ·÷¾¹-
+vsquid:S00117õ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŒêÄ¢úÿÿÿÿ8õ·÷¾¹-
+Xsquid:S1118":Add a private constructor to hide the implicit public one.(×¼­Æ8õ·÷¾¹-
+Fsquid:S1125—"(Remove the literal "true" boolean value.(Ô—Ø<8õ·÷¾¹-
+squid:S3923å"[Remove this conditional structure or edit its code blocks so that they're not all the same.(‰ûÖ™úÿÿÿÿ8õ·÷¾¹-
+Fsquid:S1125´"(Remove the literal "true" boolean value.(Ô—Ø<8õ·÷¾¹-
+osquid:CommentedOutCodeLine¥"<This block of commented-out lines of code should be removed.(ÁÍÞ•üÿÿÿÿ8õ·÷¾¹-
+Qsquid:S1481„"2Remove this unused "new7PaySalary" local variable.(ÃÑÑá8õ·÷¾¹-
+Isquid:S00108‰")Either remove or fill this block of code.(”ý¾8õ·÷¾¹-
+Isquid:S00108Ž")Either remove or fill this block of code.(”ý¾8õ·÷¾¹-

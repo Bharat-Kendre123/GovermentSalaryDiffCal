@@ -1,0 +1,16 @@
+
+dsquid:S1854’"@Remove this useless assignment to local variable "rowidFor2019".(É•¼Éúÿÿÿÿ8—¼÷¾¹-
+qsquid:S00117Â"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ž¯Þé8—¼÷¾¹-
+nsquid:CommentedOutCodeLine3"<This block of commented-out lines of code should be removed.(¦¹ážøÿÿÿÿ8—¼÷¾¹-
+Osquid:S1172Â"0Remove this unused method parameter "rowNumber".(Ž¯Þé8—¼÷¾¹-
+Xsquid:S1118":Add a private constructor to hide the implicit public one.(¹§“µ8—¼÷¾¹-
+~squid:S00115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(”Ã­ûÿÿÿÿ8—¼÷¾¹-
+{squid:S3973„"WUse curly braces or indentation to denote the code conditionally executed by this "if".(ÉÈ™­úÿÿÿÿ8—¼÷¾¹-
+_squid:S1854õ"@Remove this useless assignment to local variable "rowidFor2019".(œî–8—¼÷¾¹-
+@squid:S2386"Make this member "protected".(žÂãÌøÿÿÿÿ8—¼÷¾¹-
+asquid:S3358)"DExtract this nested ternary operation into an independent statement.(ÆÂ÷)8—¼÷¾¹-
+Xsquid:S1854Ç"9Remove this useless assignment to local variable "rowid".(­°Âñ8—¼÷¾¹-
+csquid:S1854Ô"DRemove this useless assignment to local variable "installmentIndex".(ÓÄÖã8—¼÷¾¹-
+‡squid:S4144©"cUpdate this method so that its implementation is not identical to "getStyleForTotalRow" on line 57.(ÜÕÅïüÿÿÿÿ8—¼÷¾¹-
+vsquid:S3776Ñ"RRefactor this method to reduce its Cognitive Complexity from 31 to the 15 allowed.(ÔÙ·úøÿÿÿÿ8—¼÷¾¹-
+dsquid:S1854ž"@Remove this useless assignment to local variable "rowidFor2019".(É•¼Éúÿÿÿÿ8—¼÷¾¹-
