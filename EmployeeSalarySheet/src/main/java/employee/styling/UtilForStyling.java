@@ -214,7 +214,7 @@ public class UtilForStyling {
 
 
     //COMMON METHOD FOR BOTH SHEET
-    public static void setTitleStyle(XSSFWorkbook workbook, int rowidFor2019, XSSFSheet spreadsheetFor2019, String[] columnLsit, boolean dcpsFlag) {
+    public static void setTitleStyle(XSSFWorkbook workbook, int rowidFor2019, XSSFSheet spreadsheetFor2019, String[] columnLsit, int dcpsFlag) {
         // tital for 2019 sheet ++ style
         XSSFCellStyle admissibleStyle = UtilForStyling.getStyleForAdmiDrwanDifff(workbook, 1);
         XSSFRow xrowFor2019 = spreadsheetFor2019.createRow(rowidFor2019++);
@@ -257,11 +257,11 @@ public class UtilForStyling {
 
             if (counter == columnLsit.length - 1) {
                 cell.setCellStyle(styleForBoldBorder);
-                if(!dcpsFlag)
+                if(dcpsFlag==2 || dcpsFlag==3)
                 cell.setCellValue("Credit to G.P.F ACC");
             }
 
-            if((counter == 11 || counter == 22 || counter == 32) && !dcpsFlag)
+            if((counter == 11 || counter == 22 || counter == 32) && (dcpsFlag==2 || dcpsFlag==3))
             {
                 cell.setCellValue("G.P.F");
             }
@@ -337,7 +337,7 @@ public class UtilForStyling {
 
     }
 
-    public static void setInstallments1(XSSFWorkbook workbook, XSSFSheet spreadsheet, int[] additionArray, int recoveryAmt,boolean dcpsFlag) {
+    public static void setInstallments1(XSSFWorkbook workbook, XSSFSheet spreadsheet, int[] additionArray, int recoveryAmt,int dcpsFlag) {
 
         int payToNPA = additionArray[additionArray.length - 4];
         int dcpsTotal = additionArray[additionArray.length - 2];
@@ -402,10 +402,10 @@ public class UtilForStyling {
             firstInstRow= spreadsheet.createRow(rowId);
         }
         Cell firstInstCell = firstInstRow.createCell(35);
-        if(dcpsFlag){
-            firstInstCell.setCellValue("D.C.P.S. Arrear = " + dcpsTotal);
+        if(dcpsFlag==1){
+            firstInstCell.setCellValue("D.C.P.S. Arrear = " + dcpsTotal+"  TOTAL REC="+ (recoveryAmt+dcpsTotal));
         }else{
-            firstInstCell.setCellValue("G.P.F Arrear = " + dcpsTotal);
+            firstInstCell.setCellValue("G.P.F Arrear = " + dcpsTotal+"  TOTAL REC="+ (recoveryAmt+dcpsTotal));
         }
 
         firstInstCell.setCellStyle(inner);
@@ -421,7 +421,7 @@ public class UtilForStyling {
             secondInstRow= spreadsheet.createRow(rowId);
         }
         Cell secondtInstCell = secondInstRow.createCell(35);
-        if(dcpsFlag){
+        if(dcpsFlag==1){
             secondtInstCell.setCellValue("Net Amt = " + netAmount);
         }else{
             secondtInstCell.setCellValue("Credit to G.P.F ACC = " + netAmount);
@@ -441,7 +441,7 @@ public class UtilForStyling {
             thirdInstRow= spreadsheet.createRow(rowId);
         }
         Cell thirdInstCell = thirdInstRow.createCell(35);
-        if(dcpsFlag) {
+        if(dcpsFlag==1) {
             thirdInstCell.setCellValue("Hence, Net Amt = " + netAmount + "/5");
         }else{
             thirdInstCell.setCellValue("Hence, Credit to G.P.F ACC = " + netAmount + "/5");
@@ -465,7 +465,7 @@ public class UtilForStyling {
         headerCellFirst.setCellStyle(headerStyle);
 
         Cell headerCellSecond = heaer.createCell(36);
-        if(dcpsFlag){
+        if(dcpsFlag==1){
             headerCellSecond.setCellValue("7TH NPS AMT.");
         }  else{
             headerCellSecond.setCellValue("B.P. ARR.");
@@ -479,7 +479,7 @@ public class UtilForStyling {
 
         Cell headerCellForth = heaer.createCell(38);
 
-        if(dcpsFlag){
+        if(dcpsFlag==1){
             headerCellForth.setCellValue("DCPS Arr.");
         } else{
             headerCellForth.setCellValue("GPF Arr.");
@@ -487,7 +487,7 @@ public class UtilForStyling {
         headerCellThird.setCellStyle(headerStyle);
 
         Cell headerCellFfth = heaer.createCell(39);
-        if(dcpsFlag){
+        if(dcpsFlag==1){
             headerCellFfth.setCellValue("Net Amt.");
         }else{
             headerCellFfth.setCellValue("Cr-GPF Acc");
@@ -503,7 +503,7 @@ public class UtilForStyling {
             firstInstallmentRow= spreadsheet.createRow(rowId);
         }
         Cell cellFirst2019 = firstInstallmentRow.createCell(35);
-        if(dcpsFlag){
+        if(dcpsFlag==1){
             cellFirst2019.setCellValue("1st 2019+REC+NPS ARR");
         }else {
             cellFirst2019.setCellValue("1st 2019+REC+GPF ARR");
@@ -512,7 +512,7 @@ public class UtilForStyling {
         cellFirst2019.setCellStyle(headerStyle);
 
         Cell cellSecond2019 = firstInstallmentRow.createCell(36);
-        cellSecond2019.setCellValue(installments[installmentIndex] + " + " + dcpsTotal + "+" + recoveryAmt+" = " + (installments[0] + dcpsTotal+recoveryAmt));
+        cellSecond2019.setCellValue(installments[installmentIndex] + " + " + recoveryAmt + "+" + dcpsTotal+" = " + (installments[0] + dcpsTotal+recoveryAmt));
         cellSecond2019.setCellStyle(headerStyle);
 
         Cell cellThird2019 = firstInstallmentRow.createCell(37);

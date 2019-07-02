@@ -190,8 +190,14 @@ public class Util {
         return drawanDa;
     }
 
-    public static boolean isDSCP(String dcpsinput) {
-        return "YES".equalsIgnoreCase(dcpsinput) ? true : false;
+    public static int isDSCP(String dcpsinput) {
+        if("DCPS".equalsIgnoreCase(dcpsinput)){
+            return 1;
+        }else if("GPF".equalsIgnoreCase(dcpsinput)){
+            return 2;
+        }else {
+            return 3;
+        }
     }
 
     //calcuulate NPA

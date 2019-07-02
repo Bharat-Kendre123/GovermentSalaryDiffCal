@@ -26,7 +26,7 @@ public class ExcelSheetCreator {
     public static String statementDuration = "";
     public static String statementDuration2019 = "";
 
-    public static void createExcelSheetFromDiffValues(List<Employee> employeeSheetList, boolean dcpsFlag, String nameOfEmployee, int recoveredAmt,List<GPFDuration> gpfDurations) throws IOException {
+    public static void createExcelSheetFromDiffValues(List<Employee> employeeSheetList, int dcpsFlag, String nameOfEmployee, int recoveredAmt,List<GPFDuration> gpfDurations) throws IOException {
 
 
         employeeSheetList = EmplyeeListSplitter.getSplittedList(employeeSheetList);
@@ -48,7 +48,7 @@ public class ExcelSheetCreator {
         UtilForStyling.setDurationTital(workbook, rowidFor2019, spreadsheetFor2019, statementDuration2019);
         rowidFor2019++;
         // TITAL + COLUMN NAME STYLING FOR 2019
-        UtilForStyling.setTitleStyle(workbook, rowidFor2019, spreadsheetFor2019, columnLsitFor2019, true);
+        UtilForStyling.setTitleStyle(workbook, rowidFor2019, spreadsheetFor2019, columnLsitFor2019, 1);
         rowidFor2019 = rowidFor2019 + 2;
         xrowFor2019 = spreadsheetFor2019.createRow(rowidFor2019++);
         Cell cellFor2019EMployeeName = xrowFor2019.createCell(0);
@@ -166,12 +166,12 @@ public class ExcelSheetCreator {
                                     AdditionFor2019[k] = data[k] + diffDa - diffddcps + AdditionFor2019[k];    /// Addition of Amounts
                                 } else if (k == 11)   //calculate admissibble dcps
                                 {
-                                    admissibleDcps = dcpsFlag ? (int) Math.round((data[2] + admissibleDa) * 10 / 100.0) : (int) Math.round((data[2] * 6 / 100.0));
+                                    admissibleDcps = dcpsFlag  ==1? (int) Math.round((data[2] + admissibleDa) * 10 / 100.0) : dcpsFlag==2?(int) Math.round((data[2] * 6 / 100.0)):0;
                                     AdditionFor2019[k] = admissibleDcps + AdditionFor2019[k];    /// Addition of Amounts
                                     cell.setCellValue(admissibleDcps);
                                 } else if (k == 22)   //calculate drwan dcps
                                 {
-                                    drawnDcps = dcpsFlag ? (int) Math.round((data[12] + data[13] + drwanDa) * 10 / 100.0) : Util.getDrawanDCPS(i,j,gpfDurations);
+                                    drawnDcps = dcpsFlag  ==1 ? (int) Math.round((data[12] + data[13] + drwanDa) * 10 / 100.0) : dcpsFlag==2?Util.getDrawanDCPS(i,j,gpfDurations):0;
                                     AdditionFor2019[k] = drawnDcps + AdditionFor2019[k];    /// Addition of Amounts
                                     cell.setCellValue(drawnDcps);
                                 } else if (k == 32)   //diff dcps
@@ -255,12 +255,12 @@ public class ExcelSheetCreator {
                                     Addition[k] = data[k] + diffDa - diffddcps + Addition[k];    /// Addition of Amounts
                                 } else if (k == 11)   //calculate admissibble dcps
                                 {
-                                    admissibleDcps = dcpsFlag ? (int) Math.round((data[2] + admissibleDa) * 10 / 100.0) : (int) Math.round((data[2] * 6 / 100.0));
+                                    admissibleDcps = dcpsFlag==1 ? (int) Math.round((data[2] + admissibleDa) * 10 / 100.0) : dcpsFlag==2?(int) Math.round((data[2] * 6 / 100.0)):0;
                                     Addition[k] = admissibleDcps + Addition[k];    /// Addition of Amounts
                                     cell.setCellValue(admissibleDcps);
                                 } else if (k == 22)   //calculate drwan dcps
                                 {
-                                    drawnDcps = dcpsFlag ? (int) Math.round((data[12] + data[13] + drwanDa) * 10 / 100.0) : Util.getDrawanDCPS(i,j,gpfDurations);
+                                    drawnDcps = dcpsFlag==1 ? (int) Math.round((data[12] + data[13] + drwanDa) * 10 / 100.0) :dcpsFlag==2? Util.getDrawanDCPS(i,j,gpfDurations):0;
                                     Addition[k] = drawnDcps + Addition[k];    /// Addition of Amounts
                                     cell.setCellValue(drawnDcps);
                                 } else if (k == 32)   //diff dcps

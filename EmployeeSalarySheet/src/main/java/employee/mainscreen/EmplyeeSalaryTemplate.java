@@ -121,7 +121,7 @@ public class EmplyeeSalaryTemplate implements ActionListener {
         WA = new JLabel("W.A. : ");
         WA.setBounds(50, 290 - height, 100, 30);
 
-        DCPS = new JLabel("D.C.P.S. : ");
+        DCPS = new JLabel("Deduction : ");
         DCPS.setBounds(50, 330 - height, 100, 30);
         HRA6 = new JLabel("HRA6 : ");
         HRA6.setBounds(50, 370 - height, 50, 30);
@@ -224,7 +224,7 @@ public class EmplyeeSalaryTemplate implements ActionListener {
         JWA.setBounds(130, 290 - height, 100, 30);
         f.add(JWA);
 
-        String yesNoLst[] = {"No", "Yes"};
+        String yesNoLst[] = {"GPF", "DCPS","NO"};
         JDCPS = new JComboBox(yesNoLst);
         JDCPS.setBounds(130, 330 - height, 100, 30);
         f.add(JDCPS);
@@ -377,7 +377,7 @@ public class EmplyeeSalaryTemplate implements ActionListener {
 
             //DCPS
             String dcps = (String) JDCPS.getItemAt(JDCPS.getSelectedIndex());
-            boolean isDSCP = Util.isDSCP(dcps);
+            int isDSCP = Util.isDSCP(dcps);
             int recoveredAmt = Integer.parseInt((String) JRECOVERED.getText());
             ExcelSheetCreator.createExcelSheetFromDiffValues(list, isDSCP, TName.getText(), recoveredAmt,gpfDurations);
             // no global properties get affected by increment
@@ -401,7 +401,7 @@ public class EmplyeeSalaryTemplate implements ActionListener {
         } else if (e.getSource() == done) {
             //DCPS
             String dcps = (String) JDCPS.getItemAt(JDCPS.getSelectedIndex());
-            boolean isDSCP = Util.isDSCP(dcps);
+            int isDSCP = Util.isDSCP(dcps);
             int recoveredAmt = Integer.parseInt((String) JRECOVERED.getText());
             ExcelSheetCreator.createExcelSheetFromDiffValues(employeeList, isDSCP, (String) TName.getText(), recoveredAmt,gpfDurations);
             employeeList.clear();
