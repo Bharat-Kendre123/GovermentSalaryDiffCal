@@ -465,7 +465,12 @@ public class UtilForStyling {
         headerCellFirst.setCellStyle(headerStyle);
 
         Cell headerCellSecond = heaer.createCell(36);
-        headerCellSecond.setCellValue("7TH NPS AMT.");
+        if(dcpsFlag){
+            headerCellSecond.setCellValue("7TH NPS AMT.");
+        }  else{
+            headerCellSecond.setCellValue("B.P. ARR.");
+        }
+
         headerCellSecond.setCellStyle(headerStyle);
 
         Cell headerCellThird = heaer.createCell(37);
@@ -498,7 +503,12 @@ public class UtilForStyling {
             firstInstallmentRow= spreadsheet.createRow(rowId);
         }
         Cell cellFirst2019 = firstInstallmentRow.createCell(35);
-        cellFirst2019.setCellValue("1st 2019+REC+NPS ARR");
+        if(dcpsFlag){
+            cellFirst2019.setCellValue("1st 2019+REC+NPS ARR");
+        }else {
+            cellFirst2019.setCellValue("1st 2019+REC+GPF ARR");
+        }
+
         cellFirst2019.setCellStyle(headerStyle);
 
         Cell cellSecond2019 = firstInstallmentRow.createCell(36);
