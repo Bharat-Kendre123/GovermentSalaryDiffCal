@@ -436,6 +436,7 @@ public class EmplyeeSalaryTemplate implements ActionListener {
             setGPF();
         } else if (e.getSource() == reset) {
             gpfDurations.clear();
+            gpfAmount.setText("0");
         }
     }
 
@@ -537,6 +538,7 @@ public class EmplyeeSalaryTemplate implements ActionListener {
         firstTimeIcre = false;
         IncrementTime = 0;
         JRECOVERED.setText("0");
+        gpfAmount.setText("0");
         gpfDurations.clear();
     }
 

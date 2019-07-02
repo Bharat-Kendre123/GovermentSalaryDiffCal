@@ -11,7 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f23569b9-6e90-4eac-a059-f591562a9f59" name="Default Changelist" comment="" />
     <file path="/Dummy.txt" changelist="f23569b9-6e90-4eac-a059-f591562a9f59" time="1562066093079" ignored="false" />
-    <file path="/EmplyeeSalaryTemplate.java" changelist="f23569b9-6e90-4eac-a059-f591562a9f59" time="1562082704387" ignored="false" />
+    <file path="/EmplyeeSalaryTemplate.java" changelist="f23569b9-6e90-4eac-a059-f591562a9f59" time="1562086827211" ignored="false" />
     <file path="/GPFDuration.java" changelist="f23569b9-6e90-4eac-a059-f591562a9f59" time="1562069250093" ignored="false" />
     <file path="/ExcelSheetCreator.java" changelist="f23569b9-6e90-4eac-a059-f591562a9f59" time="1562079629665" ignored="false" />
     <file path="/UtilForStyling.java" changelist="f23569b9-6e90-4eac-a059-f591562a9f59" time="1562085483093" ignored="false" />
@@ -68,7 +68,7 @@
       </breakpoint>
     </breakpoint_any>
     <line_breakpoints>
-      <breakpoint url="file://$PROJECT_DIR$/src/main/java/employee/mainscreen/EmplyeeSalaryTemplate.java" line="449" class="employee.mainscreen.EmplyeeSalaryTemplate" package="employee.mainscreen">
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/employee/mainscreen/EmplyeeSalaryTemplate.java" line="450" class="employee.mainscreen.EmplyeeSalaryTemplate" package="employee.mainscreen">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -198,10 +198,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="EmplyeeSalaryTemplate.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="EmplyeeSalaryTemplate.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/employee/mainscreen/EmplyeeSalaryTemplate.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="452" column="22" selection-start="16573" selection-end="16573" vertical-scroll-proportion="-6.36">
+            <state line="552" column="38" selection-start="20810" selection-end="20810" vertical-scroll-proportion="0.31790122">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -220,10 +220,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UtilForStyling.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="UtilForStyling.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/employee/styling/UtilForStyling.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="470" column="52" selection-start="19395" selection-end="19395" vertical-scroll-proportion="0.8767908">
+            <state line="459" column="112" selection-start="18974" selection-end="18974" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -300,9 +300,9 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/java/employee/models/GPFDuration.java" />
         <option value="$PROJECT_DIR$/src/main/java/employee/utility/ExcelSheetCreator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/employee/mainscreen/EmplyeeSalaryTemplate.java" />
         <option value="$PROJECT_DIR$/src/main/java/employee/utility/Util.java" />
         <option value="$PROJECT_DIR$/src/main/java/employee/styling/UtilForStyling.java" />
+        <option value="$PROJECT_DIR$/src/main/java/employee/mainscreen/EmplyeeSalaryTemplate.java" />
       </list>
     </option>
   </component>
@@ -368,46 +368,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EmployeeSalarySheet" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EmployeeSalarySheet" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EmployeeSalarySheet" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EmployeeSalarySheet" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -594,7 +554,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="1" width="1364" height="736" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -609,7 +569,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17511521" sideWeight="0.67128026" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17511521" sideWeight="0.67128026" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32871974" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -805,19 +765,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/employee/mainscreen/EmplyeeSalaryTemplate.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/employee/styling/UtilForStyling.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="452" column="22" selection-start="16573" selection-end="16573" vertical-scroll-proportion="-6.36">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="459" column="112" selection-start="18974" selection-end="18974" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/employee/styling/UtilForStyling.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/employee/mainscreen/EmplyeeSalaryTemplate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="470" column="52" selection-start="19395" selection-end="19395" vertical-scroll-proportion="0.8767908">
-          <folding />
+        <state line="552" column="38" selection-start="20810" selection-end="20810" vertical-scroll-proportion="0.31790122">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
