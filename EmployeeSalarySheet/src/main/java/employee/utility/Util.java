@@ -3,6 +3,7 @@ package employee.utility;
 import employee.data.PayBandMapObject;
 import employee.data.SalaryData;
 import employee.models.Employee;
+import employee.models.GPFDuration;
 
 import java.util.HashMap;
 import java.util.List;
@@ -394,5 +395,37 @@ public class Util {
             }
         }
         return new7PaySalary;
+    }
+
+    public static int getDrawanDCPS(int year, int month, List<GPFDuration> gpfDurations) {
+
+        for(GPFDuration gpfDuration:gpfDurations){
+
+            if(gpfDuration.getfYear() == gpfDuration.gettYear() ){
+
+                if(year == gpfDuration.getfYear()){
+                    if( month >= gpfDuration.getfMonth() && month <= gpfDuration.gettMonth()){
+
+                        return gpfDuration.getAmount();
+                    }
+                }
+
+
+            }else{
+
+                if(year == gpfDuration.getfYear()){
+                    if(month>=gpfDuration.getfMonth()){
+                        return gpfDuration.getAmount();
+                    }
+                }  else if(year == gpfDuration.gettYear()){
+                     if(month<= gpfDuration.gettMonth()){
+                         return gpfDuration.getAmount();
+                     }
+                }else if(year > gpfDuration.getfYear() && year < gpfDuration.gettYear()){
+                    return gpfDuration.getAmount();
+                }
+            }
+        }
+        return 0;
     }
 }

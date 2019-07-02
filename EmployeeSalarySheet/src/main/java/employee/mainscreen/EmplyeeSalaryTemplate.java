@@ -2,6 +2,7 @@ package employee.mainscreen;
 
 import employee.data.PayBandMapObject;
 import employee.models.Employee;
+import employee.models.GPFDuration;
 import employee.models.SalaryCalculatonDuraton;
 import employee.steps.StepButtons;
 import employee.styling.UtilForJanIncrement;
@@ -20,13 +21,14 @@ import java.util.List;
 
 public class EmplyeeSalaryTemplate implements ActionListener {
 
-    JLabel Name, Basic, GP, TA, WA, DCPS, HRA6, HRA7, CA_OtherA, NPA, FromDate, ToDate, DOJ, PAY_BAND, NPA7, PROMO, INCRE, RECOVERED_AMOUNT;
-    JTextField TName, TBasic, TGP, TDOJD, TDOJY, TSLEVEL, JRECOVERED;
+    JLabel Name, Basic, GP, TA, WA, DCPS, HRA6, HRA7, CA_OtherA, NPA, FromDate, ToDate, DOJ, PAY_BAND, NPA7, PROMO, INCRE, RECOVERED_AMOUNT,GPF;
+    JTextField TName, TBasic, TGP, TDOJD, TDOJY, TSLEVEL, JRECOVERED,gpfAmount;
     JComboBox JTA, JCA_OtherA, JWA, JDCPS, JHRA6, JHRA7, JNPA, FMonth, FYear, TMonth, TYear, JDOJM, JNcrement, JPAY_BAND, JNPA7, JFROMD, JTOD, JPROMO, JINCRE, Normal_Or_Dr;
+    JComboBox fMonthForGPF,toMonthForGPF,fYearForGPF,tYearForGPF;
     JFrame f;
     JButton WithoutIncrement, increment;
     JButton inProgress, done, refresh, BJULYPROM, AUTO_PB;
-    JButton steps;
+    JButton steps,next,reset;
     List<Employee> employeeList = new ArrayList<>();
     int lastGradPay = 0;
     boolean doIncrement = false;
@@ -38,6 +40,10 @@ public class EmplyeeSalaryTemplate implements ActionListener {
 
 
     public static final int height = 45;
+
+    // GPF HHOLDER
+
+    List<GPFDuration>  gpfDurations   = new ArrayList<>();
 
     public static void main(String[] args) {
         new EmplyeeSalaryTemplate();
@@ -65,6 +71,50 @@ public class EmplyeeSalaryTemplate implements ActionListener {
 
         TA = new JLabel("T.A : ");
         TA.setBounds(50, 210 - height, 100, 30);
+
+
+
+        GPF = new JLabel("G. P. F : ");
+        GPF.setBounds(350, 210 - height, 100, 30);
+        f.add(GPF);
+
+        gpfAmount = new JTextField("0");
+        gpfAmount.setHorizontalAlignment(JTextField.CENTER);
+        gpfAmount.setBounds(430, 210 - height, 100, 30);
+        f.add(gpfAmount);
+
+        String monthList1[] = {"01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"};
+        fMonthForGPF = new JComboBox(monthList1);
+        fMonthForGPF.setBounds(350, 250 - height, 60, 30);
+        f.add(fMonthForGPF);
+
+        String yearList1[] = {"2016", "2017", "2018", "2019", "2020"};
+        fYearForGPF = new JComboBox(yearList1);
+        fYearForGPF.setBounds(430, 250 - height, 80, 30);
+        f.add(fYearForGPF);
+
+        //String monthList1[] = {"01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"};
+        toMonthForGPF = new JComboBox(monthList1);
+        toMonthForGPF.setBounds(350, 290 - height, 60, 30);
+        f.add(toMonthForGPF);
+
+       // String yearList1[] = {"2016", "2017", "2018", "2019", "2020"};
+        tYearForGPF = new JComboBox(yearList1);
+        tYearForGPF.setBounds(430, 290 - height, 80, 30);
+        f.add(tYearForGPF);
+
+
+        next = new JButton("NEXT");
+        next.setBounds(350, 330 - height, 70, 30);
+        f.add(next);
+        next.addActionListener(this);
+
+        reset = new JButton("RESET");
+        reset.setBounds(430, 330 - height, 80, 30);
+        f.add(reset);
+        reset.addActionListener(this);
+
+
         CA_OtherA = new JLabel("C.A./Other A. : ");
         CA_OtherA.setBounds(50, 250 - height, 100, 30);
         f.add(CA_OtherA);
@@ -329,7 +379,7 @@ public class EmplyeeSalaryTemplate implements ActionListener {
             String dcps = (String) JDCPS.getItemAt(JDCPS.getSelectedIndex());
             boolean isDSCP = Util.isDSCP(dcps);
             int recoveredAmt = Integer.parseInt((String) JRECOVERED.getText());
-            ExcelSheetCreator.createExcelSheetFromDiffValues(list, isDSCP, TName.getText(), recoveredAmt);
+            ExcelSheetCreator.createExcelSheetFromDiffValues(list, isDSCP, TName.getText(), recoveredAmt,gpfDurations);
             // no global properties get affected by increment
             JRECOVERED.setText("0");
         } else if (e.getSource() == inProgress) {
@@ -353,7 +403,7 @@ public class EmplyeeSalaryTemplate implements ActionListener {
             String dcps = (String) JDCPS.getItemAt(JDCPS.getSelectedIndex());
             boolean isDSCP = Util.isDSCP(dcps);
             int recoveredAmt = Integer.parseInt((String) JRECOVERED.getText());
-            ExcelSheetCreator.createExcelSheetFromDiffValues(employeeList, isDSCP, (String) TName.getText(), recoveredAmt);
+            ExcelSheetCreator.createExcelSheetFromDiffValues(employeeList, isDSCP, (String) TName.getText(), recoveredAmt,gpfDurations);
             employeeList.clear();
             resetGlobalProperties();
         } else if (e.getSource() == refresh) {
@@ -382,7 +432,23 @@ public class EmplyeeSalaryTemplate implements ActionListener {
             new StepButtons();
         } else if (e.getSource() == AUTO_PB) {
             setPBDropdownValue();
+        } else if (e.getSource() == next) {
+            setGPF();
+        } else if (e.getSource() == reset) {
+            gpfDurations.clear();
         }
+    }
+
+    private void setGPF() {
+
+        int fMonthGPF = Integer.parseInt((String) fMonthForGPF.getItemAt(fMonthForGPF.getSelectedIndex()));
+        int tMonthGPF = Integer.parseInt((String) toMonthForGPF.getItemAt(toMonthForGPF.getSelectedIndex()));
+        int fYearGPF = Integer.parseInt((String) fYearForGPF.getItemAt(fYearForGPF.getSelectedIndex()));
+        int tYearGPF = Integer.parseInt((String) tYearForGPF.getItemAt(tYearForGPF.getSelectedIndex()));
+        int amount =  Integer.parseInt(gpfAmount.getText());
+
+        gpfDurations.add(new GPFDuration(fMonthGPF,tMonthGPF,fYearGPF,tYearGPF,amount));
+
     }
 
     private void setPBDropdownValue() {
@@ -471,6 +537,7 @@ public class EmplyeeSalaryTemplate implements ActionListener {
         firstTimeIcre = false;
         IncrementTime = 0;
         JRECOVERED.setText("0");
+        gpfDurations.clear();
     }
 
     private void doPromotion() {

@@ -1,6 +1,7 @@
 package employee.utility;
 
 import employee.models.Employee;
+import employee.models.GPFDuration;
 import employee.styling.UtilForStyling;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.util.CellRangeAddress;
@@ -25,7 +26,7 @@ public class ExcelSheetCreator {
     public static String statementDuration = "";
     public static String statementDuration2019 = "";
 
-    public static void createExcelSheetFromDiffValues(List<Employee> employeeSheetList, boolean dcpsFlag, String nameOfEmployee, int recoveredAmt) throws IOException {
+    public static void createExcelSheetFromDiffValues(List<Employee> employeeSheetList, boolean dcpsFlag, String nameOfEmployee, int recoveredAmt,List<GPFDuration> gpfDurations) throws IOException {
 
 
         employeeSheetList = EmplyeeListSplitter.getSplittedList(employeeSheetList);
@@ -165,12 +166,12 @@ public class ExcelSheetCreator {
                                     AdditionFor2019[k] = data[k] + diffDa - diffddcps + AdditionFor2019[k];    /// Addition of Amounts
                                 } else if (k == 11)   //calculate admissibble dcps
                                 {
-                                    admissibleDcps = dcpsFlag ? (int) Math.round((data[2] + admissibleDa) * 10 / 100.0) : 0;
+                                    admissibleDcps = dcpsFlag ? (int) Math.round((data[2] + admissibleDa) * 10 / 100.0) : (int) Math.round((data[2] * 6 / 100.0));
                                     AdditionFor2019[k] = admissibleDcps + AdditionFor2019[k];    /// Addition of Amounts
                                     cell.setCellValue(admissibleDcps);
                                 } else if (k == 22)   //calculate drwan dcps
                                 {
-                                    drawnDcps = dcpsFlag ? (int) Math.round((data[12] + data[13] + drwanDa) * 10 / 100.0) : 0;
+                                    drawnDcps = dcpsFlag ? (int) Math.round((data[12] + data[13] + drwanDa) * 10 / 100.0) : Util.getDrawanDCPS(i,j,gpfDurations);
                                     AdditionFor2019[k] = drawnDcps + AdditionFor2019[k];    /// Addition of Amounts
                                     cell.setCellValue(drawnDcps);
                                 } else if (k == 32)   //diff dcps
@@ -254,12 +255,12 @@ public class ExcelSheetCreator {
                                     Addition[k] = data[k] + diffDa - diffddcps + Addition[k];    /// Addition of Amounts
                                 } else if (k == 11)   //calculate admissibble dcps
                                 {
-                                    admissibleDcps = dcpsFlag ? (int) Math.round((data[2] + admissibleDa) * 10 / 100.0) : 0;
+                                    admissibleDcps = dcpsFlag ? (int) Math.round((data[2] + admissibleDa) * 10 / 100.0) : (int) Math.round((data[2] * 6 / 100.0));
                                     Addition[k] = admissibleDcps + Addition[k];    /// Addition of Amounts
                                     cell.setCellValue(admissibleDcps);
                                 } else if (k == 22)   //calculate drwan dcps
                                 {
-                                    drawnDcps = dcpsFlag ? (int) Math.round((data[12] + data[13] + drwanDa) * 10 / 100.0) : 0;
+                                    drawnDcps = dcpsFlag ? (int) Math.round((data[12] + data[13] + drwanDa) * 10 / 100.0) : Util.getDrawanDCPS(i,j,gpfDurations);
                                     Addition[k] = drawnDcps + Addition[k];    /// Addition of Amounts
                                     cell.setCellValue(drawnDcps);
                                 } else if (k == 32)   //diff dcps

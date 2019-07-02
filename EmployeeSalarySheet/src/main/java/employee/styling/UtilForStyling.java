@@ -261,7 +261,10 @@ public class UtilForStyling {
                 cell.setCellValue("Credit to G.P.F ACC");
             }
 
-
+            if((counter == 11 || counter == 22 || counter == 32) && !dcpsFlag)
+            {
+                cell.setCellValue("G.P.F");
+            }
             counter++;
         }
 
@@ -341,7 +344,7 @@ public class UtilForStyling {
         int netAmount = additionArray[additionArray.length - 1] - recoveryAmt;
         int[] installments = Util.getInstallmentAmount(netAmount);
 
-        int totalBPArrear=dcpsTotal;
+        int totalBPArrear=dcpsTotal+recoveryAmt;
         for(int temp:installments)
             totalBPArrear+=temp;
 
@@ -358,9 +361,9 @@ public class UtilForStyling {
         Cell installment2019 = xrowFor2019.createCell(35);
         installment2019.setCellValue("Note :-");
         installment2019.setCellStyle(upper);
-        for (int i = 36; i <= 38; i++)
+        for (int i = 36; i <= 39; i++)
             xrowFor2019.createCell(i).setCellStyle(upper);
-        spreadsheet.addMergedRegion(new CellRangeAddress(rowId, rowId, 35, 38));
+        spreadsheet.addMergedRegion(new CellRangeAddress(rowId, rowId, 35, 39));
 
         //---------------------Basic Pay-----------------------------------
         rowId++;  // INCREASE ROW
@@ -371,9 +374,9 @@ public class UtilForStyling {
         Cell recoveryCell = recoveryRow.createCell(35);
         recoveryCell.setCellValue("B.P Arrear Amt. = " + payToNPA);
         recoveryCell.setCellStyle(inner);
-        for (int i = 36; i <= 38; i++)
+        for (int i = 36; i <= 39; i++)
             recoveryRow.createCell(i).setCellStyle(inner);
-        spreadsheet.addMergedRegion(new CellRangeAddress(rowId, rowId, 35, 38));
+        spreadsheet.addMergedRegion(new CellRangeAddress(rowId, rowId, 35, 39));
 
 
         // ----------------------- Recovery Amt-----------------------------------------
@@ -386,9 +389,9 @@ public class UtilForStyling {
         Cell netInstCell = netPayble.createCell(35);
         netInstCell.setCellValue("Recovery Amt. = " + recoveryAmt);
         netInstCell.setCellStyle(inner);
-        for (int i = 36; i <= 38; i++)
+        for (int i = 36; i <= 39; i++)
             netPayble.createCell(i).setCellStyle(inner);
-        spreadsheet.addMergedRegion(new CellRangeAddress(rowId, rowId, 35, 38));
+        spreadsheet.addMergedRegion(new CellRangeAddress(rowId, rowId, 35, 39));
 
 
         // ----------------------- DCPS-----------------------------------------
@@ -399,11 +402,16 @@ public class UtilForStyling {
             firstInstRow= spreadsheet.createRow(rowId);
         }
         Cell firstInstCell = firstInstRow.createCell(35);
-        firstInstCell.setCellValue("D.C.P.S. Arrear = " + dcpsTotal);
+        if(dcpsFlag){
+            firstInstCell.setCellValue("D.C.P.S. Arrear = " + dcpsTotal);
+        }else{
+            firstInstCell.setCellValue("G.P.F Arrear = " + dcpsTotal);
+        }
+
         firstInstCell.setCellStyle(inner);
-        for (int i = 36; i <= 38; i++)
+        for (int i = 36; i <= 39; i++)
             firstInstRow.createCell(i).setCellStyle(inner);
-        spreadsheet.addMergedRegion(new CellRangeAddress(rowId, rowId, 35, 38));
+        spreadsheet.addMergedRegion(new CellRangeAddress(rowId, rowId, 35, 39));
 
         // ----------------------- NET AMT-----------------------------------------
 
@@ -420,9 +428,9 @@ public class UtilForStyling {
         }
 
         secondtInstCell.setCellStyle(inner);
-        for (int i = 36; i <= 38; i++)
+        for (int i = 36; i <= 39; i++)
             secondInstRow.createCell(i).setCellStyle(inner);
-        spreadsheet.addMergedRegion(new CellRangeAddress(rowId, rowId, 35, 38));
+        spreadsheet.addMergedRegion(new CellRangeAddress(rowId, rowId, 35, 39));
 
 
         // ----------------------- Net Amount Division-----------------------------------------
@@ -439,9 +447,9 @@ public class UtilForStyling {
             thirdInstCell.setCellValue("Hence, Credit to G.P.F ACC = " + netAmount + "/5");
         }
         thirdInstCell.setCellStyle(lower);
-        for (int i = 36; i <= 38; i++)
+        for (int i = 36; i <= 39; i++)
             thirdInstRow.createCell(i).setCellStyle(lower);
-        spreadsheet.addMergedRegion(new CellRangeAddress(rowId, rowId, 35, 38));
+        spreadsheet.addMergedRegion(new CellRangeAddress(rowId, rowId, 35, 39));
 
 
         // Table Header part
@@ -457,21 +465,30 @@ public class UtilForStyling {
         headerCellFirst.setCellStyle(headerStyle);
 
         Cell headerCellSecond = heaer.createCell(36);
-        headerCellSecond.setCellValue("B.P. Arr.");
+        headerCellSecond.setCellValue("7TH NPS AMT.");
         headerCellSecond.setCellStyle(headerStyle);
 
         Cell headerCellThird = heaer.createCell(37);
-        headerCellThird.setCellValue("DCPS P. Arr.");
+        headerCellThird.setCellValue("REC AMT.");
         headerCellThird.setCellStyle(headerStyle);
 
         Cell headerCellForth = heaer.createCell(38);
+
         if(dcpsFlag){
-            headerCellForth.setCellValue("Net Amt.");
+            headerCellForth.setCellValue("DCPS Arr.");
+        } else{
+            headerCellForth.setCellValue("GPF Arr.");
+        }
+        headerCellThird.setCellStyle(headerStyle);
+
+        Cell headerCellFfth = heaer.createCell(39);
+        if(dcpsFlag){
+            headerCellFfth.setCellValue("Net Amt.");
         }else{
-            headerCellForth.setCellValue("Cr to GPF Acc");
+            headerCellFfth.setCellValue("Cr-GPF Acc");
         }
 
-        headerCellForth.setCellStyle(headerStyle);
+        headerCellFfth.setCellStyle(headerStyle);
 
         // FIRST INSTALLMENT
         rowId++;  // INCREASE ROW
@@ -481,20 +498,24 @@ public class UtilForStyling {
             firstInstallmentRow= spreadsheet.createRow(rowId);
         }
         Cell cellFirst2019 = firstInstallmentRow.createCell(35);
-        cellFirst2019.setCellValue("1st insta 2019+NPS ARR");
+        cellFirst2019.setCellValue("1st 2019+REC+NPS ARR");
         cellFirst2019.setCellStyle(headerStyle);
 
         Cell cellSecond2019 = firstInstallmentRow.createCell(36);
-        cellSecond2019.setCellValue(installments[installmentIndex] + " + " + dcpsTotal + " = " + (installments[0] + dcpsTotal));
+        cellSecond2019.setCellValue(installments[installmentIndex] + " + " + dcpsTotal + "+" + recoveryAmt+" = " + (installments[0] + dcpsTotal+recoveryAmt));
         cellSecond2019.setCellStyle(headerStyle);
 
         Cell cellThird2019 = firstInstallmentRow.createCell(37);
-        cellThird2019.setCellValue(dcpsTotal);
+        cellThird2019.setCellValue(recoveryAmt);
         cellThird2019.setCellStyle(headerStyle);
 
         Cell cellForth2019 = firstInstallmentRow.createCell(38);
-        cellForth2019.setCellValue(installments[installmentIndex]);
+        cellForth2019.setCellValue(dcpsTotal);
         cellForth2019.setCellStyle(headerStyle);
+
+        Cell cellFiftth2019 = firstInstallmentRow.createCell(39);
+        cellFiftth2019.setCellValue(installments[installmentIndex]);
+        cellFiftth2019.setCellStyle(headerStyle);
 
 
         // Second  INSTALLMENT
@@ -517,8 +538,12 @@ public class UtilForStyling {
         cellThird2020.setCellStyle(headerStyle);
 
         Cell cellForth2020 = secondInstallmentRow.createCell(38);
-        cellForth2020.setCellValue(installments[installmentIndex]);
+        cellForth2020.setCellValue("-");
         cellForth2020.setCellStyle(headerStyle);
+
+        Cell cellFffthth2020 = secondInstallmentRow.createCell(39);
+        cellFffthth2020.setCellValue(installments[installmentIndex]);
+        cellFffthth2020.setCellStyle(headerStyle);
 
 
         // Third  INSTALLMENT
@@ -540,9 +565,13 @@ public class UtilForStyling {
         cellThird2021.setCellValue("-");
         cellThird2021.setCellStyle(headerStyle);
 
-        Cell cellForth2021 = thirdInstallmentRow.createCell(38);
-        cellForth2021.setCellValue(installments[installmentIndex]);
-        cellForth2021.setCellStyle(headerStyle);
+        Cell cellfforrth2021 = thirdInstallmentRow.createCell(38);
+        cellfforrth2021.setCellValue("-");
+        cellfforrth2021.setCellStyle(headerStyle);
+
+        Cell cellFiffthth2021 = thirdInstallmentRow.createCell(39);
+        cellFiffthth2021.setCellValue(installments[installmentIndex]);
+        cellFiffthth2021.setCellStyle(headerStyle);
 
         // Forth  INSTALLMENT
         rowId++;  // INCREASE ROW
@@ -564,8 +593,12 @@ public class UtilForStyling {
         cellThird2022.setCellStyle(headerStyle);
 
         Cell cellForth2022 = forthInstallmentRow.createCell(38);
-        cellForth2022.setCellValue(installments[installmentIndex]);
+        cellForth2022.setCellValue("-");
         cellForth2022.setCellStyle(headerStyle);
+
+        Cell cellFifth2022 = forthInstallmentRow.createCell(39);
+        cellFifth2022.setCellValue(installments[installmentIndex]);
+        cellFifth2022.setCellStyle(headerStyle);
 
         // Fifth  INSTALLMENT
         rowId++;  // INCREASE ROW
@@ -587,8 +620,12 @@ public class UtilForStyling {
         cellThird2023.setCellStyle(headerStyle);
 
         Cell cellForth2023 = fifthInstallmentRow.createCell(38);
-        cellForth2023.setCellValue(installments[installmentIndex]);
+        cellForth2023.setCellValue("-");
         cellForth2023.setCellStyle(headerStyle);
+
+        Cell cellFifthth2023 = fifthInstallmentRow.createCell(39);
+        cellFifthth2023.setCellValue(installments[installmentIndex]);
+        cellFifthth2023.setCellStyle(headerStyle);
 
 
         // Total amount
@@ -607,12 +644,16 @@ public class UtilForStyling {
         cellSecondTotal.setCellStyle(headerStyle);
 
         Cell cellThirdTotal = totalRow.createCell(37);
-        cellThirdTotal.setCellValue(dcpsTotal);
+        cellThirdTotal.setCellValue(recoveryAmt);
         cellThirdTotal.setCellStyle(headerStyle);
 
         Cell cellForthTotal = totalRow.createCell(38);
-        cellForthTotal.setCellValue(netAmount);
+        cellForthTotal.setCellValue(dcpsTotal);
         cellForthTotal.setCellStyle(headerStyle);
+
+        Cell cellFifthTotal = totalRow.createCell(39);
+        cellFifthTotal.setCellValue(netAmount);
+        cellFifthTotal.setCellStyle(headerStyle);
 
 
         if(recoveryAmt>0){
@@ -625,10 +666,10 @@ public class UtilForStyling {
             Cell statementCell = statementRow.createCell(35);
             statementCell.setCellValue("Note:- OverPayment Recovery Statement Copy Enclosed");
             statementCell.setCellStyle(headerStyle);
-            for (int i = 36; i <= 38; i++)
+            for (int i = 36; i <= 39; i++)
                 statementRow.createCell(i).setCellStyle(headerStyle);
 
-            spreadsheet.addMergedRegion(new CellRangeAddress(rowId, rowId, 35, 38));
+            spreadsheet.addMergedRegion(new CellRangeAddress(rowId, rowId, 35, 39));
         }
     }
 
