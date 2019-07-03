@@ -21,8 +21,8 @@ import java.util.List;
 
 public class EmplyeeSalaryTemplate implements ActionListener {
 
-    JLabel Name, Basic, GP, TA, WA, DCPS, HRA6, HRA7, CA_OtherA, NPA, FromDate, ToDate, DOJ, PAY_BAND, NPA7, PROMO, INCRE, RECOVERED_AMOUNT,GPF;
-    JTextField TName, TBasic, TGP, TDOJD, TDOJY, TSLEVEL, JRECOVERED,gpfAmount;
+    JLabel Name, Basic, GP, TA, WA, DCPS, HRA6, HRA7, CA_OtherA, NPA, FromDate, ToDate, DOJ, PAY_BAND, NPA7, PROMO, INCRE, RECOVERED_AMOUNT,admissibleBasicPay,GPF;
+    JTextField TName, TBasic, TGP, TDOJD, TDOJY, TSLEVEL, JRECOVERED,TadmissibleBasic,gpfAmount;
     JComboBox JTA, JCA_OtherA, JWA, JDCPS, JHRA6, JHRA7, JNPA, FMonth, FYear, TMonth, TYear, JDOJM, JNcrement, JPAY_BAND, JNPA7, JFROMD, JTOD, JPROMO, JINCRE, Normal_Or_Dr;
     JComboBox fMonthForGPF,toMonthForGPF,fYearForGPF,tYearForGPF;
     JFrame f;
@@ -37,6 +37,10 @@ public class EmplyeeSalaryTemplate implements ActionListener {
     boolean firstTimeIcre = false;
     int IncrementTime = 0;
     int firstTimeAdmissible = 0;
+
+    // flag to take admissible input from input screen
+
+    boolean isAdmissibleBasicPayEnable=true;
 
 
     public static final int height = 45;
@@ -61,10 +65,14 @@ public class EmplyeeSalaryTemplate implements ActionListener {
         Name.setBounds(50, 50 - height, 100, 30);
         Basic = new JLabel("Basic : ");
         Basic.setBounds(50, 90 - height, 100, 30);
+
+        admissibleBasicPay = new JLabel("7th Basic : ");
+        admissibleBasicPay.setBounds(320, 90 - height, 100, 30);
+        f.add(admissibleBasicPay);
         GP = new JLabel("Grade Pay : ");
         GP.setBounds(50, 130 - height, 100, 30);
         AUTO_PB = new JButton("Auto PB");
-        AUTO_PB.setBounds(350, 130 - height, 100, 30);
+        AUTO_PB.setBounds(320, 130 - height, 100, 30);
         AUTO_PB.addActionListener(this);
         PAY_BAND = new JLabel("Pay Band");
         PAY_BAND.setBounds(50, 170 - height, 100, 30);
@@ -166,19 +174,27 @@ public class EmplyeeSalaryTemplate implements ActionListener {
         // TEST FIELDS
         TName = new JTextField();
         TName.setHorizontalAlignment(JTextField.CENTER);
-        TName.setBounds(130, 50 - height, 200, 30);
+        TName.setBounds(130, 50 - height, 180, 30);
         TBasic = new JTextField();
         TBasic.setHorizontalAlignment(JTextField.CENTER);
-        TBasic.setBounds(130, 90 - height, 200, 30);
+        TBasic.setBounds(130, 90 - height, 180, 30);
+
+        TadmissibleBasic = new JTextField("0");
+        TadmissibleBasic.setHorizontalAlignment(JTextField.CENTER);
+        TadmissibleBasic.setBounds(400, 90 - height, 160, 30);
+        f.add(TadmissibleBasic);
+
         String DCPSLinRupees[] = {"Jan", "July"};
         JNcrement = new JComboBox(DCPSLinRupees);
-        JNcrement.setBounds(350, 90 - height, 50, 30);
+        JNcrement.setBounds(320, 50 - height, 60, 30);
         f.add(JNcrement);
 
         String list[] = {"Normal", "Doctor"};
         Normal_Or_Dr = new JComboBox(list);
-        Normal_Or_Dr.setBounds(410, 90 - height, 80, 30);
+        Normal_Or_Dr.setBounds(400, 50 - height, 80, 30);
         f.add(Normal_Or_Dr);
+
+
 
         RECOVERED_AMOUNT = new JLabel("RECOVERY :");
         RECOVERED_AMOUNT.setBounds(340, 450 - height, 80, 30);
@@ -191,20 +207,20 @@ public class EmplyeeSalaryTemplate implements ActionListener {
 
         TGP = new JTextField();
         TGP.setHorizontalAlignment(JTextField.CENTER);
-        TGP.setBounds(130, 130 - height, 200, 30);
+        TGP.setBounds(130, 130 - height, 180, 30);
 
         f.add(TName);
         f.add(TGP);
         f.add(TBasic);
 
         JPAY_BAND = new JComboBox(PayBandMapObject.payBandList);
-        JPAY_BAND.setBounds(130, 170 - height, 200, 30);
+        JPAY_BAND.setBounds(130, 170 - height, 180, 30);
         JPAY_BAND.addActionListener(this);
         f.add(JPAY_BAND);
 
         TSLEVEL = new JTextField("LEVEL WILL DISPLAY HERE");
         TSLEVEL.setHorizontalAlignment(JTextField.CENTER);
-        TSLEVEL.setBounds(350, 170 - height, 200, 30);
+        TSLEVEL.setBounds(320, 170 - height, 200, 30);
         Font font = new Font("SansSerif", Font.BOLD, 12);
         TSLEVEL.setFont(font);
         f.add(TSLEVEL);
@@ -411,7 +427,12 @@ public class EmplyeeSalaryTemplate implements ActionListener {
             employeeList.clear();
             resetGlobalProperties();
         } else if (e.getSource() == JPAY_BAND) {
-            setPaybandLevel();
+            int admissibleBasicPayInput=Integer.parseInt(TadmissibleBasic.getText());
+            if(admissibleBasicPayInput>0){
+                setPaybandLevelForAdmissibleInput();
+            }else{
+                setPaybandLevel();
+            }
         } else if (e.getSource() == JPROMO) {
             doPromotion();
         } else if (e.getSource() == FMonth) {
@@ -432,7 +453,13 @@ public class EmplyeeSalaryTemplate implements ActionListener {
         } else if (e.getSource() == steps) {
             new StepButtons();
         } else if (e.getSource() == AUTO_PB) {
-            setPBDropdownValue();
+            int admissibleBasicPayInput=Integer.parseInt(TadmissibleBasic.getText());
+            if(admissibleBasicPayInput>0){
+                setPBDropdownValueForAdmissibleBasicPayInput();
+            }else{
+                setPBDropdownValue();
+            }
+
         } else if (e.getSource() == next) {
             setGPF();
         } else if (e.getSource() == reset) {
@@ -514,20 +541,77 @@ public class EmplyeeSalaryTemplate implements ActionListener {
         }
     }
 
-    private void setTheFilteredList() {
-        // TODO Auto-generated method stub
+    private void setPBDropdownValueForAdmissibleBasicPayInput() {
+        String payBand = TGP.getText();
 
-        String gradePay = TGP.getText();
-        String[] filteredList = new String[PayBandMapObject.payBandList.length - 1];
-        int count = 0;
-        for (String x : PayBandMapObject.payBandList) {
-            if (x.contains(gradePay)) {
-                filteredList[count++] = x;
-
+        String payband = "";
+        int counter = 0;
+        int counterForDuplicateGp = 0;
+        for (String key : PayBandMapObject.payBandList) {
+            counter++;
+            String[] payBandSplit = key.split("-");
+            if (payBandSplit[payBandSplit.length - 1].equals(payBand)) {
+                payband = key;
+                counterForDuplicateGp++;
+            }
+            if (counter == PayBandMapObject.payBandList.length - 1) {
+                if ((67000 <= Integer.parseInt(TGP.getText()) && Integer.parseInt(TGP.getText()) <= 79000)) {
+                    payband = "67000 - 79000";
+                }
             }
         }
-        JPAY_BAND = new JComboBox(filteredList);
 
+        String band = payband;
+        if (counterForDuplicateGp == 1 && (Util.gradePayMap.containsKey(Integer.parseInt(TGP.getText())) || (67000 <= Integer.parseInt(TGP.getText()) && Integer.parseInt(TGP.getText()) <= 79000))) {
+            if (!(67000 <= Integer.parseInt(TGP.getText()) && Integer.parseInt(TGP.getText()) <= 79000)) {
+                String s_level = PayBandMapObject.paybandMapWithLevels.get(payband);
+                String[] payBandSplit = (payband).split("-");
+                if (payBandSplit[payBandSplit.length - 1].equalsIgnoreCase(TGP.getText())) {
+                    int level = Util.getLevelFor7thPayForAdmissibleBasicPayInput(Integer.parseInt(TadmissibleBasic.getText()), payband);
+                    if(level<0){
+                        TSLEVEL.setText("Admissible Pay is Wrong");
+                        TSLEVEL.setBackground(Color.pink);
+                        Font font = new Font("SansSerif", Font.BOLD, 12);
+                        TSLEVEL.setFont(font);
+                    }else{
+                        TSLEVEL.setText(s_level + " => (" + level + ")");
+                        Font font = new Font("SansSerif", Font.BOLD, 12);
+                        TSLEVEL.setFont(font);
+                        TSLEVEL.setBackground(null);
+                    }
+                    TSLEVEL.setText(s_level + " => (" + level + ")");
+                    Font font = new Font("SansSerif", Font.BOLD, 12);
+                    TSLEVEL.setFont(font);
+                    TSLEVEL.setBackground(null);
+                } else {
+                    TSLEVEL.setText("INVALID GP ENTRY");
+                    TSLEVEL.setBackground(Color.pink);
+                    Font font = new Font("SansSerif", Font.BOLD, 12);
+                    TSLEVEL.setFont(font);
+                }
+                JPAY_BAND.setSelectedItem(band);
+            } else {
+                // need to find level now for 7th pay basic
+                int level = Util.getLevelFor7thPayForAdmissibleBasicPayInput(Integer.parseInt(TadmissibleBasic.getText()), "67000 - 79000");
+                TSLEVEL.setText("S-31" + " => (" + level + ")");
+                TSLEVEL.setBackground(null);
+                JPAY_BAND.setSelectedItem(band);
+            }
+
+        } else {
+            if (counterForDuplicateGp > 1) {
+                TSLEVEL.setText("SELECT  GP  MANUALLY");
+                TSLEVEL.setBackground(Color.orange);
+                Font font = new Font("SansSerif", Font.BOLD, 12);
+                TSLEVEL.setFont(font);
+            } else {
+                TSLEVEL.setText("INVALID  GP  ENTRY");
+                TSLEVEL.setBackground(Color.pink);
+                Font font = new Font("SansSerif", Font.BOLD, 12);
+                TSLEVEL.setFont(font);
+            }
+
+        }
     }
 
 
@@ -541,6 +625,8 @@ public class EmplyeeSalaryTemplate implements ActionListener {
         JRECOVERED.setText("0");
         gpfAmount.setText("0");
         gpfDurations.clear();
+        TadmissibleBasic.setText("0");
+        isAdmissibleBasicPayEnable=true;
     }
 
     private void doPromotion() {
@@ -739,12 +825,19 @@ public class EmplyeeSalaryTemplate implements ActionListener {
 
         int basic = 0;
         int admissible = 0;
+
+        // identifire will hold admissible basic input
+        int admissibleInput=0;
         // BASIC FOR ADMISSIBLE, DRAWN  AND DIFFERENCE
         if (employeeList.size() > 0) {
             basic = employeeList.get(employeeList.size() - 1).getDrawnSalary().getBasicPay();
             admissible = employeeList.get(employeeList.size() - 1).getAdmissibleSalary().getBasicPay();
         } else {
             basic = Integer.parseInt(TBasic.getText());
+            if(isAdmissibleBasicPayEnable){
+                admissibleInput=Integer.parseInt(TadmissibleBasic.getText());
+                isAdmissibleBasicPayEnable=false;
+            }
         }
 
         int joiningYear = Integer.parseInt(TDOJY.getText());
@@ -772,8 +865,13 @@ public class EmplyeeSalaryTemplate implements ActionListener {
             employee.setToYear(salaryCalculatonDuraton.getToYear());
             employee.getDrawnSalary().setBasicPay(basic);
             employee.getDrawnSalary().setGradepay(Integer.parseInt(TGP.getText()));
-            if (admissible == 0) {
-                employee.getAdmissibleSalary().setBasicPay(Util.getAdmissibleBasicPay(basic, Integer.parseInt(TGP.getText()), (String) JPAY_BAND.getItemAt(JPAY_BAND.getSelectedIndex())));
+            if (admissible == 0) {  // meaning it is not the first attempt
+                if(admissibleInput==0){ // there is no admissible basic input from input screen
+                    employee.getAdmissibleSalary().setBasicPay(Util.getAdmissibleBasicPay(basic, Integer.parseInt(TGP.getText()), (String) JPAY_BAND.getItemAt(JPAY_BAND.getSelectedIndex())));
+                }else{
+                    employee.getAdmissibleSalary().setBasicPay(admissibleInput);
+                }
+
             } else {
                 employee.getAdmissibleSalary().setBasicPay(admissible);
             }
@@ -830,6 +928,15 @@ public class EmplyeeSalaryTemplate implements ActionListener {
         int basic = Integer.parseInt(TBasic.getText());
         int gradePay = Integer.parseInt(TGP.getText());
 
+        // identifier is for holding admissible basic input
+        int admissibleBasicPayInput=0;
+        admissibleBasicPayInput=Integer.parseInt(TadmissibleBasic.getText());
+        boolean isAdmissibleinputLocal=false;
+        if(admissibleBasicPayInput>0){
+            isAdmissibleinputLocal=true;
+        }
+
+
         List<Employee> employees1 = new ArrayList();
         for (SalaryCalculatonDuraton salaryCalculatonDuraton : salaryCalculatonDuratons) {
             Employee employee = new Employee();
@@ -845,10 +952,22 @@ public class EmplyeeSalaryTemplate implements ActionListener {
             if (salaryCalculatonDuraton.isIncrement()) {
                 //basic = basic + Util.roundOffIncrement((int) (Math.round((basic + gradePay) * 3 / 100.0)));
                 basic = basic + Util.roundOffIncrement(roundOff(basic,gradePay));
+               // basic = basic + Util.roundOffIncrement((int) (Math.round((basic + gradePay) * 3 / 100.0)));
+                if(isAdmissibleinputLocal){
+                    //admissibleBasicPayInput=admissibleBasicPayInput + Util.roundOffIncrement((int) (Math.round((admissibleBasicPayInput) * 3 / 100.0)));
+                    admissibleBasicPayInput=admissibleBasicPayInput + Util.roundOffIncrement(roundOff(admissibleBasicPayInput,0));
+                    admissibleBasicPayInput=Util.getAdmissibleBasicPayForManualInput(admissibleBasicPayInput,(String) JPAY_BAND.getItemAt(JPAY_BAND.getSelectedIndex()));
+                }
             }
             employee.getDrawnSalary().setBasicPay(basic);
             employee.getDrawnSalary().setGradepay(Integer.parseInt(TGP.getText()));
-            employee.getAdmissibleSalary().setBasicPay(Util.getAdmissibleBasicPay(basic, Integer.parseInt(TGP.getText()), (String) JPAY_BAND.getItemAt(JPAY_BAND.getSelectedIndex())));
+
+            if(isAdmissibleinputLocal){
+                employee.getAdmissibleSalary().setBasicPay(admissibleBasicPayInput);
+            }else{
+                employee.getAdmissibleSalary().setBasicPay(Util.getAdmissibleBasicPay(basic, Integer.parseInt(TGP.getText()), (String) JPAY_BAND.getItemAt(JPAY_BAND.getSelectedIndex())));
+            }
+
             employee.getAdmissibleSalary().setGradepay(0);
             employee.getDiff().setBasicPay(employee.getAdmissibleSalary().getBasicPay() - (employee.getDrawnSalary().getBasicPay() + employee.getDrawnSalary().getGradepay()));
             employee.getDiff().setGradepay(employee.getAdmissibleSalary().getGradepay() - employee.getDrawnSalary().getGradepay());
@@ -902,6 +1021,14 @@ public class EmplyeeSalaryTemplate implements ActionListener {
         int basic = Integer.parseInt(TBasic.getText());
         int gradePay = Integer.parseInt(TGP.getText());
 
+        // identifier is for holding admissible basic input
+        int admissibleBasicPayInput=0;
+        admissibleBasicPayInput=Integer.parseInt(TadmissibleBasic.getText());
+        boolean isAdmissibleinputLocal=false;
+        if(admissibleBasicPayInput>0){
+            isAdmissibleinputLocal=true;
+        }
+
         List<Employee> employees1 = new ArrayList();
         for (SalaryCalculatonDuraton salaryCalculatonDuraton : salaryCalculatonDuratons) {
             Employee employee = new Employee();
@@ -917,10 +1044,21 @@ public class EmplyeeSalaryTemplate implements ActionListener {
             if (salaryCalculatonDuraton.isIncrement()) {
                 //basic = basic + Util.roundOffIncrement((int) (Math.round((basic + gradePay) * 3 / 100.0)));
                 basic = basic + Util.roundOffIncrement(roundOff(basic,gradePay));
+                if(isAdmissibleinputLocal){
+                    //admissibleBasicPayInput=admissibleBasicPayInput + Util.roundOffIncrement((int) (Math.round((admissibleBasicPayInput) * 3 / 100.0)));
+                    admissibleBasicPayInput=admissibleBasicPayInput + Util.roundOffIncrement(roundOff(admissibleBasicPayInput,0));
+                    admissibleBasicPayInput=Util.getAdmissibleBasicPayForManualInput(admissibleBasicPayInput,(String) JPAY_BAND.getItemAt(JPAY_BAND.getSelectedIndex()));
+                }
+                //basic = basic + Util.roundOffIncrement((int) (Math.round((basic + gradePay) * 3 / 100.0)));
+                basic = basic + Util.roundOffIncrement(roundOff(basic,gradePay));
             }
             employee.getDrawnSalary().setBasicPay(basic);
             employee.getDrawnSalary().setGradepay(Integer.parseInt(TGP.getText()));
-            employee.getAdmissibleSalary().setBasicPay(Util.getAdmissibleBasicPay(basic, Integer.parseInt(TGP.getText()), (String) JPAY_BAND.getItemAt(JPAY_BAND.getSelectedIndex())));
+            if(isAdmissibleinputLocal){
+                employee.getAdmissibleSalary().setBasicPay(admissibleBasicPayInput);
+            }else{
+                employee.getAdmissibleSalary().setBasicPay(Util.getAdmissibleBasicPay(basic, Integer.parseInt(TGP.getText()), (String) JPAY_BAND.getItemAt(JPAY_BAND.getSelectedIndex())));
+            }
             employee.getAdmissibleSalary().setGradepay(0);
             employee.getDiff().setBasicPay(employee.getAdmissibleSalary().getBasicPay() - (employee.getDrawnSalary().getBasicPay() + employee.getDrawnSalary().getGradepay()));
             employee.getDiff().setGradepay(employee.getAdmissibleSalary().getGradepay() - employee.getDrawnSalary().getGradepay());
@@ -1160,6 +1298,53 @@ public class EmplyeeSalaryTemplate implements ActionListener {
         } catch (Exception ex) {
             TSLEVEL.setBackground(Color.red);
             TSLEVEL.setText("Basic Pay or GP is missing");
+            TSLEVEL.setBackground(Color.pink);
+            Font font = new Font("SansSerif", Font.BOLD, 12);
+            TSLEVEL.setFont(font);
+        }
+    }
+
+    public void setPaybandLevelForAdmissibleInput() {
+        try {
+            if (Util.gradePayMap.containsKey(Integer.parseInt(TGP.getText())) || (67000 <= Integer.parseInt(TGP.getText()) && Integer.parseInt(TGP.getText()) <= 79000)) {
+                if (!(67000 <= Integer.parseInt(TGP.getText()) && Integer.parseInt(TGP.getText()) <= 79000)) {
+                    String s_level = PayBandMapObject.paybandMapWithLevels.get((String) JPAY_BAND.getItemAt(JPAY_BAND.getSelectedIndex()));
+                    String[] payBandSplit = ((String) JPAY_BAND.getItemAt(JPAY_BAND.getSelectedIndex())).split("-");
+                    if (payBandSplit[payBandSplit.length - 1].equalsIgnoreCase((String) TGP.getText())) {
+                        int level = Util.getLevelFor7thPayForAdmissibleBasicPayInput(Integer.parseInt(TadmissibleBasic.getText()),  (String) JPAY_BAND.getItemAt(JPAY_BAND.getSelectedIndex()));
+                        if(level<0){
+                            TSLEVEL.setText("Admissible Pay is Wrong");
+                            TSLEVEL.setBackground(Color.pink);
+                            Font font = new Font("SansSerif", Font.BOLD, 12);
+                            TSLEVEL.setFont(font);
+                        }else{
+                            TSLEVEL.setText(s_level + " => (" + level + ")");
+                            Font font = new Font("SansSerif", Font.BOLD, 12);
+                            TSLEVEL.setFont(font);
+                            TSLEVEL.setBackground(null);
+                        }
+
+                    } else {
+                        TSLEVEL.setText("INVALID GP ENTRY");
+                        TSLEVEL.setBackground(Color.pink);
+                        Font font = new Font("SansSerif", Font.BOLD, 12);
+                        TSLEVEL.setFont(font);
+                    }
+
+                } else {
+                    int level = Util.getLevelFor7thPayForAdmissibleBasicPayInput(Integer.parseInt(TadmissibleBasic.getText()),  (String) JPAY_BAND.getItemAt(JPAY_BAND.getSelectedIndex()));
+                    TSLEVEL.setText("S-31" + " => (" + level + ")");
+                    TSLEVEL.setBackground(null);
+                }
+            } else {
+                TSLEVEL.setText("INVALID GP ENTRY");
+                TSLEVEL.setBackground(Color.pink);
+                Font font = new Font("SansSerif", Font.BOLD, 12);
+                TSLEVEL.setFont(font);
+            }
+        } catch (Exception ex) {
+            TSLEVEL.setBackground(Color.red);
+            TSLEVEL.setText("Basic Pay 6/7th or GP is missing");
             TSLEVEL.setBackground(Color.pink);
             Font font = new Font("SansSerif", Font.BOLD, 12);
             TSLEVEL.setFont(font);
