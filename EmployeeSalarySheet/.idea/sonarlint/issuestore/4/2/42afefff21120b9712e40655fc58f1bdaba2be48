@@ -1,55 +1,0 @@
-
-qsquid:S1192"UDefine a constant instead of duplicating this literal "PB-2 9300-34800-4600" 3 times.(õ‰Îúüÿÿÿÿ
-ksquid:S1192"UDefine a constant instead of duplicating this literal "PB-1 5200-20200-1900" 3 times.(Ø…Ç
-qsquid:S1192"UDefine a constant instead of duplicating this literal "PB-2 9300-34800-4800" 3 times.(õ‰Îúüÿÿÿÿ
-msquid:S1192"VDefine a constant instead of duplicating this literal "PB-3 15600-39100-5400" 3 times.(¶é¬†
-msquid:S1192"VDefine a constant instead of duplicating this literal "PB-3 15600-39100-5000" 3 times.(¶é¬†
-msquid:S1192"VDefine a constant instead of duplicating this literal "PB-3 15600-39100-6900" 3 times.(¶é¬†
-lsquid:S1192"UDefine a constant instead of duplicating this literal "PB-2 9300-34800-5400" 3 times.(¶é¬†
-lsquid:S1192"UDefine a constant instead of duplicating this literal "PB-2 9300-34800-5000" 3 times.(¶é¬†
-rsquid:S1192"VDefine a constant instead of duplicating this literal "PB-4 37400-67000-8700" 3 times.(×Ê»¯ûÿÿÿÿ
-ksquid:S1192"UDefine a constant instead of duplicating this literal "PB-1 5200-20200-2800" 3 times.(Ø…Ç
-rsquid:S1192"VDefine a constant instead of duplicating this literal "PB-4 37400-67000-8900" 3 times.(×Ê»¯ûÿÿÿÿ
-hsquid:S1192"RDefine a constant instead of duplicating this literal "1S-4440-7440-1650" 3 times.(Ø…Ç
-ksquid:S1192"UDefine a constant instead of duplicating this literal "PB-1 5200-20200-2400" 3 times.(Ø…Ç
-qsquid:S1192"UDefine a constant instead of duplicating this literal "PB-2 9300-34800-4100" 3 times.(õ‰Îúüÿÿÿÿ
-msquid:S1192"VDefine a constant instead of duplicating this literal "PB-3 15600-39100-5700" 3 times.(¶é¬†
-msquid:S1192"VDefine a constant instead of duplicating this literal "PB-3 15600-39100-5500" 3 times.(¶é¬†
-qsquid:S1192"UDefine a constant instead of duplicating this literal "PB-2 9300-34800-4300" 3 times.(õ‰Îúüÿÿÿÿ
-hsquid:S1192"RDefine a constant instead of duplicating this literal "1S-4440-7440-1400" 3 times.(Ø…Ç
-hsquid:S1192"RDefine a constant instead of duplicating this literal "1S-4440-7440-1600" 3 times.(Ø…Ç
-ssquid:S1192"WDefine a constant instead of duplicating this literal "PB-4 37400-67000-10000" 3 times.(×Ê»¯ûÿÿÿÿ
-ksquid:S1192"UDefine a constant instead of duplicating this literal "PB-1 5200-20200-1800" 3 times.(Ø…Ç
-rsquid:S1192"VDefine a constant instead of duplicating this literal "PB-3 15600-39100-7600" 3 times.(×Ê»¯ûÿÿÿÿ
-qsquid:S1192"UDefine a constant instead of duplicating this literal "PB-2 9300-34800-4500" 3 times.(õ‰Îúüÿÿÿÿ
-lsquid:S1192"UDefine a constant instead of duplicating this literal "PB-2 9300-34800-4900" 3 times.(¶é¬†
-ksquid:S1192"UDefine a constant instead of duplicating this literal "PB-1 5200-20200-2000" 3 times.(Ø…Ç
-qsquid:S1192"UDefine a constant instead of duplicating this literal "PB-1 5200-20200-3500" 3 times.(õ‰Îúüÿÿÿÿ
-msquid:S1192"VDefine a constant instead of duplicating this literal "PB-3 15600-39100-6600" 3 times.(¶é¬†
-rsquid:S1192"VDefine a constant instead of duplicating this literal "PB-4 37400-67000-8800" 3 times.(×Ê»¯ûÿÿÿÿ
-qsquid:S1192"UDefine a constant instead of duplicating this literal "PB-1 5200-20200-2900" 3 times.(õ‰Îúüÿÿÿÿ
-qsquid:S1192"UDefine a constant instead of duplicating this literal "PB-1 5200-20200-3000" 3 times.(õ‰Îúüÿÿÿÿ
-hsquid:S1192"RDefine a constant instead of duplicating this literal "1S-4440-7440-1300" 3 times.(Ø…Ç
-ksquid:S1192"UDefine a constant instead of duplicating this literal "PB-1 5200-20200-2500" 3 times.(Ø…Ç
-msquid:S1192"VDefine a constant instead of duplicating this literal "PB-3 15600-39100-5800" 3 times.(¶é¬†
-qsquid:S1192"UDefine a constant instead of duplicating this literal "PB-2 9300-34800-4400" 3 times.(õ‰Îúüÿÿÿÿ
-jsquid:S1192"NDefine a constant instead of duplicating this literal "67000 - 79000" 3 times.(×Ê»¯ûÿÿÿÿ
-hsquid:S1192"RDefine a constant instead of duplicating this literal "1S-4440-7440-1700" 3 times.(Ø…Ç
-qsquid:S1192"UDefine a constant instead of duplicating this literal "PB-2 9300-34800-4200" 3 times.(õ‰Îúüÿÿÿÿ
-rsquid:S1192"VDefine a constant instead of duplicating this literal "PB-3 15600-39100-7900" 4 times.(×Ê»¯ûÿÿÿÿ
-Tsquid:S1444	"=Make this "public static payBandLevelArrayMaping" field final(±¨ƒë
-Qsquid:S1444
-":Make this "public static paybandMapWithLevels" field final(É¨ºÊ
-Gsquid:S1444"1Make this "public static payBandList" field final(Ø…Ç
-Ksquid:S1444"/Make this "public static levelList" field final(ÁÒÌşÿÿÿÿ
-‘"squid:ClassVariableVisibilityCheck	"cMake payBandLevelArrayMaping a static final constant or non-public and provide accessors if needed.(±¨ƒë
-"squid:ClassVariableVisibilityCheck
-"`Make paybandMapWithLevels a static final constant or non-public and provide accessors if needed.(É¨ºÊ
-„"squid:ClassVariableVisibilityCheck"WMake payBandList a static final constant or non-public and provide accessors if needed.(Ø…Ç
-ˆ"squid:ClassVariableVisibilityCheck"UMake levelList a static final constant or non-public and provide accessors if needed.(ÁÒÌşÿÿÿÿ
-Vsquid:S1118":Add a private constructor to hide the implicit public one.(êö™¾şÿÿÿÿ
-4squid:S2386	"Make this member "protected".(±¨ƒë
-4squid:S2386
-"Make this member "protected".(É¨ºÊ
-3squid:S2386"Make this member "protected".(Ø…Ç
-9squid:S2386"Make this member "protected".(ÁÒÌşÿÿÿÿ

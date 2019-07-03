@@ -1,8 +1,0 @@
-
-hsquid:CommentedOutCodeLine—"<This block of commented-out lines of code should be removed.(Æø¹ûÿÿÿÿ
-hsquid:CommentedOutCodeLineÀ"<This block of commented-out lines of code should be removed.(öŒ—”þÿÿÿÿ
-Fsquid:S1481D"*Remove this unused "toDay" local variable.(ÌÕþÞùÿÿÿÿ
-Csquid:S1481E",Remove this unused "toMonth" local variable.(—‹‹“
-Qsquid:S1118":Add a private constructor to hide the implicit public one.(ÚÝÉ”
-Rsquid:S1854E";Remove this useless assignment to local variable "toMonth".(—‹‹“
-Usquid:S1854D"9Remove this useless assignment to local variable "toDay".(ÌÕþÞùÿÿÿÿ
