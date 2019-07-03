@@ -224,8 +224,9 @@ public class EmplyeeSalaryTemplate implements ActionListener {
         JWA.setBounds(130, 290 - height, 100, 30);
         f.add(JWA);
 
-        String yesNoLst[] = {"GPF", "DCPS","NO"};
-        JDCPS = new JComboBox(yesNoLst);
+        String deductionList[] = {"GPF", "DCPS","NO"};
+        String yesNoLst[] = {"YES","NO"};
+        JDCPS = new JComboBox(deductionList);
         JDCPS.setBounds(130, 330 - height, 100, 30);
         f.add(JDCPS);
 

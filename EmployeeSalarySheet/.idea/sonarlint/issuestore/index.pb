@@ -29,5 +29,3 @@ b
 2src/main/java/employee/styling/UtilForStyling.java,f\2\f293ded97cd1a779f5c2cf91fc3e709463481a48
 \
 ,src/main/java/employee/steps/DoctorCase.java,3\5\35afe7dc3460e708c5ba89394c0273c8ce0cf8ec
-T
-$.settings/org.eclipse.m2e.core.prefs,c\8\c8cb288c04fee82ed81fb7eeaa1e1b3ea20da607

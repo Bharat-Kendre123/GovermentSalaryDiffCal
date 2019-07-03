@@ -1,136 +1,159 @@
 
-lsquid:S00116"MRename this field "WA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßª”µ8¡Üˆ‘²-
-psquid:S00116"QRename this field "JFROMD" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ì®¥8¡Üˆ‘²-
-Asquid:S1659"#Declare "JNPA7" on a separate line.(¡ì®¥8¡Üˆ‘²-
-vsquid:S3776„"RRefactor this method to reduce its Cognitive Complexity from 25 to the 15 allowed.(ƒ¨«åúÿÿÿÿ8¡Üˆ‘²-
-?squid:S1659""Declare "done" on a separate line.(şù„8¡Üˆ‘²-
->squid:S1659" Declare "WA" on a separate line.(ßª”µ8¡Üˆ‘²-
-Bsquid:S1659"%Declare "AUTO_PB" on a separate line.(şù„8¡Üˆ‘²-
-ysquid:S00115("ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(›¤ëâ8¡Üˆ‘²-
-ssquid:S00116"TRename this field "JPAY_BAND" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ì®¥8¡Üˆ‘²-
-vsquid:S00117Ë"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÄÉç½úÿÿÿÿ8¡Üˆ‘²-
-nsquid:S1192"JDefine a constant instead of duplicating this literal "SansSerif" 9 times.(ÊêáÓÿÿÿÿÿ8¡Üˆ‘²-
-bsquid:S1155">Use isEmpty() to check whether the collection is empty or not.(üÊ „ÿÿÿÿÿ8¬îüú´-
-psquid:S00116"QRename this field "ToDate" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßª”µ8¡Üˆ‘²-
-Asquid:S1659"#Declare "Basic" on a separate line.(ßª”µ8¡Üˆ‘²-
-msquid:S00116"NRename this field "JTA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ì®¥8¡Üˆ‘²-
-bsquid:S1155Ö">Use isEmpty() to check whether the collection is empty or not.(üÊ „ÿÿÿÿÿ8¬îüú´-
-Bsquid:S1659"$Declare "JINCRE" on a separate line.(¡ì®¥8¡Üˆ‘²-
-Wsquid:S1197¢"8Move the array designator from the variable to the type.(Î«·™8¡Üˆ‘²-
-nsquid:S00116"PRename this field "TDOJD" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ò•ö8¡Üˆ‘²-
-squid:S00116"[Rename this field "WithoutIncrement" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(”¶Õîşÿÿÿÿ8¡Üˆ‘²-
-\squid:S1197ç"8Move the array designator from the variable to the type.(×íøµşÿÿÿÿ8¡Üˆ‘²-
-Vsquid:S1197·"8Move the array designator from the variable to the type.(‘ä8¡Üˆ‘²-
-msquid:S00116"NRename this field "NPA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßª”µ8¡Üˆ‘²-
-\squid:S1197Á"8Move the array designator from the variable to the type.(ïƒµÏúÿÿÿÿ8¬îüú´-
-@squid:S1659""Declare "HRA6" on a separate line.(ßª”µ8¡Üˆ‘²-
-osquid:S00116"PRename this field "JDOJM" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ì®¥8¡Üˆ‘²-
-Asquid:S1659"$Declare "TBasic" on a separate line.(ò•ö8¡Üˆ‘²-
-osquid:CommentedOutCodeLine¤"<This block of commented-out lines of code should be removed.(ÚĞ“ƒÿÿÿÿÿ8÷¢‚İ´-
-Asquid:S1659"#Declare "PROMO" on a separate line.(ßª”µ8¡Üˆ‘²-
-lsquid:S00116"MRename this field "TA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßª”µ8¡Üˆ‘²-
-rsquid:S00116"SRename this field "FromDate" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßª”µ8¡Üˆ‘²-
-@squid:S1659""Declare "HRA7" on a separate line.(ßª”µ8¡Üˆ‘²-
-nsquid:S00116"PRename this field "TName" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ò•ö8¡Üˆ‘²-
-osquid:S00116"PRename this field "TYear" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ì®¥8¡Üˆ‘²-
-msquid:S00116"NRename this field "JWA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ì®¥8¡Üˆ‘²-
-Esquid:S1659"'Declare "CA_OtherA" on a separate line.(ßª”µ8¡Üˆ‘²-
-osquid:S00116"PRename this field "PROMO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßª”µ8¡Üˆ‘²-
-osquid:S00116"PRename this field "JHRA7" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ì®¥8¡Üˆ‘²-
-Bsquid:S1659"$Declare "TMonth" on a separate line.(¡ì®¥8¡Üˆ‘²-
-Bsquid:S1659"%Declare "refresh" on a separate line.(şù„8¡Üˆ‘²-
-?squid:S1659"!Declare "JWA" on a separate line.(¡ì®¥8¡Üˆ‘²-
-zsquid:S00116"[Rename this field "RECOVERED_AMOUNT" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßª”µ8¡Üˆ‘²-
-Wsquid:S1197Ì"8Move the array designator from the variable to the type.(Ì·Ûº8¬îüú´-
-psquid:S00116"RRename this field "TSLEVEL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ò•ö8¡Üˆ‘²-
-vsquid:S00116"WRename this field "Normal_Or_Dr" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ì®¥8²ÂŸÛ´-
-nsquid:S00116"ORename this field "HRA7" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßª”µ8¡Üˆ‘²-
-psquid:S00116"QRename this field "FMonth" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ì®¥8¡Üˆ‘²-
-psquid:S00116"QRename this field "JINCRE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ì®¥8¡Üˆ‘²-
-rsquid:S00116"SRename this field "PAY_BAND" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßª”µ8¡Üˆ‘²-
-osquid:S00116"PRename this field "JNPA7" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ì®¥8¡Üˆ‘²-
-jsquid:S1192Ÿ"FDefine a constant instead of duplicating this literal " => (" 4 times.(åŞ¯‘şÿÿÿÿ8¡Üˆ‘²-
-Gsquid:S1148´"#Use a logger to log this exception.(Âşÿâûÿÿÿÿ8¡Üˆ‘²-
-psquid:S00116"QRename this field "JPROMO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ì®¥8¡Üˆ‘²-
-Hsquid:S1659"*Declare "Normal_Or_Dr" on a separate line.(¡ì®¥8²ÂŸÛ´-
-Wsquid:S1197á"8Move the array designator from the variable to the type.(í®ø8¡Üˆ‘²-
-nsquid:S00116"ORename this field "HRA6" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßª”µ8¡Üˆ‘²-
-@squid:S1659"#Declare "TDOJY" on a separate line.(ò•ö8¡Üˆ‘²-
-Asquid:S1659"#Declare "FYear" on a separate line.(¡ì®¥8¡Üˆ‘²-
-osquid:S00116"PRename this field "Basic" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßª”µ8¡Üˆ‘²-
-Ssquid:S1066’"/Merge this if statement with the enclosing one.(ŸÒ²æüÿÿÿÿ8¡Üˆ‘²-
-nsquid:S00116"ORename this field "DCPS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßª”µ8¡Üˆ‘²-
-rsquid:S00116"TRename this field "BJULYPROM" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(şù„8¡Üˆ‘²-
-@squid:S1659"#Declare "TDOJD" on a separate line.(ò•ö8¡Üˆ‘²-
-Bsquid:S1659"$Declare "JPROMO" on a separate line.(¡ì®¥8¡Üˆ‘²-
-\squid:S1197€"8Move the array designator from the variable to the type.(¥ÈÏ³ùÿÿÿÿ8’£Û´-
-msquid:S00116"NRename this field "DOJ" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßª”µ8¡Üˆ‘²-
-@squid:S1659""Declare "JTOD" on a separate line.(¡ì®¥8¡Üˆ‘²-
-tsquid:S00116"URename this field "JCA_OtherA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ì®¥8¡Üˆ‘²-
-vsquid:S00117ø"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÄÉç½úÿÿÿÿ8¡Üˆ‘²-
-Asquid:S1659"#Declare "JHRA7" on a separate line.(¡ì®¥8¡Üˆ‘²-
-Asquid:S1659"#Declare "JHRA6" on a separate line.(¡ì®¥8¡Üˆ‘²-
-?squid:S1659"!Declare "DOJ" on a separate line.(ßª”µ8¡Üˆ‘²-
-Bsquid:S1659"$Declare "FMonth" on a separate line.(¡ì®¥8¡Üˆ‘²-
-\squid:S1197Ç"8Move the array designator from the variable to the type.(è±Ìüúÿÿÿÿ8¬îüú´-
-ssquid:S00116"TRename this field "JNcrement" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ì®¥8¡Üˆ‘²-
-Dsquid:S1659"&Declare "PAY_BAND" on a separate line.(ßª”µ8¡Üˆ‘²-
-ssquid:S00116"URename this field "JRECOVERED" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ò•ö8¡Üˆ‘²-
-vsquid:S00117¡"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(âà²ûÿÿÿÿ8÷¢‚İ´-
-Asquid:S1659"#Declare "INCRE" on a separate line.(ßª”µ8¡Üˆ‘²-
-nsquid:S00116"ORename this field "JNPA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ì®¥8¡Üˆ‘²-
-wsquid:S00116$"XRename this field "IncrementTime" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•èâÁ8¡Üˆ‘²-
-vsquid:S00117î"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÄÉç½úÿÿÿÿ8÷¢‚İ´-
-Asquid:S1659"#Declare "TYear" on a separate line.(¡ì®¥8¡Üˆ‘²-
-Fsquid:S1659"(Declare "JCA_OtherA" on a separate line.(¡ì®¥8¡Üˆ‘²-
-@squid:S1659""Declare "JNPA" on a separate line.(¡ì®¥8¡Üˆ‘²-
-\squid:S1197¬"8Move the array designator from the variable to the type.(Õ»Î·øÿÿÿÿ8¡Üˆ‘²-
-osquid:S00116"PRename this field "JDCPS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ì®¥8¡Üˆ‘²-
-Dsquid:S1659"'Declare "BJULYPROM" on a separate line.(şù„8¡Üˆ‘²-
-usquid:S00117{"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¨±™şÿÿÿÿ8¡Üˆ‘²-
-psquid:S1192¤"QDefine a constant instead of duplicating this literal "INVALID GP ENTRY" 3 times.(¼ÀÍ”8¡Üˆ‘²-
-vsquid:S00117¦"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÄÉç½úÿÿÿÿ8÷¢‚İ´-
-Lsquid:S1659".Declare "RECOVERED_AMOUNT" on a separate line.(ßª”µ8¡Üˆ‘²-
-nsquid:S00116"PRename this field "TDOJY" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ò•ö8¡Üˆ‘²-
-nsquid:S00116"ORename this field "Name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßª”µ8¡Üˆ‘²-
-psquid:S00116"QRename this field "TMonth" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ì®¥8¡Üˆ‘²-
-vsquid:S00117Æ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÄÉç½úÿÿÿÿ8÷¢‚İ´-
-Asquid:S1659"#Declare "JDOJM" on a separate line.(¡ì®¥8¡Üˆ‘²-
-Bsquid:S1659"%Declare "TSLEVEL" on a separate line.(ò•ö8¡Üˆ‘²-
-Jsquid:S1659"'Declare "increment" on a separate line.(”¶Õîşÿÿÿÿ8¡Üˆ‘²-
-vsquid:S00117›"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤…øŞşÿÿÿÿ8¡Üˆ‘²-
-vsquid:S00117±"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÄÉç½úÿÿÿÿ8÷¢‚İ´-
-Esquid:S1659"'Declare "JNcrement" on a separate line.(¡ì®¥8¡Üˆ‘²-
-osquid:S00116"QRename this field "TBasic" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ò•ö8¡Üˆ‘²-
-Asquid:S1659"#Declare "JDCPS" on a separate line.(¡ì®¥8¡Üˆ‘²-
->squid:S1659"!Declare "TGP" on a separate line.(ò•ö8¡Üˆ‘²-
-Dsquid:S1659"&Declare "FromDate" on a separate line.(ßª”µ8¡Üˆ‘²-
-\squid:S1197±"8Move the array designator from the variable to the type.( Ÿçıÿÿÿÿ8¡Üˆ‘²-
-vsquid:S3776¸"RRefactor this method to reduce its Cognitive Complexity from 30 to the 15 allowed.(Ÿáéáúÿÿÿÿ8¡Üˆ‘²-
-osquid:S00116"PRename this field "JHRA6" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ì®¥8¡Üˆ‘²-
-Wsquid:S1197§"8Move the array designator from the variable to the type.(£ˆ±š8¡Üˆ‘²-
-Wsquid:S1197Ü"8Move the array designator from the variable to the type.(·‘¹Ñ8¡Üˆ‘²-
-osquid:S00116"PRename this field "INCRE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßª”µ8¡Üˆ‘²-
->squid:S1659" Declare "GP" on a separate line.(ßª”µ8¡Üˆ‘²-
-?squid:S1659"!Declare "NPA" on a separate line.(ßª”µ8¡Üˆ‘²-
-psquid:S00116"RRename this field "AUTO_PB" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(şù„8¡Üˆ‘²-
-[squid:S1197{"8Move the array designator from the variable to the type.(¨±™şÿÿÿÿ8¡Üˆ‘²-
-nsquid:S00116"ORename this field "NPA7" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßª”µ8¡Üˆ‘²-
-@squid:S1659""Declare "DCPS" on a separate line.(ßª”µ8¡Üˆ‘²-
-Bsquid:S1659"$Declare "JFROMD" on a separate line.(¡ì®¥8¡Üˆ‘²-
-@squid:S1659""Declare "NPA7" on a separate line.(ßª”µ8¡Üˆ‘²-
-lsquid:S00116"NRename this field "TGP" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ò•ö8¡Üˆ‘²-
-Esquid:S1659"'Declare "JPAY_BAND" on a separate line.(¡ì®¥8¡Üˆ‘²-
-isquid:UnusedPrivateMethodÁ"7Remove this unused private "setTheFilteredList" method.(Ê«è¢ıÿÿÿÿ8¡Üˆ‘²-
-ksquid:S00112Ã"FDefine and throw a dedicated exception instead of using a generic one.(Ó®ù¶úÿÿÿÿ8¡Üˆ‘²-
-Bsquid:S1659"$Declare "ToDate" on a separate line.(ßª”µ8¡Üˆ‘²-
-vsquid:S00117ë"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÄÉç½úÿÿÿÿ8¡Üˆ‘²-
-bsquid:S1155ä">Use isEmpty() to check whether the collection is empty or not.(üÊ „ÿÿÿÿÿ8¬îüú´-
-Vsquid:S1135Â"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8¡Üˆ‘²-
-Esquid:S1659"(Declare "JRECOVERED" on a separate line.(ò•ö8¡Üˆ‘²-
->squid:S1659" Declare "TA" on a separate line.(ßª”µ8¡Üˆ‘²-
-osquid:S00116"PRename this field "FYear" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ì®¥8¡Üˆ‘²-
-ssquid:S00116"TRename this field "CA_OtherA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßª”µ8¡Üˆ‘²-
-nsquid:S00116"ORename this field "JTOD" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ì®¥8¡Üˆ‘²-
-lsquid:S00116"MRename this field "GP" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßª”µ8¡Üˆ‘²-
-\squid:S1197¼"8Move the array designator from the variable to the type.(ïéìåşÿÿÿÿ8¡Üˆ‘²-
+rsquid:S00116"PRename this field "TDOJD" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(šÖ©˜şÿÿÿÿ8¤ôó¾¹-
+fsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ƒİ×T8¤ôó¾¹-
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(À¹¸›8£®û¾¹-
+@squid:S1659"$Declare "FMonth" on a separate line.(¡ì®¥8¤ôó¾¹-
+Ysquid:S1197"8Move the array designator from the variable to the type.(¨±™şÿÿÿÿ8¤ôó¾¹-
+msquid:S00116"PRename this field "JNPA7" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ì®¥8¤ôó¾¹-
+Ysquid:S1197"8Move the array designator from the variable to the type.(ïƒµÏúÿÿÿÿ8¤ôó¾¹-
+ksquid:S00116"NRename this field "NPA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ö÷å•8¤ôó¾¹-
+tsquid:S00116"RRename this field "TSLEVEL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(šÖ©˜şÿÿÿÿ8¤ôó¾¹-
+lsquid:S00116"ORename this field "NPA7" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ö÷å•8¤ôó¾¹-
+xsquid:S00116"[Rename this field "RECOVERED_AMOUNT" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ö÷å•8¤ôó¾¹-
+ksquid:S00116"NRename this field "JWA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ì®¥8¤ôó¾¹-
+?squid:S1659"#Declare "TYear" on a separate line.(¡ì®¥8¤ôó¾¹-
+ssquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(âà²ûÿÿÿÿ8¤ôó¾¹-
+Bsquid:S1659"&Declare "FromDate" on a separate line.(ö÷å•8¤ôó¾¹-
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¬ä¾¸üÿÿÿÿ8¤ôó¾¹-
+ssquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÄÉç½úÿÿÿÿ8¤ôó¾¹-
+ssquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(°æëÛÿÿÿÿÿ8¤ôó¾¹-
+ssquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÄÉç½úÿÿÿÿ8¤ôó¾¹-
+nsquid:S00116"QRename this field "JFROMD" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ì®¥8¤ôó¾¹-
+Ysquid:S1197"8Move the array designator from the variable to the type.(×íøµşÿÿÿÿ8¤ôó¾¹-
+wsquid:S00116"URename this field "JRECOVERED" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(šÖ©˜şÿÿÿÿ8¤ôó¾¹-
+Tsquid:S1197"8Move the array designator from the variable to the type.(Î«·™8¤ôó¾¹-
+qsquid:S00116"TRename this field "JNcrement" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ì®¥8¤ôó¾¹-
+Jsquid:S1659".Declare "RECOVERED_AMOUNT" on a separate line.(ö÷å•8¤ôó¾¹-
+}squid:S00116"[Rename this field "WithoutIncrement" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(”¶Õîşÿÿÿÿ8¤ôó¾¹-
+gsquid:S1192"FDefine a constant instead of duplicating this literal " => (" 9 times.(åŞ¯‘şÿÿÿÿ8¤ôó¾¹-
+wsquid:S00115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(›¤ëâ8¤ôó¾¹-
+jsquid:CommentedOutCodeLine­	"<This block of commented-out lines of code should be removed.(İø´8¤ôó¾¹-
+@squid:S1659"$Declare "JPROMO" on a separate line.(¡ì®¥8¤ôó¾¹-
+Ysquid:S1197"8Move the array designator from the variable to the type.(¥ÈÏ³ùÿÿÿÿ8¤ôó¾¹-
+?squid:S1659"#Declare "JHRA6" on a separate line.(¡ì®¥8¤ôó¾¹-
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ŒùóÜ8¤ôó¾¹-
+ssquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÄÉç½úÿÿÿÿ8¤ôó¾¹-
+ssquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÄÉç½úÿÿÿÿ8¤ôó¾¹-
+Dsquid:S1659"#Declare "TDOJY" on a separate line.(šÖ©˜şÿÿÿÿ8¤ôó¾¹-
+Bsquid:S1659"'Declare "BJULYPROM" on a separate line.(şù„8¤ôó¾¹-
+ksquid:S00116"NRename this field "JTA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ì®¥8¤ôó¾¹-
+lsquid:S00116"ORename this field "JNPA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ì®¥8¤ôó¾¹-
+lsquid:S00116"ORename this field "Name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ö÷å•8¤ôó¾¹-
+Fsquid:S1659"%Declare "TSLEVEL" on a separate line.(šÖ©˜şÿÿÿÿ8¤ôó¾¹-
+Tsquid:S1197"8Move the array designator from the variable to the type.(£ˆ±š8¤ôó¾¹-
+lsquid:S1192"KDefine a constant instead of duplicating this literal "SansSerif" 20 times.(ÊêáÓÿÿÿÿÿ8¤ôó¾¹-
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ŒùóÜ8¤ôó¾¹-
+Esquid:S1659"$Declare "TBasic" on a separate line.(šÖ©˜şÿÿÿÿ8¤ôó¾¹-
+Isquid:S1659"(Declare "JRECOVERED" on a separate line.(šÖ©˜şÿÿÿÿ8¤ôó¾¹-
+tsquid:S00116"WRename this field "Normal_Or_Dr" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ì®¥8¤ôó¾¹-
+=squid:S1659"!Declare "DOJ" on a separate line.(ö÷å•8¤ôó¾¹-
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ŒùóÜ8¤ôó¾¹-
+?squid:S1659"#Declare "JDOJM" on a separate line.(¡ì®¥8¤ôó¾¹-
+jsquid:CommentedOutCodeLine§	"<This block of commented-out lines of code should be removed.(İø´8¤ôó¾¹-
+}squid:S00116"[Rename this field "TadmissibleBasic" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(šÖ©˜şÿÿÿÿ8¤ôó¾¹-
+>squid:S1659""Declare "JTOD" on a separate line.(¡ì®¥8¤ôó¾¹-
+nsquid:S00116"QRename this field "JPROMO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ì®¥8¤ôó¾¹-
+jsquid:CommentedOutCodeLine¸	"<This block of commented-out lines of code should be removed.(¨àò«8¤ôó¾¹-
+<squid:S1659" Declare "WA" on a separate line.(ö÷å•8¤ôó¾¹-
+@squid:S1659"$Declare "TMonth" on a separate line.(¡ì®¥8¤ôó¾¹-
+Hsquid:S1659"'Declare "increment" on a separate line.(”¶Õîşÿÿÿÿ8¤ôó¾¹-
+@squid:S1659"%Declare "AUTO_PB" on a separate line.(şù„8¤ôó¾¹-
+msquid:S00116"PRename this field "JHRA6" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ì®¥8¤ôó¾¹-
+>squid:S1659""Declare "HRA6" on a separate line.(ö÷å•8¤ôó¾¹-
+msquid:S00116"PRename this field "INCRE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ö÷å•8¤ôó¾¹-
+Fsquid:S1659"*Declare "Normal_Or_Dr" on a separate line.(¡ì®¥8¤ôó¾¹-
+Tsquid:S1197"8Move the array designator from the variable to the type.(í®ø8¤ôó¾¹-
+osquid:S1192"NDefine a constant instead of duplicating this literal "67000 - 79000" 4 times.(¡íĞßøÿÿÿÿ8¤ôó¾¹-
+msquid:S1192"QDefine a constant instead of duplicating this literal "INVALID GP ENTRY" 6 times.(¼ÀÍ”8¤ôó¾¹-
+rsquid:S00116"PRename this field "TName" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(šÖ©˜şÿÿÿÿ8¤ôó¾¹-
+ssquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¨±™şÿÿÿÿ8¤ôó¾¹-
+Ysquid:S1197"8Move the array designator from the variable to the type.(Õ»Î·øÿÿÿÿ8¤ôó¾¹-
+hsquid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(Ó®ù¶úÿÿÿÿ8¤ôó¾¹-
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ŒùóÜ8¤ôó¾¹-
+ssquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÄÉç½úÿÿÿÿ8¤ôó¾¹-
+jsquid:S00116"MRename this field "WA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ö÷å•8¤ôó¾¹-
+rsquid:S00116"URename this field "JCA_OtherA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ì®¥8¤ôó¾¹-
+Osquid:S1659".Declare "TadmissibleBasic" on a separate line.(šÖ©˜şÿÿÿÿ8¤ôó¾¹-
+@squid:S1659"$Declare "ToDate" on a separate line.(ö÷å•8¤ôó¾¹-
+Ysquid:S1197"8Move the array designator from the variable to the type.( Ÿçıÿÿÿÿ8¤ôó¾¹-
+msquid:S00116"PRename this field "FYear" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ì®¥8¤ôó¾¹-
+?squid:S1659"#Declare "Basic" on a separate line.(ö÷å•8¤ôó¾¹-
+ssquid:S00116"QRename this field "TBasic" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(šÖ©˜şÿÿÿÿ8¤ôó¾¹-
+nsquid:S00116"QRename this field "TMonth" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ì®¥8¤ôó¾¹-
+msquid:S00116"PRename this field "TYear" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ì®¥8¤ôó¾¹-
+usquid:S00116"XRename this field "IncrementTime" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•èâÁ8¤ôó¾¹-
+Lsquid:S1659"0Declare "admissibleBasicPay" on a separate line.(ö÷å•8¤ôó¾¹-
+Ysquid:S1197"8Move the array designator from the variable to the type.(ïéìåşÿÿÿÿ8¤ôó¾¹-
+msquid:S00116"PRename this field "JDOJM" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ì®¥8¤ôó¾¹-
+?squid:S1659"#Declare "FYear" on a separate line.(¡ì®¥8¤ôó¾¹-
+?squid:S1659"#Declare "PROMO" on a separate line.(ö÷å•8¤ôó¾¹-
+qsquid:S00116"TRename this field "CA_OtherA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ö÷å•8¤ôó¾¹-
+psquid:S00116"SRename this field "FromDate" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ö÷å•8¤ôó¾¹-
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÚĞ“ƒÿÿÿÿÿ8¤ôó¾¹-
+jsquid:S00116"MRename this field "TA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ö÷å•8¤ôó¾¹-
+bsquid:S1155¤	">Use isEmpty() to check whether the collection is empty or not.(üÊ „ÿÿÿÿÿ8¤ôó¾¹-
+Dsquid:S1659"#Declare "TDOJD" on a separate line.(šÖ©˜şÿÿÿÿ8¤ôó¾¹-
+Dsquid:S1659"(Declare "JCA_OtherA" on a separate line.(¡ì®¥8¤ôó¾¹-
+=squid:S1659""Declare "done" on a separate line.(şù„8¤ôó¾¹-
+>squid:S1659""Declare "NPA7" on a separate line.(ö÷å•8¤ôó¾¹-
+ssquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤…øŞşÿÿÿÿ8¤ôó¾¹-
+Ssquid:S1197"8Move the array designator from the variable to the type.(‘ä8¤ôó¾¹-
+Csquid:S1659"'Declare "CA_OtherA" on a separate line.(ö÷å•8¤ôó¾¹-
+msquid:S00116"PRename this field "PROMO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ö÷å•8¤ôó¾¹-
+Csquid:S1659"'Declare "JNcrement" on a separate line.(¡ì®¥8¤ôó¾¹-
+ssquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 25 to the 15 allowed.(ƒ¨«åúÿÿÿÿ8¤ôó¾¹-
+lsquid:S00116"ORename this field "JTOD" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ì®¥8¤ôó¾¹-
+jsquid:CommentedOutCodeLine¾	"<This block of commented-out lines of code should be removed.(¨àò«8¤ôó¾¹-
+?squid:S1659"#Declare "JNPA7" on a separate line.(¡ì®¥8¤ôó¾¹-
+Psquid:S1066"/Merge this if statement with the enclosing one.(ŸÒ²æüÿÿÿÿ8¤ôó¾¹-
+?squid:S1659"#Declare "JDCPS" on a separate line.(¡ì®¥8¤ôó¾¹-
+ssquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 36 to the 15 allowed.(Ÿáéáúÿÿÿÿ8¤ôó¾¹-
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ŒùóÜ8¤ôó¾¹-
+rsquid:S00116"PRename this field "TDOJY" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(šÖ©˜şÿÿÿÿ8¤ôó¾¹-
+ssquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤…øŞşÿÿÿÿ8¤ôó¾¹-
+ssquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÄÉç½úÿÿÿÿ8¤ôó¾¹-
+osquid:CommentedOutCodeLineœ	"<This block of commented-out lines of code should be removed.(¶›‹•ıÿÿÿÿ8¤ôó¾¹-
+=squid:S1659"!Declare "JWA" on a separate line.(¡ì®¥8¤ôó¾¹-
+ksquid:S00116"NRename this field "DOJ" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ö÷å•8¤ôó¾¹-
+msquid:S00116"PRename this field "JHRA7" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ì®¥8¤ôó¾¹-
+>squid:S1659""Declare "JNPA" on a separate line.(¡ì®¥8¤ôó¾¹-
+qsquid:S00116"TRename this field "JPAY_BAND" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ì®¥8¤ôó¾¹-
+psquid:S00116"NRename this field "TGP" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(šÖ©˜şÿÿÿÿ8¤ôó¾¹-
+<squid:S1659" Declare "GP" on a separate line.(ö÷å•8¤ôó¾¹-
+@squid:S1659"$Declare "JINCRE" on a separate line.(¡ì®¥8¤ôó¾¹-
+Tsquid:S1197"8Move the array designator from the variable to the type.(·‘¹Ñ8¤ôó¾¹-
+=squid:S1659"!Declare "NPA" on a separate line.(ö÷å•8¤ôó¾¹-
+ssquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 30 to the 15 allowed.(¹«Æüÿÿÿÿ8¤ôó¾¹-
+nsquid:S00116"QRename this field "ToDate" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ö÷å•8¤ôó¾¹-
+nsquid:S00116"QRename this field "FMonth" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ì®¥8¤ôó¾¹-
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(À¹¸›8ç›€¿¹-
+@squid:S1659"%Declare "refresh" on a separate line.(şù„8¤ôó¾¹-
+_squid:S1155">Use isEmpty() to check whether the collection is empty or not.(üÊ „ÿÿÿÿÿ8¤ôó¾¹-
+Bsquid:S1659"&Declare "PAY_BAND" on a separate line.(ö÷å•8¤ôó¾¹-
+lsquid:S00116"ORename this field "HRA7" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ö÷å•8¤ôó¾¹-
+>squid:S1659""Declare "HRA7" on a separate line.(ö÷å•8¤ôó¾¹-
+msquid:S00116"PRename this field "JDCPS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ì®¥8¤ôó¾¹-
+bsquid:S1155´	">Use isEmpty() to check whether the collection is empty or not.(üÊ „ÿÿÿÿÿ8¤ôó¾¹-
+Bsquid:S1659"!Declare "TGP" on a separate line.(šÖ©˜şÿÿÿÿ8¤ôó¾¹-
+msquid:S00116"PRename this field "Basic" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ö÷å•8¤ôó¾¹-
+lsquid:S00116"ORename this field "HRA6" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ö÷å•8¤ôó¾¹-
+psquid:S00116"SRename this field "PAY_BAND" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ö÷å•8¤ôó¾¹-
+Psquid:S1066"/Merge this if statement with the enclosing one.(ŸÒ²æüÿÿÿÿ8¤ôó¾¹-
+psquid:S00116"TRename this field "BJULYPROM" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(şù„8¤ôó¾¹-
+@squid:S1659"$Declare "JFROMD" on a separate line.(¡ì®¥8¤ôó¾¹-
+Ysquid:S1197"8Move the array designator from the variable to the type.(è±Ìüúÿÿÿÿ8¤ôó¾¹-
+nsquid:S00116"RRename this field "AUTO_PB" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(şù„8¤ôó¾¹-
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ŒùóÜ8¤ôó¾¹-
+<squid:S1659" Declare "TA" on a separate line.(ö÷å•8¤ôó¾¹-
+?squid:S1659"#Declare "JHRA7" on a separate line.(¡ì®¥8¤ôó¾¹-
+?squid:S1659"#Declare "INCRE" on a separate line.(ö÷å•8¤ôó¾¹-
+lsquid:S00116"ORename this field "DCPS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ö÷å•8¤ôó¾¹-
+osquid:CommentedOutCodeLineš	"<This block of commented-out lines of code should be removed.(¼ê’•üÿÿÿÿ8¤ôó¾¹-
+>squid:S1659""Declare "DCPS" on a separate line.(ö÷å•8¤ôó¾¹-
+ssquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÄÉç½úÿÿÿÿ8¤ôó¾¹-
+ssquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(âà²ûÿÿÿÿ8¤ôó¾¹-
+Tsquid:S1197"8Move the array designator from the variable to the type.(Ì·Ûº8¤ôó¾¹-
+jsquid:S00116"MRename this field "GP" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ö÷å•8¤ôó¾¹-
+Csquid:S1659"'Declare "JPAY_BAND" on a separate line.(¡ì®¥8¤ôó¾¹-
+nsquid:S00116"QRename this field "JINCRE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡ì®¥8¤ôó¾¹-
+Dsquid:S1148"#Use a logger to log this exception.(Âşÿâûÿÿÿÿ8¤ôó¾¹-
