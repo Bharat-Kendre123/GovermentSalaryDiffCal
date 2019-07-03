@@ -1,0 +1,7 @@
+
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(€Ïùƒüÿÿÿÿ
+Esquid:S1481")Remove this unused "list" local variable.(òñ÷èýÿÿÿÿ
+nsquid:S37766"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(ÐÞŽÒøÿÿÿÿ
+Ysquid:S00107"<Method has 9 parameters, which is greater than 7 authorized.(øþú¶ÿÿÿÿÿ
+Tsquid:S1854"8Remove this useless assignment to local variable "list".(òñ÷èýÿÿÿÿ

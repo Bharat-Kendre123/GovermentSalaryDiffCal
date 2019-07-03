@@ -1,0 +1,21 @@
+
+jsquid:S3776¢"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(æÎßè
+@squid:S1125ﬂ"(Remove the literal "true" boolean value.(≠‘π…
+?squid:S1125≥"(Remove the literal "true" boolean value.(‘óÿ<
+?squid:S1125∂"(Remove the literal "true" boolean value.(‘óÿ<
+ssquid:S3923–"[Remove this conditional structure or edit its code blocks so that they're not all the same.(ª«ÎÒ
+Gsquid:S00108è")Either remove or fill this block of code.(¨¿·™¯ˇˇˇˇ
+isquid:S00117Ù"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(àî∫Q
+jsquid:S3776˝"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(Ωˇ·“
+Msquid:S1444"1Make this "public static gradePayMap" field final(±úÚó˘ˇˇˇˇ
+Qsquid:S1118":Add a private constructor to hide the implicit public one.(◊º≠∆
+asquid:S3358å"DExtract this nested ternary operation into an independent statement.(‹‹˝¢˚ˇˇˇˇ
+9squid:S2386"Make this member "protected".(±úÚó˘ˇˇˇˇ
+osquid:S00117ˆ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(∞£◊˚˛ˇˇˇˇ
+osquid:S00117˜"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(åÍƒ¢˙ˇˇˇˇ
+osquid:S00117ı"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(»åÊä˘ˇˇˇˇ
+?squid:S1125é"(Remove the literal "true" boolean value.(‘óÿ<
+?squid:S1125ë"(Remove the literal "true" boolean value.(‘óÿ<
+ä"squid:ClassVariableVisibilityCheck"WMake gradePayMap a static final constant or non-public and provide accessors if needed.(±úÚó˘ˇˇˇˇ
+Isquid:S1481q"2Remove this unused "new7PaySalary" local variable.(√——·
+Gsquid:S00108ã")Either remove or fill this block of code.(¨¿·™¯ˇˇˇˇ
